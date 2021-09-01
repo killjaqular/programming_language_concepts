@@ -1,3 +1,10 @@
+! Author:  Adonay Pichardo, apichardo2019@my.fit.edu
+! Course:  CSE 4250, Fall 2021
+! Project: Proj1, Spread of Epidemics
+
+! This program compiles with gfortran version:
+! GNU Fortran (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609
+
 FUNCTION f_lambert(z)
 ! Newtonian approximation of the Lambert W function at z
 	REAL, intent(IN) :: z ! Used as input
@@ -30,9 +37,13 @@ END FUNCTION
 !--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM-
 
 PROGRAM project1
-! 
-! 
-! 
+! Simulation of the spread of a virus; given 'n' as the initial population,
+! and 'a' as the number of people one infected person is in contact with.
+! T               =          f_gamma(a) * n: Total number of people infected.
+! infected_ration =                   T / n: Ratio of infected to not infected.
+! f_lamber(z)     = Newtonian Approximation: Using Newtonian Approximation,
+! we have estimated the value of the Lambert W function at the given z value.
+
 	IMPLICIT NONE ! Do not allow implicit casting
 	! Functions
 	REAL    :: f_lambert         ! Lamber W function
@@ -62,12 +73,12 @@ PROGRAM project1
 		END IF
 
 		! Process data
-		T = f_total_infected(a, n)
-		infected_ratio = (T / n) * 100.0
+		T = NINT(f_total_infected(a, n))
+		infected_ratio = NINT((T / n) * 100.0)
 
 		! Print results
 		case_number = case_number + 1
-		print *, "Case", case_number, ":", T, infected_ratio, "%"
+		print *, "Case", case_number, ":", INT(T), INT(infected_ratio), "%"
 	END DO
 
 END PROGRAM project1
