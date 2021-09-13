@@ -13,20 +13,12 @@ FUNCTION f_lambert(z)
     REAL :: approx        ! A variable used to approximate the value at z
     REAL :: old_value     ! Holds last iteration's approx
 
-    small_change = 0.1 ! Level of accuracy
-    old_value    = 0           ! Initial guess
+    small_change = 0.000000001 ! Level of accuracy
     approx       = 1           ! Initial guess
     DO WHILE (ABS(old_value - approx) > small_change)
         old_value = approx
 
         approx = approx - ((approx * exp(approx) - z) / (exp(approx) + approx * exp(approx)))
-
-        IF (ABS(old_value - approx) < small_change) THEN
-            EXIT
-        END IF
-
-        old_value = approx ! Update last guess
-        approx = 0         ! Reset approximation
     END DO
 
     print *, "z", z, " = ", approx
