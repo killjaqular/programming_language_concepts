@@ -1,8 +1,8 @@
 bin: obj
-	gfortran -o $1 $1.o
+	gfortran -Wall -o $1 $1.o
 
 obj:
-	gfortran -c $1.f95
+	gfortran -Wall -c $1.f95
 
 clean:
 	rm $1.o

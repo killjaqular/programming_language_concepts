@@ -7,31 +7,46 @@
 
 FUNCTION f_lambert(z)
 ! Newtonian approximation of the Lambert W function at z
-	REAL, intent(IN) :: z ! Used as input
+    REAL, intent(IN) :: z ! Used as input
 
-	REAL :: approx ! A variable used to approximate the value at z
+    REAL :: small_change  ! Used to measure change between iterations
+    REAL :: approx        ! A variable used to approximate the value at z
+    REAL :: old_value     ! Holds last iteration's approx
 
-	approx = 1 ! Initial guess
-	DO iteration = 1, 1000, 1 ! Use 1000 iterations for precision
-		approx = approx - ((approx * exp(approx) - z) / (exp(approx) + approx * exp(approx)))
-	END DO
+    small_change = 0.1 ! Level of accuracy
+    old_value    = 0           ! Initial guess
+    approx       = 1           ! Initial guess
+    DO WHILE (ABS(old_value - approx) > small_change)
+        old_value = approx
 
-	f_lambert = approx ! Return the estimated value
+        approx = approx - ((approx * exp(approx) - z) / (exp(approx) + approx * exp(approx)))
+
+        IF (ABS(old_value - approx) < small_change) THEN
+            EXIT
+        END IF
+
+        old_value = approx ! Update last guess
+        approx = 0         ! Reset approximation
+    END DO
+
+    print *, "z", z, " = ", approx
+
+    f_lambert = approx ! Return the estimated value
 END FUNCTION
 
 FUNCTION f_gamma(alpha)
 ! Calculates the gamma value used to find total population infected
-	REAL, intent(IN) :: alpha ! Used as input
+    REAL, intent(IN) :: alpha ! Used as input
 
-	f_gamma = 1 + f_lambert(-alpha * exp(-alpha)) / alpha
+    f_gamma = 1 + f_lambert(-alpha * exp(-alpha)) / alpha
 END FUNCTION
 
 FUNCTION f_total_infected(alpha, population)
 ! Calculates the total population infected
-	REAL,    intent(IN) :: alpha
-	INTEGER, intent(IN) :: population
+    REAL,    intent(IN) :: alpha
+    INTEGER, intent(IN) :: population
 
-	f_total_infected = f_gamma(alpha) * population
+    f_total_infected = f_gamma(alpha) * population
 END FUNCTION
 
 !--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM--PROGRAM-
@@ -41,44 +56,42 @@ PROGRAM project1
 ! and 'a' as the number of people one infected person is in contact with.
 ! T               =          f_gamma(a) * n: Total number of people infected.
 ! infected_ration =                   T / n: Ratio of infected to not infected.
-! f_lamber(z)     = Newtonian Approximation: Using Newtonian Approximation,
+! f_lambert(z)     = Newtonian Approximation: Using Newtonian Approximation,
 ! we have estimated the value of the Lambert W function at the given z value.
 
-	IMPLICIT NONE ! Do not allow implicit casting
-	! Functions
-	REAL    :: f_lambert         ! Lamber W function
-	REAL    :: f_gamma           ! Gamma value
-	REAL    :: f_total_infected  ! Calculates total population infected
+    IMPLICIT NONE ! Do not allow implicit casting
+    ! Functions
+    REAL :: f_total_infected  ! Calculates total population infected
 
-	! Used for input
-	INTEGER :: n                 ! Initial population
-	REAL    :: a                 ! Initial in contact with infected person
+    ! Used for input
+    INTEGER          :: n                 ! Initial population
+    REAL :: a                 ! Initial in contact with infected person
 
-	! Used for output
-	REAL    :: T                 ! Total population infected
-	REAL    :: infected_ratio    ! T/n
-	INTEGER :: case_number       ! Current case number
+    ! Used for output
+    REAL :: T                 ! Total population infected
+    REAL :: infected_ratio    ! T/n
+    INTEGER          :: case_number       ! Current case number
 
-	! Used for control, auxiliary
-	INTEGER :: flag              ! Used to signal EOF has been read
+    ! Used for control, auxiliary
+    INTEGER :: flag ! Used to signal EOF has been read
 
 !----------------------------------------------------------------------------------------------------------------------
 
-	case_number = 0 ! Begin at first case
-	DO
-		! Read input
-		read (*, *, IOSTAT = flag), n, a
-		IF (flag < 0) THEN ! If we have read EOF
-			EXIT ! Break out of DO loop
-		END IF
+    case_number = 0 ! Begin at first case
+    DO
+        ! Read input
+        read (*, *, IOSTAT = flag) n, a
+        IF (flag < 0) THEN ! If we have read EOF
+            EXIT ! Break out of DO loop
+        END IF
 
-		! Process data
-		T = NINT(f_total_infected(a, n))
-		infected_ratio = NINT((T / n) * 100.0)
+        ! Process data
+        T = NINT(f_total_infected(a, n))
+        infected_ratio = NINT((T / n) * 100.0)
 
-		! Print results
-		case_number = case_number + 1
-		print *, "Case", case_number, ":", INT(T), INT(infected_ratio), "%"
-	END DO
+        ! Print results
+        case_number = case_number + 1
+        print *, "Case", case_number, ":", INT(T), INT(infected_ratio), "%"
+    END DO
 
 END PROGRAM project1
