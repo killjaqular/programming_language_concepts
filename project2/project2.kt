@@ -19,21 +19,14 @@ import java.io.*
 import java.net.*
 import java.util.*
 
-class ImageInfo constructor(given_pallet: String){
-    val pallete = HashMap<String, IntArray>()
-}
-
-class ImageInfoList{
-    var list: ArrayList<ImageInfo> = ArrayList()
+class ColorPalette constructor(){
+    val palette = HashMap<String, IntArray>()
 }
 
 fun main(args: Array<String>){
     println("Hello World!")
 
-    var current_image: ImageInfo = ImageInfo("Hello")
-    var ranking_list:  ImageInfoList = ImageInfoList()
-
-    ranking_list.list.add(current_image)
+    var current_image: ColorPalette = ColorPalette()
 
     var width:  Int
     var height: Int
