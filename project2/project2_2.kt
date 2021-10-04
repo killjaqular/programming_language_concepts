@@ -72,10 +72,12 @@ class ColorPalette constructor(){
         }
         // Increment every color that is close and reset the Euclidean distance
         for (key in palette.keys){
+            // If the color was found to be close,
             if (current_lowest == palette.get(key)!!.get(3)){
                 var temp: Float = palette.get(key)!!.get(4)
                 palette.get(key)!!.set(4, temp + 1)
             }
+            // Reset the field to be reused next time matchColor() is called
             palette.get(key)!!.set(3, 0f)
         }
     }
