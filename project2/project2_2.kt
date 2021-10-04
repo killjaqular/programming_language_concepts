@@ -26,7 +26,8 @@ class ColorPalette constructor(){
     palette will be a HashMap of K:V pairs,
     The values will be IntArrays
     The IntArrays will have 5 integers representing:
-    Red channel, Green channel, Blue channel, Eucldiean distance, Frequency of pixel
+    -----0------|------1-------|------2------|--------3---------
+    Red channel, Green channel, Blue channel, Frequency of pixel
     */
     var palette = HashMap<String, FloatArray>()
 
@@ -40,43 +41,50 @@ class ColorPalette constructor(){
         }
     }
 
-    fun setEuclideanDistance(pixel: Color){
+    fun matchColor(pixel: Color): String{
+        /*
+        Using Euclidean Distance, calculate which color the pixel is closest to and account for the frequency.
+        */
+        var name          : String = palette.keys.first()
+        var current_lowest: Float  = 999f
         for (key in palette.keys){
-            System.out.println("---|---|---")
-            System.out.println(key)
-            System.out.println(palette.get(key)!!.get(0).toString()+"|"+
-                               palette.get(key)!!.get(1).toString()+"|"+
-                               palette.get(key)!!.get(2).toString())
-            System.out.println("-----------")
-            System.out.println(pixel.getRed().toString()+"|"+
-                               pixel.getGreen().toString()+"|"+
-                               pixel.getBlue().toString())
-
+            // System.out.println("loop current_lowest:_> " + current_lowest.toString())
             var distance: Float = sqrt((palette.get(key)!!.get(0) - pixel.getRed()).pow(2) +
                                        (palette.get(key)!!.get(1) - pixel.getGreen()).pow(2) +
                                        (palette.get(key)!!.get(2) - pixel.getBlue()).pow(2))
-
-            palette.get(key)!!.set(3, distance)
+            if (distance < current_lowest){
+                name           = key
+                current_lowest = distance
+                // System.out.println("new  current_lowest:_> " + current_lowest.toString())
+            }
+            // TODO: DELETE THIS, THIS IS ONLY FOR TROUBLE SHOOTING!
+            // System.out.println("---|---|---")
+            // System.out.println(key)
+            // System.out.println(palette.get(key)!!.get(0).toString()+"|"+
+            //                    palette.get(key)!!.get(1).toString()+"|"+
+            //                    palette.get(key)!!.get(2).toString())
+            // System.out.println("-----------")
+            // System.out.println(pixel.getRed().toString()+"|"+
+            //                    pixel.getGreen().toString()+"|"+
+            //                    pixel.getBlue().toString())
         }
+        var temp: Float = palette.get(name)!!.get(3)
+        palette.get(name)!!.set(3, temp + 1)
+        return name
     }
 
-    fun countDominantColor(pixel: Color): String{
-        var name          : String = palette.keys.get(0)
-        var distance_value: Float  = palette.get(name)!!.get(3)
+    fun reset(){
         for (key in palette.keys){
-            if (distance_value < palette.get(key)!!.get(3)){
-                name           = key
-                distance_value = palette.get(key)!!.get(3)
+            for (index in palette.get(key)!!.indices){
+                palette.get(key)!!.set(index, 0f)
             }
-            palette.get(key)!!.set(3, 0.toFloat())
         }
-        palette.get(name)!!.[4] += 1.toFloat()
-        return name
     }
 }
 
-class ImageInfo constructor(){
-    var flag: String = ""
+class ImageInfo constructor(flag_name: String){
+    var flag: String = flag_name
+    var colors = HashMap<String, IntArray>()
 }
 
 fun main(args: Array<String>){
@@ -92,7 +100,7 @@ fun main(args: Array<String>){
         if (line == null) break
 
         val (color, r, g, b) = line.split(' ')
-        inputPalette.palette.put(color, floatArrayOf(r.toFloat(), g.toFloat(), b.toFloat(), 0.toFloat(), 0.toFloat()))
+        inputPalette.palette.put(color, floatArrayOf(r.toFloat(), g.toFloat(), b.toFloat(), 0f, 0f))
     }
 
     inputPalette.printPalette()
@@ -107,17 +115,11 @@ fun main(args: Array<String>){
         for (y in 0..image.getHeight() - 1){
             for (x in 0..image.getWidth() - 1){
                 pixel = Color(image.getRGB(x, y))
-                inputPalette.setEuclideanDistance(pixel)
-                inputPalette.printPalette()
-                dominant_color = inputPalette.countDominantColor(pixel)
-                break
-                // System.out.println("---|---|---|---")
-                // System.out.println(pixel.getRed().toString() + "|" +
-                //     pixel.getGreen().toString() + "|" +
-                //     pixel.getBlue().toString() + "|" +
-                //     pixel.getAlpha().toString())
+                var color_found: String = inputPalette.matchColor(pixel)
             }
-            break
         }
+        inputPalette.printPalette()
+        inputPalette.reset()
+        break
     }
 }
