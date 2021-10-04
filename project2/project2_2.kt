@@ -26,8 +26,8 @@ class ColorPalette constructor(){
     palette will be a HashMap of K:V pairs,
     The values will be IntArrays
     The IntArrays will have 5 integers representing:
-    -----0------|------1-------|------2------|--------3---------
-    Red channel, Green channel, Blue channel, Frequency of pixel
+    -----0------|------1-------|------2------|--------3----------|--------4---------
+    Red channel, Green channel, Blue channel, Euclidean Distance, Frequency of pixel
     */
     var palette = HashMap<String, FloatArray>()
 
@@ -41,19 +41,21 @@ class ColorPalette constructor(){
         }
     }
 
-    fun matchColor(pixel: Color): String{
+    fun matchColor(pixel: Color){
         /*
         Using Euclidean Distance, calculate which color the pixel is closest to and account for the frequency.
         */
-        var name          : String = palette.keys.first()
         var current_lowest: Float  = 999f
+        // Find the value that is the closest
         for (key in palette.keys){
             // System.out.println("loop current_lowest:_> " + current_lowest.toString())
             var distance: Float = sqrt((palette.get(key)!!.get(0) - pixel.getRed()).pow(2) +
                                        (palette.get(key)!!.get(1) - pixel.getGreen()).pow(2) +
                                        (palette.get(key)!!.get(2) - pixel.getBlue()).pow(2))
+
+            // Save Euclidean distance
+            palette.get(key)!!.set(3, distance)
             if (distance < current_lowest){
-                name           = key
                 current_lowest = distance
                 // System.out.println("new  current_lowest:_> " + current_lowest.toString())
             }
@@ -68,16 +70,19 @@ class ColorPalette constructor(){
             //                    pixel.getGreen().toString()+"|"+
             //                    pixel.getBlue().toString())
         }
-        var temp: Float = palette.get(name)!!.get(3)
-        palette.get(name)!!.set(3, temp + 1)
-        return name
+        // Increment every color that is close and reset the Euclidean distance
+        for (key in palette.keys){
+            if (current_lowest == palette.get(key)!!.get(3)){
+                var temp: Float = palette.get(key)!!.get(4)
+                palette.get(key)!!.set(4, temp + 1)
+            }
+            palette.get(key)!!.set(3, 0f)
+        }
     }
 
-    fun reset(){
+    fun printFrequencies(){
         for (key in palette.keys){
-            for (index in palette.get(key)!!.indices){
-                palette.get(key)!!.set(index, 0f)
-            }
+            System.out.println(key.toString() + " " + palette.get(key)!!.get(4).toInt());
         }
     }
 }
@@ -115,11 +120,10 @@ fun main(args: Array<String>){
         for (y in 0..image.getHeight() - 1){
             for (x in 0..image.getWidth() - 1){
                 pixel = Color(image.getRGB(x, y))
-                var color_found: String = inputPalette.matchColor(pixel)
+                inputPalette.matchColor(pixel)
             }
         }
-        inputPalette.printPalette()
-        inputPalette.reset()
-        break
+        inputPalette.printFrequencies()
+        break //TODO: DELETE BEFORE FINAL TESTING AND SUBMISSION
     }
 }
