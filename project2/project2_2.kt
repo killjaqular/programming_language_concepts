@@ -8,7 +8,6 @@
 
 // Compile like so:
 // $:_> kotlinc project2_2.kt -include-runtime -d project2_2.jar
-//
 // Run like so:
 // $:_> kotlin project2_2.jar usa sau can < palette.in
 // Or:
@@ -24,22 +23,13 @@ import kotlin.math.sqrt
 class ColorPalette constructor(){
     /*
     palette will be a HashMap of K:V pairs,
-    The values will be IntArrays
-    The IntArrays will have 5 integers representing:
+    The values will be FloatArray
+    The FloatArray will have 5 integers representing:
     -----0------|------1-------|------2------|--------3----------|--------4---------
     Red channel, Green channel, Blue channel, Euclidean Distance, Frequency of pixel
     */
     var palette = HashMap<String, FloatArray>()
-
-    fun printPalette(){
-        for (key in palette.keys){
-            System.out.print(key.toString() + " ");
-            for (element in palette.get(key)!!){
-                System.out.print(element.toString() + " ")
-            }
-            System.out.println()
-        }
-    }
+    var allColors = ArrayList<String>()
 
     fun matchColor(pixel: Color){
         /*
@@ -47,7 +37,7 @@ class ColorPalette constructor(){
         */
         var current_lowest: Float  = 999f
         // Find the value that is the closest
-        for (key in palette.keys){
+        for (key in allColors){
             // System.out.println("loop current_lowest:_> " + current_lowest.toString())
             var distance: Float = sqrt((palette.get(key)!!.get(0) - pixel.getRed()).pow(2) +
                                        (palette.get(key)!!.get(1) - pixel.getGreen()).pow(2) +
@@ -59,65 +49,59 @@ class ColorPalette constructor(){
                 current_lowest = distance
                 // System.out.println("new  current_lowest:_> " + current_lowest.toString())
             }
-            // TODO: DELETE THIS, THIS IS ONLY FOR TROUBLE SHOOTING!
-            // System.out.println("---|---|---")
-            // System.out.println(key)
-            // System.out.println(palette.get(key)!!.get(0).toString()+"|"+
-            //                    palette.get(key)!!.get(1).toString()+"|"+
-            //                    palette.get(key)!!.get(2).toString())
-            // System.out.println("-----------")
-            // System.out.println(pixel.getRed().toString()+"|"+
-            //                    pixel.getGreen().toString()+"|"+
-            //                    pixel.getBlue().toString())
         }
-        // Increment every color that is close and reset the Euclidean distance
-        for (key in palette.keys){
+        // Increment the first color that is close and reset the Euclidean distance
+        for (key in allColors){
             // If the color was found to be close,
             if (current_lowest == palette.get(key)!!.get(3)){
                 var temp: Float = palette.get(key)!!.get(4)
                 palette.get(key)!!.set(4, temp + 1)
+                break
             }
-            // Reset the field to be reused next time matchColor() is called
-            palette.get(key)!!.set(3, 0f)
+        }
+    }
+
+    fun perCapita(total_pixels: Int){
+        for (key in palette.keys){
+            var temp: Float = palette.get(key)!!.get(4)
+            palette.get(key)!!.set(4, temp / total_pixels.toFloat() * 1000f)
         }
     }
 
     fun printFrequencies(){
         for (key in palette.keys){
-            System.out.println(key.toString() + " " + palette.get(key)!!.get(4).toInt());
+            System.out.println(key.toString() + " " + palette.get(key)!!.get(4).toInt())
         }
     }
 }
 
-class ImageInfo constructor(flag_name: String){
-    var flag: String = flag_name
-    var colors = HashMap<String, IntArray>()
-}
-
 fun main(args: Array<String>){
     // Initialize Data Structures
-    val inputPalette: ColorPalette = ColorPalette()
-    var image:        BufferedImage
-    var url:          URL
-    var pixel:        Color
+    val inputPalette:      ColorPalette = ColorPalette()
+    var image:             BufferedImage
+    var url:               URL
+    var pixel:             Color
+    var total_pixel_count: Int = 0
 
     // Collect Color Palette
     while (true){
         val line = readLine()
         if (line == null) break
 
-        val (color, r, g, b) = line.split(' ')
-        inputPalette.palette.put(color, floatArrayOf(r.toFloat(), g.toFloat(), b.toFloat(), 0f, 0f))
+        val (color, r, g, b) = line.split("\\s+".toRegex())
+        inputPalette.palette.put(color,
+                                 floatArrayOf(r.toFloat(),
+                                              g.toFloat(),
+                                              b.toFloat(),
+                                              0f, 0f))
+        inputPalette.allColors.add(color)
     }
-
-    inputPalette.printPalette()
 
     // Execute program per flag in args
     for (flag in args){
-        System.out.println("FLAG: " + flag); // TODO: Delete line before turning in
-
-        url    = URL("https://cs.fit.edu/~ryan/images/flags/large/" + flag + ".png")
-        image  = ImageIO.read(url)
+        url               = URL("https://cs.fit.edu/~ryan/images/flags/large/" + flag + ".png")
+        image             = ImageIO.read(url)
+        total_pixel_count += image.getHeight() * image.getWidth()
 
         for (y in 0..image.getHeight() - 1){
             for (x in 0..image.getWidth() - 1){
@@ -125,7 +109,7 @@ fun main(args: Array<String>){
                 inputPalette.matchColor(pixel)
             }
         }
-        inputPalette.printFrequencies()
-        break //TODO: DELETE BEFORE FINAL TESTING AND SUBMISSION
     }
+    inputPalette.perCapita(total_pixel_count)
+    inputPalette.printFrequencies()
 }
