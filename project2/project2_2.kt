@@ -22,20 +22,29 @@ import kotlin.math.sqrt
 
 class ColorPalette constructor(){
     /*
-    palette will be a HashMap of K:V pairs,
-    The values will be FloatArray
-    The FloatArray will have 5 integers representing:
+    ColorPalette: Used to hold information of the colors to be counted in an image
+
+    palette:      HashMap of K:V pairs, the values will be FloatArray.
+                  The FloatArray will have 5 integers representing:
     -----0------|------1-------|------2------|--------3----------|--------4---------
     Red channel, Green channel, Blue channel, Euclidean Distance, Frequency of pixel
+
+    allColors:     Ordered list of the name of colors to be searched. Used to break ties
+                   between pixels' Euclidean distances. Priority is given left > right.
     */
-    var palette = HashMap<String, FloatArray>()
+
+    var palette   = HashMap<String, FloatArray>()
     var allColors = ArrayList<String>()
 
     fun matchColor(pixel: Color){
         /*
-        Using Euclidean Distance, calculate which color the pixel is closest to and account for the frequency.
+        matchColor: Using Euclidean Distance, calculate which color the pixel is closest
+                    to and account for the frequency.
+        INPUT:  pixel: Color used to get RGB values of a pixel.
+        OUTOUT: None
         */
-        var current_lowest: Float  = 999f
+
+        var current_lowest: Float  = 999f // Default value set to an impossible value
         // Find the value that is the closest
         for (key in allColors){
             // System.out.println("loop current_lowest:_> " + current_lowest.toString())
@@ -50,12 +59,14 @@ class ColorPalette constructor(){
                 // System.out.println("new  current_lowest:_> " + current_lowest.toString())
             }
         }
+
         // Increment the first color that is close and reset the Euclidean distance
         for (key in allColors){
             // If the color was found to be close,
             if (current_lowest == palette.get(key)!!.get(3)){
                 var temp: Float = palette.get(key)!!.get(4)
                 palette.get(key)!!.set(4, temp + 1)
+                // Only increment the first color found to be the closest
                 break
             }
         }
@@ -85,8 +96,8 @@ fun main(args: Array<String>){
 
     // Collect Color Palette
     while (true){
-        val line = readLine()
-        if (line == null) break
+        val line = readLine()   // Read in new line from stdin
+        if (line == null) break // If readLine() read EOF, break loop
 
         val (color, r, g, b) = line.split("\\s+".toRegex())
         inputPalette.palette.put(color,
