@@ -110,8 +110,8 @@ fun main(args: Array<String>){
 
     // Execute program per flag in args
     for (flag in args){
-        url               = URL("https://cs.fit.edu/~ryan/images/flags/large/" + flag + ".png")
-        image             = ImageIO.read(url)
+        url                = URL("https://cs.fit.edu/~ryan/images/flags/large/" + flag + ".png")
+        image              = ImageIO.read(url)
         total_pixel_count += image.getHeight() * image.getWidth()
 
         for (y in 0..image.getHeight() - 1){
