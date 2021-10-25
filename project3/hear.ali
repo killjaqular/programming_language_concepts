@@ -1,0 +1,88 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnaty
+P ZX
+
+RN
+RV NO_ENUMERATION_MAPS
+RV NO_IO
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U hear%b		hear.adb		aa7d7a9e NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W graph%s		graph.adb		graph.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+W text_io%s		text_io.ads		text_io.ali
+
+D ada.ads		20210520051130 76789da1 ada%s
+D a-except.ads		20210520051127 946f3014 ada.exceptions%s
+D a-inteio.ads		20210520051127 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051127 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210520051128 119b8fb3 ada.streams%s
+D a-string.ads		20210520051128 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051128 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051128 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051129 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
+D graph.ads		20211025182602 313ad6ce graph%s
+D hear.adb		20211025190553 4cbeed6c hear%b
+D interfac.ads		20210520051131 edec285f interfaces%s
+D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
+D system.ads		20210520051134 a2da961d system%s
+D s-conca2.ads		20210520051131 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20210520051131 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051131 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051131 078245e4 system.file_control_block%s
+D s-parame.ads		20210520051133 4752c4cb system.parameters%s
+D s-putima.ads		20210520051133 4e095881 system.put_images%s
+D s-secsta.ads		20210520051133 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051133 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051133 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051133 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051133 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051133 ed88f8fb system.storage_elements%b
+D s-traent.ads		20210520051133 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051133 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
+D text_io.ads		20210520051134 21b2c898 text_io%s
+D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z b b [hear standard 21 11 none]
+G r c none [hear standard 21 11 none] [fun graph 22 13 none]
+G r c none [hear standard 21 11 none] [sub graph 20 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 14|14r6 18r5
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[11|46] 14|14w10 41r7
+X 10 a-textio.ads
+87I12*Field{integer}
+262U14*New_Line 14|43s15
+313V13*End_Of_File{boolean} 14|38s23
+463U14*Put 14|42s15
+463a19 Item{string} 14|42r20
+479U14*Get_Line 14|39s15
+506U14*Put_Line 14|34s12 35s12
+507a7 Item{string} 14|34r22 35r22
+X 11 a-tiinio.ads
+80U14*Put 14|41s23[3|18]
+81i7 Item{integer} 14|41r28[3|18]
+82i7 Width{10|87I12} 14|41r41[3|18]
+X 13 graph.ads
+8K9*Graph 24e10 14|15w6 27r8 29r19 33r4 34r48
+10E9*T 10e32 14|27r14
+20U14*Sub 14|33s10
+22V13*Fun{boolean} 14|29s25 34s54
+X 14 hear.adb
+21U11*hear 21b11 46l5 46t9
+23a4 Line{string} 39m25 42r35
+24i4 Length{integer} 39m31 42r46
+25i4 Num{integer} 40m7 40r14 41r36
+27e4 X{13|10E9} 35r55
+29b4 B{boolean}
+X 33 text_io.ads
+24K9*Text_IO=24:29 14|13w6 34r4 35r4 38r15 39r7 42r7 43r7
+
