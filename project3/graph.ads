@@ -4,21 +4,17 @@
 
 --  graph.adb: Graph package specification
 
+with Ada.Containers.Doubly_Linked_Lists;
+
 --  PACKAGE  --------------------------------------------------
 package Graph is
 
-   type T is (Red, Green, Blue);     -- a type declaration
-
-   subtype S is T range Red..Green;  -- a subtype declaration
-
-   N: Integer;                       -- an object declaration
-
-   C: constant Float := 3.14159;     -- a constant declaration
-
-   E: exception;                     -- an exception declaration
-
-   procedure Sub;                    -- a subprocedure declaration
-
-   function Fun return Boolean;      -- a function declaration
+   type elementNode;
+   type elementNode_Pointer is access elementNode;
+   type elementNode is record
+      data : String (1 .. 50);
+      prev : elementNode_Pointer;
+      next : elementNode_Pointer;
+   end record;
 
 end Graph;
