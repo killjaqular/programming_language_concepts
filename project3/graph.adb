@@ -5,28 +5,34 @@
 --  graph.adb: Graph package implementation
 
 --  INCLUDE  ------------------------------------
-with Ada.Text_IO;
-
---  NAMES  --------------------------------------
-use Ada;
+with Ada.Containers.Doubly_Linked_Lists;
 
 --  PACKAGE  --------------------------------------------------
 package body Graph is
 
-   procedure Sub is
-   begin
-      -- print name of the Nth element in type "T"
-      Text_IO.Put_Line (Item=>T'Image (T'Val (N)));
-   end Sub;
+   procedure insertNode (newNode   : elementNode,
+                         givenList : Ada.Containers.Doubly_Linked_Lists) is
+      begin
+         givenList.Append(newNode);
+      end
 
-   function Fun return Boolean is
-   begin
-      return (True);
-   end Fun;
+   function searchNode return Boolean (targetNode : String,
+                         givenList  : Ada.Containers.Doubly_Linked_Lists) is
+      begin
+      --------------------------------
+      --  Iterate through the whole list
+      --------------------------------
+      for element of givenList loop
+         --  If node is found, return True
+         if element.data = targetNode then
+            return (True);
+
+      --  If node is not found, return False
+      return (False);
+      end
 
 begin
 
-   -- initialize "N" with position of "Green" in type "T"
-   N := T'Pos (Green);
+
 
 end Graph;

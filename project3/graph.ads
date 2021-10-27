@@ -4,17 +4,19 @@
 
 --  graph.adb: Graph package specification
 
+--  INCLUDE  ------------------------------------
 with Ada.Containers.Doubly_Linked_Lists;
 
 --  PACKAGE  --------------------------------------------------
 package Graph is
 
    type elementNode;
-   type elementNode_Pointer is access elementNode;
    type elementNode is record
       data : String (1 .. 50);
-      prev : elementNode_Pointer;
-      next : elementNode_Pointer;
+      list : Ada.Containers.Doubly_Linked_Lists (String);
    end record;
+
+   procedure insertNode;
+   procedure printLinkedList;
 
 end Graph;
