@@ -31,6 +31,7 @@ procedure hear is
    --------------------------------
    --  Create a new graph
    --------------------------------
+   --  <left_tower><right_tower><action>
 
 begin
 
@@ -55,11 +56,11 @@ begin
       --------------------------------
 
       --------------------------------
-      --  Insert new link
+      --  If action is '.' Insert new link
       --------------------------------
 
       --------------------------------
-      --  Search for link
+      --  If action is '?' Search for link
       --------------------------------
 
    end loop;

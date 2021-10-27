@@ -7,6 +7,7 @@
 
 --  INCLUDE  --------------------------------------------------
 with Ada.Containers.Doubly_Linked_Lists;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 --  NAME  -----------------------------------------------------
 --  NONE
@@ -21,6 +22,11 @@ package Graph is
 
    procedure printMessage;
 
+   --------------------------------
+   --  GRAPH STUFF
+   --------------------------------
 
+   type outterList is new Ada.Containers.Doubly_Linked_Lists;
+   package innerList is new Ada.Containers.Doubly_Linked_Lists (Unbounded_String);
 
 end Graph;

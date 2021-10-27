@@ -6,6 +6,8 @@
 --  graph.adb: Graph package implementation
 
 --  INCLUDE  --------------------------------------------------
+with Ada.Containers.Doubly_Linked_Lists;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Text_IO;
 
 --  NAMES  ----------------------------------------------------
@@ -21,6 +23,4 @@ package body Graph is
 
    end printMessage;
 
-begin
-   null;
 end Graph;

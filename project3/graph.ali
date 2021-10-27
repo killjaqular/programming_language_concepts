@@ -1,75 +1,237 @@
 V "GNAT Lib v2021"
-A -gnaty
-P ZX
+P SS ZX
 
 RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
 RV NO_IO
 RV NO_ELABORATION_CODE
 
-U graph%b		graph.adb		c37ca4c2 OO PK
-W ada%s			ada.ads			ada.ali
-Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
-W ada.text_io%s		a-textio.adb		a-textio.ali
-
-U graph%s		graph.ads		0f4f456e EE NE OO PK
+U graph%b		graph.adb		43a09075 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
+W ada.strings%s		a-string.ads		a-string.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+U graph%s		graph.ads		465791f7 EE OO PF PK
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
+Z ada.containers.helpers%s  a-conhel.adb	a-conhel.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.finalization%s	a-finali.ads		a-finali.ali
+Z ada.iterator_interfaces%s
+Z ada.streams%s		a-stream.adb		a-stream.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.unchecked_deallocation%s
+Z system%s		system.ads		system.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
 
 D ada.ads		20210520051130 76789da1 ada%s
+D a-charac.ads		20210520051127 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051127 66457d31 ada.characters.latin_1%s
 D a-contai.ads		20210520051127 61e5e089 ada.containers%s
 D a-cdlili.ads		20210520051127 ad05d077 ada.containers.doubly_linked_lists%s
+D a-cdlili.adb		20210520051127 e29ee816 ada.containers.doubly_linked_lists%b
 D a-conhel.ads		20210520051127 20298884 ada.containers.helpers%s
+D a-conhel.adb		20210520051127 fe7a6827 ada.containers.helpers%b
 D a-except.ads		20210520051127 946f3014 ada.exceptions%s
 D a-finali.ads		20210520051127 bf4f806b ada.finalization%s
 D a-ioexce.ads		20210520051127 e4a01f64 ada.io_exceptions%s
 D a-iteint.ads		20210520051127 49a8bee2 ada.iterator_interfaces%s
 D a-stream.ads		20210520051128 119b8fb3 ada.streams%s
 D a-string.ads		20210520051128 90ac6797 ada.strings%s
+D a-strmap.ads		20210520051128 5a88892a ada.strings.maps%s
 D a-sttebu.ads		20210520051128 18209c64 ada.strings.text_buffers%s
+D a-strunb.ads		20210520051128 03325227 ada.strings.unbounded%s
 D a-stuten.ads		20210520051128 808c40ad ada.strings.utf_encoding%s
 D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
 D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
-D graph.ads		20211027185411 a24a9519 graph%s
-D graph.adb		20211027185317 cfc2e4b6 graph%b
+D a-uncdea.ads		20210520051129 c3a8ac65 ada.unchecked_deallocation%s
+D graph.ads		20211027202857 e86013a7 graph%s
+D graph.adb		20211027202932 ab03d4ef graph%b
 D interfac.ads		20210520051131 edec285f interfaces%s
 D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051134 a2da961d system%s
 D s-atocou.ads		20210520051131 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20210520051131 b65612c0 system.atomic_counters%b
 D s-crtl.ads		20210520051131 0ebbdb71 system.crtl%s
 D s-exctab.ads		20210520051131 54135002 system.exception_table%s
 D s-ficobl.ads		20210520051131 078245e4 system.file_control_block%s
+D s-finmas.ads		20210520051131 1ab4dba8 system.finalization_masters%s
 D s-finroo.ads		20210520051131 4ff27390 system.finalization_root%s
+D s-memory.ads		20210520051132 597d6634 system.memory%s
 D s-parame.ads		20210520051133 4752c4cb system.parameters%s
+D s-pooglo.ads		20210520051133 ede33ef8 system.pool_global%s
 D s-putima.ads		20210520051133 4e095881 system.put_images%s
 D s-secsta.ads		20210520051133 9b3ab94b system.secondary_stack%s
 D s-soflin.ads		20210520051133 a7318a92 system.soft_links%s
 D s-stache.ads		20210520051133 a37c21ec system.stack_checking%s
 D s-stalib.ads		20210520051133 472fbca8 system.standard_library%s
+D s-stalib.adb		20210520051133 977290bf system.standard_library%b
 D s-stoele.ads		20210520051133 2dc34a04 system.storage_elements%s
 D s-stoele.adb		20210520051133 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20210520051133 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20210520051133 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20210520051133 7bdda3fa system.stream_attributes%s
+D s-string.ads		20210520051133 8fe54fb7 system.strings%s
+D s-ststop.ads		20210520051133 5fbf1b38 system.strings.stream_ops%s
 D s-traent.ads		20210520051133 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051133 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
 G a e
-G c Z s b [printmessage graph 22 14 none]
+G c Z s b [printmessage graph 23 14 none]
+G c Z s s [empty graph__innerlist 70 13 29_5]
+G c Z s s [has_element graph__innerlist 75 13 29_5]
+G c Z s s [Oeq graph__innerlist 80 13 29_5]
+G c Z s s [length graph__innerlist 82 13 29_5]
+G c Z s s [is_empty graph__innerlist 84 13 29_5]
+G c Z s s [clear graph__innerlist 86 14 29_5]
+G c Z s s [element graph__innerlist 88 13 29_5]
+G c Z s s [replace_element graph__innerlist 90 14 29_5]
+G c Z s s [query_element graph__innerlist 95 14 29_5]
+G c Z s s [update_element graph__innerlist 99 14 29_5]
+G c Z s s [constant_reference graph__innerlist 114 13 29_5]
+G c Z s s [reference graph__innerlist 119 13 29_5]
+G c Z s s [assign graph__innerlist 124 14 29_5]
+G c Z s s [copy graph__innerlist 126 13 29_5]
+G c Z s s [move graph__innerlist 128 14 29_5]
+G c Z s s [insert graph__innerlist 132 14 29_5]
+G c Z s s [insert graph__innerlist 138 14 29_5]
+G c Z s s [insert graph__innerlist 145 14 29_5]
+G c Z s s [prepend graph__innerlist 151 14 29_5]
+G c Z s s [append graph__innerlist 156 14 29_5]
+G c Z s s [append graph__innerlist 161 14 29_5]
+G c Z s s [delete graph__innerlist 165 14 29_5]
+G c Z s s [delete_first graph__innerlist 170 14 29_5]
+G c Z s s [delete_last graph__innerlist 174 14 29_5]
+G c Z s s [reverse_elements graph__innerlist 178 14 29_5]
+G c Z s s [iterate graph__innerlist 180 13 29_5]
+G c Z s s [iterate graph__innerlist 183 13 29_5]
+G c Z s s [swap graph__innerlist 186 14 29_5]
+G c Z s s [swap_links graph__innerlist 190 14 29_5]
+G c Z s s [splice graph__innerlist 194 14 29_5]
+G c Z s s [splice graph__innerlist 199 14 29_5]
+G c Z s s [splice graph__innerlist 205 14 29_5]
+G c Z s s [first graph__innerlist 210 13 29_5]
+G c Z s s [first_element graph__innerlist 212 13 29_5]
+G c Z s s [last graph__innerlist 214 13 29_5]
+G c Z s s [last_element graph__innerlist 216 13 29_5]
+G c Z s s [next graph__innerlist 218 13 29_5]
+G c Z s s [next graph__innerlist 220 14 29_5]
+G c Z s s [previous graph__innerlist 222 13 29_5]
+G c Z s s [previous graph__innerlist 224 14 29_5]
+G c Z s s [find graph__innerlist 226 13 29_5]
+G c Z s s [reverse_find graph__innerlist 231 13 29_5]
+G c Z s s [contains graph__innerlist 236 13 29_5]
+G c Z s s [iterate graph__innerlist 240 14 29_5]
+G c Z s s [reverse_iterate graph__innerlist 244 14 29_5]
+G c Z s s [adjust graph__innerlist__implementation 90 28 266_4_29_5]
+G c Z s s [finalize graph__innerlist__implementation 93 28 266_4_29_5]
+G c Z s s [zero_counts graph__innerlist__implementation 96 17 266_4_29_5]
+G c Z s s [busy graph__innerlist__implementation 100 17 266_4_29_5]
+G c Z s s [unbusy graph__innerlist__implementation 104 17 266_4_29_5]
+G c Z s s [lock graph__innerlist__implementation 108 17 266_4_29_5]
+G c Z s s [unlock graph__innerlist__implementation 112 17 266_4_29_5]
+G c Z s s [tc_check graph__innerlist__implementation 116 17 266_4_29_5]
+G c Z s s [te_check graph__innerlist__implementation 120 17 266_4_29_5]
+G c Z s s [initialize graph__innerlist__implementation 139 28 266_4_29_5]
+G c Z s s [finalize graph__innerlist__implementation 140 28 266_4_29_5]
+G c Z s s [initialize graph__innerlist__implementation 145 28 266_4_29_5]
+G c Z s s [finalize graph__innerlist__implementation 146 28 266_4_29_5]
+G c Z s s [reference_control_typeDA graph__innerlist__implementation 84 12 266_4_29_5]
+G c Z s s [reference_control_typeDF graph__innerlist__implementation 84 12 266_4_29_5]
+G c Z s s [reference_control_typeIP graph__innerlist__implementation 84 12 266_4_29_5]
+G c Z s s [with_busyDF graph__innerlist__implementation 136 12 266_4_29_5]
+G c Z s s [with_busyIP graph__innerlist__implementation 136 12 266_4_29_5]
+G c Z s s [with_lockDF graph__innerlist__implementation 142 12 266_4_29_5]
+G c Z s s [with_lockIP graph__innerlist__implementation 142 12 266_4_29_5]
+G c Z s s [put_image graph__innerlist 290 14 29_5]
+G c Z s s [adjust graph__innerlist 293 25 29_5]
+G c Z s s [read graph__innerlist 297 14 29_5]
+G c Z s s [write graph__innerlist 303 14 29_5]
+G c Z s s [read graph__innerlist 318 14 29_5]
+G c Z s s [write graph__innerlist 324 14 29_5]
+G c Z s s [write graph__innerlist 343 14 29_5]
+G c Z s s [read graph__innerlist 349 14 29_5]
+G c Z s s [write graph__innerlist 365 14 29_5]
+G c Z s s [read graph__innerlist 371 14 29_5]
+G c Z s s [pseudo_reference graph__innerlist 382 13 29_5]
+G c Z s s [get_element_access graph__innerlist 392 13 29_5]
+G c Z s s [listDA graph__innerlist 282 9 29_5]
+G c Z s s [listDF graph__innerlist 282 9 29_5]
+G c Z s s [listIP graph__innerlist 282 9 29_5]
+G c Z s s [cursorIP graph__innerlist 312 9 29_5]
+G c Z s s [constant_reference_typeDI graph__innerlist 333 9 29_5]
+G c Z s s [constant_reference_typeDA graph__innerlist 333 9 29_5]
+G c Z s s [constant_reference_typeDF graph__innerlist 333 9 29_5]
+G c Z s s [constant_reference_typeIP graph__innerlist 333 9 29_5]
+G c Z s s [reference_typeDI graph__innerlist 355 9 29_5]
+G c Z s s [reference_typeDA graph__innerlist 355 9 29_5]
+G c Z s s [reference_typeDF graph__innerlist 355 9 29_5]
+G c Z s s [reference_typeIP graph__innerlist 355 9 29_5]
+G c Z s s [finalize graph__innerlist 409 25 29_5]
+G c Z s s [first graph__innerlist 411 24 29_5]
+G c Z s s [last graph__innerlist 412 24 29_5]
+G c Z s s [next graph__innerlist 414 24 29_5]
+G c Z s s [previous graph__innerlist 418 24 29_5]
+G c Z s s [node_typeDI graph__innerlist 272 9 29_5]
+G c Z s s [node_typeDF graph__innerlist 272 9 29_5]
+G c Z s s [node_typeIP graph__innerlist 272 9 29_5]
+G c Z s s [iteratorDF graph__innerlist 401 9 29_5]
+G c Z s s [iteratorIP graph__innerlist 401 9 29_5]
+G c Z s s [free graph__innerlist 47 14 29_5]
+G c Z s s [insert_internal graph__innerlist 49 14 29_5]
+G c Z s s [splice_internal graph__innerlist 54 14 29_5]
+G c Z s s [splice_internal graph__innerlist 59 14 29_5]
+G c Z s s [vet graph__innerlist 65 13 29_5]
 X 1 ada.ads
-16K9*Ada 20e8 16|9r6 17|9r6 12r5
-X 2 a-contai.ads
-16K13*Containers 28e19 16|9r10
-X 3 a-cdlili.ads
-47k24*Doubly_Linked_Lists 422e39 16|9w21
-X 8 a-iteint.ads
+16K9*Ada 20e8 23|9r6 10r6 10r33 29r30 24|9r6 10r6 10r33 11r6 14r5
+X 4 a-contai.ads
+16K13*Containers 28e19 23|9r10 29r34 24|9r10
+X 5 a-cdlili.ads
+47k24*Doubly_Linked_Lists 422e39 23|9w21 29r45 24|9w21
+X 12 a-iteint.ads
 24h9 Forward_Iterator
-32h9 Reversible_Iterator<24R9[3|77]>
-X 14 a-textio.ads
-58K13*Text_IO 725e16 17|9w10 20r7
-506U14*Put_Line 17|20s15
-X 16 graph.ads
-15K9*Graph 26l5 26e10 17|15b14 26l5 26t10
-20a4*theMessage{string} 17|20r25
-22U14*printMessage 17|17b14 22l8 22t20
+32h9 Reversible_Iterator<24R9[5|77]>
+X 14 a-string.ads
+16K13*Strings 35e16 23|10r10 10r37 24|10r10 10r37
+X 17 a-strunb.ads
+83K21*Unbounded 765e26 23|10w18 10r45 24|10w18 10r45
+88R9*Unbounded_String<10|43R9> 744e15 23|29r66
+239V14*"="{boolean} 5|44i19
+X 20 a-textio.ads
+58K13*Text_IO 725e16 24|11w10 22r7
+506U14*Put_Line 24|22s15
+X 23 graph.ads
+16K9*Graph 31l5 31e10 24|17b14 26l5 26t10
+21a4*theMessage{string} 24|22r25
+23U14*printMessage 24|19b14 24l8 24t20
+29K13*innerList[5|47]
+X 27 system.ads
+67M9*Address
+X 35 s-memory.ads
+53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
+X 43 s-stalib.adb
+89U14 Break_Start 90i<c,__gnat_break_start>22
 
