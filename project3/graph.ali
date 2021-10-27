@@ -3,26 +3,28 @@ A -gnaty
 P ZX
 
 RN
-RV NO_ENUMERATION_MAPS
-RV NO_FLOATING_POINT
 RV NO_IO
-RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_ELABORATION_CODE
 
-U graph%b		graph.adb		b876d143 OO PK
+U graph%b		graph.adb		c37ca4c2 OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
-U graph%s		graph.ads		313ad6ce BD EE OO PK
+U graph%s		graph.ads		0f4f456e EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
-Z system%s		system.ads		system.ali
-Z system.exception_table%s  s-exctab.adb	s-exctab.ali
-Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 
 D ada.ads		20210520051130 76789da1 ada%s
+D a-contai.ads		20210520051127 61e5e089 ada.containers%s
+D a-cdlili.ads		20210520051127 ad05d077 ada.containers.doubly_linked_lists%s
+D a-conhel.ads		20210520051127 20298884 ada.containers.helpers%s
 D a-except.ads		20210520051127 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051127 bf4f806b ada.finalization%s
 D a-ioexce.ads		20210520051127 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20210520051127 49a8bee2 ada.iterator_interfaces%s
 D a-stream.ads		20210520051128 119b8fb3 ada.streams%s
 D a-string.ads		20210520051128 90ac6797 ada.strings%s
 D a-sttebu.ads		20210520051128 18209c64 ada.strings.text_buffers%s
@@ -30,14 +32,16 @@ D a-stuten.ads		20210520051128 808c40ad ada.strings.utf_encoding%s
 D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
 D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
-D graph.ads		20211025182602 313ad6ce graph%s
-D graph.adb		20211025183329 27b8d2e0 graph%b
+D graph.ads		20211027185411 a24a9519 graph%s
+D graph.adb		20211027185317 cfc2e4b6 graph%b
 D interfac.ads		20210520051131 edec285f interfaces%s
 D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051134 a2da961d system%s
+D s-atocou.ads		20210520051131 b45c2d8d system.atomic_counters%s
 D s-crtl.ads		20210520051131 0ebbdb71 system.crtl%s
 D s-exctab.ads		20210520051131 54135002 system.exception_table%s
 D s-ficobl.ads		20210520051131 078245e4 system.file_control_block%s
+D s-finroo.ads		20210520051131 4ff27390 system.finalization_root%s
 D s-parame.ads		20210520051133 4752c4cb system.parameters%s
 D s-putima.ads		20210520051133 4e095881 system.put_images%s
 D s-secsta.ads		20210520051133 9b3ab94b system.secondary_stack%s
@@ -51,24 +55,21 @@ D s-unstyp.ads		20210520051133 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
 G a e
-G c Z s b [sub graph 20 14 none]
-G c Z s b [fun graph 22 13 none]
+G c Z s b [printmessage graph 22 14 none]
 X 1 ada.ads
-16K9*Ada 20e8 12|8r6 11r5
-X 9 a-textio.ads
-58K13*Text_IO 725e16 12|8w10 19r7
-506U14*Put_Line 12|19s15
-507a7 Item{string} 12|19r25
-X 11 graph.ads
-8K9*Graph 24l5 24e10 12|14b14 32l5 32t10
-10E9*T 10e32 12r17 12|19r31 19r40 30r9
-10n15*Red{10E9} 12r25
-10n20*Green{10E9} 12r30 12|30r16
-10n27*Blue{10E9}
-12E12*S{10E9}
-14i4*N{integer} 12|19r47 30m4
-16f4*C{float}
-18X4*E
-20U14*Sub 12|16b14 20l8 20t11
-22V13*Fun{boolean} 12|22b13 25l8 25t11
+16K9*Ada 20e8 16|9r6 17|9r6 12r5
+X 2 a-contai.ads
+16K13*Containers 28e19 16|9r10
+X 3 a-cdlili.ads
+47k24*Doubly_Linked_Lists 422e39 16|9w21
+X 8 a-iteint.ads
+24h9 Forward_Iterator
+32h9 Reversible_Iterator<24R9[3|77]>
+X 14 a-textio.ads
+58K13*Text_IO 725e16 17|9w10 20r7
+506U14*Put_Line 17|20s15
+X 16 graph.ads
+15K9*Graph 26l5 26e10 17|15b14 26l5 26t10
+20a4*theMessage{string} 17|20r25
+22U14*printMessage 17|17b14 22l8 22t20
 

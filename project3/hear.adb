@@ -11,29 +11,26 @@
 --  ./hear < someFile
 
 --  INCLUDE  --------------------------------------------------
-with Text_IO;
-with Ada.Integer_Text_IO;
+with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
+with Ada.Text_IO; use Ada;
 with Graph;
-
---  NAMES  ----------------------------------------------------
-use Ada;
 
 --  PROCEDURE  ------------------------------------------------
 procedure hear is
 
    --  No input line shall be greater than 150 chars
-   inputLine   : String (1 .. 150);
-   inputLength : Integer;
+   inputLine   : Unbounded_String;
 
    --  No tower name shall be greater than 50 chars
-   left_tower  : String (1 .. 50);
-   right_tower : String (1 .. 50);
+   left_tower  : Unbounded_String;
+   right_tower : Unbounded_String;
    --  The char '.' adds a link between two towers
    --  The char '?' asks if a connection exists between two towers
    action      : Character;
 
-   --  Maintains a directed graph as lists of lists of the entire network
-   network : Graph.elementNode;
+   --------------------------------
+   --  Create a new graph
+   --------------------------------
 
 begin
 
@@ -42,8 +39,8 @@ begin
       --------------------------------
       --  Read in a line
       --------------------------------
-      Text_IO.Get_Line (inputLine, inputLength);
-      Text_IO.Put_Line ("inputLine:_> " & inputLine);
+      inputLine := To_Unbounded_String (Text_IO.Get_Line);
+      Text_IO.Put_Line ("inputLine:_> " & To_String(inputLine));
 
       --------------------------------
       --  Get left_tower
@@ -66,5 +63,7 @@ begin
       --------------------------------
 
    end loop;
+
+   Graph.printMessage;
 
 end hear;
