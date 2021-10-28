@@ -13,13 +13,17 @@
 --  INCLUDE  --------------------------------------------------
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Text_IO; use Ada;
+with Ada.Integer_Text_IO;
 with Graph;
 
 --  PROCEDURE  ------------------------------------------------
 procedure hear is
 
    --  No input line shall be greater than 150 chars
-   inputLine   : Unbounded_String;
+   inputLine   : String (1 .. 150);
+   inputLineLen : Integer;
+   index : Integer := 1;
+   start : Integer;
 
    --  No tower name shall be greater than 50 chars
    left_tower  : Unbounded_String;
@@ -40,21 +44,43 @@ begin
       --------------------------------
       --  Read in a line
       --------------------------------
-      inputLine := To_Unbounded_String (Text_IO.Get_Line);
-      Text_IO.Put_Line ("inputLine:_> " & To_String(inputLine));
-
+      Text_IO.Get_Line (inputLine, inputLineLen);
+      Text_IO.Put_Line ("inputLine:=> " & inputLine (1 .. inputLineLen));
       --------------------------------
       --  Get left_tower
       --------------------------------
-
+      loop
+            exit when inputLine (index) = ' ';
+            index := index + 1;
+      end loop;
+      --  Ada.Integer_Text_IO.Put (index - 1);
+      Append (left_tower, inputLine (1 .. index - 1));
+      Text_IO.Put_Line (To_String (left_tower));
       --------------------------------
       --  Get right_tower
       --------------------------------
-
+      while inputLine (index) = ' ' loop
+            index := index + 1;
+      end loop;
+      --  Text_IO.Put_Line (inputLine (1 .. index));
+      start := index;
+      loop
+            exit when inputLine (index) = ' ';
+            index := index + 1;
+      end loop;
+      --  Text_IO.Put_Line (inputLine (start .. index - 1));
+      Append (right_tower, inputLine (start .. index - 1));
+      Text_IO.Put_Line (To_String (right_tower));
       --------------------------------
       --  Get action
       --------------------------------
-
+      loop
+            exit when inputLine (index) = '.';
+            exit when inputLine (index) = '?';
+            index := index + 1;
+      end loop;
+      action := inputLine (index);
+      Text_IO.Put (action);
       --------------------------------
       --  If action is '.' Insert new link
       --------------------------------
