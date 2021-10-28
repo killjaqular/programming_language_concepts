@@ -15,18 +15,18 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 --  PACKAGE  --------------------------------------------------
 package Graph is
 
-   --------------------------------
-   --  EXAMPLE STUFF
-   --------------------------------
-   theMessage : String := "MESSAGE FROM graph.ads, PRINTED BY graph.adb.";
+      --------------------------------
+      --  EXAMPLE STUFF
+      --------------------------------
+      theMessage : String := "MESSAGE FROM graph.ads, PRINTED BY graph.adb.";
 
-   procedure printMessage;
+      procedure printMessage;
 
-   --------------------------------
-   --  GRAPH STUFF
-   --------------------------------
+      --------------------------------
+      --  GRAPH STUFF
+      --------------------------------
 
-   type outterList is new Ada.Containers.Doubly_Linked_Lists;
-   package innerList is new Ada.Containers.Doubly_Linked_Lists (Unbounded_String);
+      package listPackage is
+      new Ada.Containers.Doubly_Linked_Lists (Unbounded_String);
 
 end Graph;
