@@ -49,12 +49,17 @@ begin
       --------------------------------
       --  Get left_tower
       --------------------------------
+	while inputLine (index) = ' ' loop
+            index := index + 1;
+      end loop;
+      --  Text_IO.Put_Line (inputLine (1 .. index));
+      start := index; 
       loop
             exit when inputLine (index) = ' ';
             index := index + 1;
       end loop;
       --  Ada.Integer_Text_IO.Put (index - 1);
-      Append (left_tower, inputLine (1 .. index - 1));
+      Append (left_tower, inputLine (start .. index - 1));
       Text_IO.Put_Line (To_String (left_tower));
       --------------------------------
       --  Get right_tower
