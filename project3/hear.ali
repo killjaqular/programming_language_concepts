@@ -1,24 +1,33 @@
-V "GNAT Lib v2021"
+V "GNAT Lib v9"
 M P W=b
+<<<<<<< HEAD
+A -gnaty
+P ZX
+=======
 P SS ZX
+>>>>>>> 3b6bd1037238ce72d2ebba1c55dbf637947758b4
 
 RN
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTIONS
 RV NO_IO
-RV NO_LOCAL_ALLOCATORS
 RV NO_NESTED_FINALIZATION
 RV NO_SECONDARY_STACK
-RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
+RV SPARK_05
 
+<<<<<<< HEAD
+U hear%b		hear.adb		a13ba1c6 NE OO SU IL
+=======
 U hear%b		hear.adb		378431c2 NE OO SU IL
+>>>>>>> 3b6bd1037238ce72d2ebba1c55dbf637947758b4
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 W ada.strings%s		a-string.ads		a-string.ali
-Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W graph%s		graph.adb		graph.ali
 Z system.concat_2%s	s-conca2.adb		s-conca2.ali
@@ -26,6 +35,53 @@ Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
 
+<<<<<<< HEAD
+D ada.ads		20200312110721 76789da1 ada%s
+D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20200312110721 61e5e089 ada.containers%s
+D a-cdlili.ads		20200312110721 8e06b4f2 ada.containers.doubly_linked_lists%s
+D a-conhel.ads		20200312110721 20298884 ada.containers.helpers%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-inteio.ads		20200312110721 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20200312110721 7c7305e9 ada.iterator_interfaces%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-string.ads		20200312110721 90ac6797 ada.strings%s
+D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-tiinio.ads		20200312110721 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D graph.ads		20211027190232 a24a9519 graph%s
+D hear.adb		20211027212057 fdbfc73e hear%b
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D system.ads		20200312110721 77e65b42 system%s
+D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
+D s-conca2.ads		20200312110721 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-memory.ads		20200312110721 597d6634 system.memory%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stalib.adb		20200312110721 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
+D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
+=======
 D ada.ads		20210520051130 76789da1 ada%s
 D a-charac.ads		20210520051127 2d3ec45b ada.characters%s
 D a-chlat1.ads		20210520051127 66457d31 ada.characters.latin_1%s
@@ -77,14 +133,43 @@ D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [hear standard 19 11 none]
 G r c none [hear standard 19 11 none] [printmessage graph 23 14 none]
+>>>>>>> 3b6bd1037238ce72d2ebba1c55dbf637947758b4
 X 1 ada.ads
-16K9*Ada 20e8 21|14r6 14r33 15r6 15r23
-X 10 a-iteint.ads
+16K9*Ada 20e8 21|14r6 14r33 15r6 15r23 16r6
+X 9 a-inteio.ads
+18K13*Integer_Text_IO[18|46] 21|16w10
+X 11 a-iteint.ads
 24h9 Forward_Iterator
-32h9 Reversible_Iterator<24R9[5|77]>
-X 12 a-string.ads
+32h9 Reversible_Iterator<24R9[5|69]>
+X 13 a-string.ads
 16K13*Strings 35e16 21|14r10 14r37
 X 15 a-strunb.ads
+<<<<<<< HEAD
+76K21*Unbounded 491e26 21|14w18 14r45
+79R9*Unbounded_String<8|43R9> 474e14 21|29r18 30r18
+100V13*To_String{string} 21|57s25 72s25
+111U14*Append 21|56s7 71s7
+X 17 a-textio.ads
+49K13*Text_IO 471e16 21|15w10 42r15 46r7 47r7 57r7 72r7 82r7
+184V13*End_Of_File{boolean} 21|42s23
+208U14*Put 21|82s15
+249U14*Get_Line 21|46s15
+263U14*Put_Line 21|47s15 57s15 72s15
+X 20 graph.ads
+15K9*Graph 26e10 21|17w6 93r4
+22U14*printMessage 21|93s10
+X 21 hear.adb
+20U11*hear 20b11 95l5 95t9
+23a4 inputLine{string} 46m25 47r43 52r23 56r27 61r13 67r23 71r28 77r23 78r23
+. 81r17
+24i4 inputLineLen{integer} 46m36 47r59
+25i4 index{integer} 52r34 53m13 53r22 56r43 61r24 62m13 62r22 65r16 67r34
+. 68m13 68r22 71r48 77r34 78r34 79m13 79r22 81r28
+26i4 start{integer} 65m7 71r39
+29r4 left_tower{15|79R9} 56m15 56r15 57r36
+30r4 right_tower{15|79R9} 71m15 71r15 72r36
+33e4 action{character} 81m7 82r20
+=======
 83K21*Unbounded 765e26 21|14w18 14r45
 88R9*Unbounded_String<8|43R9> 744e15 21|22r18 25r18 26r18
 104V13*To_Unbounded_String{88R9} 21|44s20
@@ -104,12 +189,18 @@ X 21 hear.adb
 25r4 left_tower{15|88R9}
 26r4 right_tower{15|88R9}
 29e4 action{character}
+>>>>>>> 3b6bd1037238ce72d2ebba1c55dbf637947758b4
 X 24 system.ads
 67M9*Address
 X 32 s-memory.ads
 53V13*Alloc{24|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
 76V13*Realloc{24|67M9} 105i<c,__gnat_realloc>22
+<<<<<<< HEAD
+X 38 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+=======
 X 40 s-stalib.adb
 89U14 Break_Start 90i<c,__gnat_break_start>22
+>>>>>>> 3b6bd1037238ce72d2ebba1c55dbf637947758b4
 
