@@ -16,11 +16,9 @@ use Ada;
 --  PACKAGE  --------------------------------------------------
 package body Graph is
 
-procedure printMessage is
-begin
-
-      Text_IO.Put_Line (theMessage);
-
+      procedure printMessage is
+      begin
+            Text_IO.Put_Line (theMessage);
       end printMessage;
 
 end Graph;

@@ -12,7 +12,7 @@ RV NO_SECONDARY_STACK
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U hear%b		hear.adb		4a43f855 NE OO SU IL
+U hear%b		hear.adb		35c79916 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -47,8 +47,8 @@ D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
 D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051129 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
-D graph.ads		20211028235154 dfde7e3e graph%s
-D hear.adb		20211028235217 ce108885 hear%b
+D graph.ads		20211029000321 a05a1f7d graph%s
+D hear.adb		20211028235938 ce108885 hear%b
 D interfac.ads		20210520051131 edec285f interfaces%s
 D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051134 a2da961d system%s
@@ -78,7 +78,7 @@ D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [hear standard 20 11 none]
-G r c none [hear standard 20 11 none] [printmessage graph 23 14 none]
+G r c none [hear standard 20 11 none] [printmessage graph 23 17 none]
 X 1 ada.ads
 16K9*Ada 20e8 23|14r6 14r33 15r6 15r23 16r6
 X 9 a-inteio.ads
@@ -90,30 +90,30 @@ X 13 a-string.ads
 16K13*Strings 35e16 23|14r10 14r37
 X 16 a-strunb.ads
 83K21*Unbounded 765e26 23|14w18 14r45
-88R9*Unbounded_String<8|43R9> 744e15 23|29r18 30r18
-117V13*To_String{string} 23|63s25 78s25
-136U14*Append 23|62s7 77s7
+88R9*Unbounded_String<8|43R9> 744e15 23|29r21 30r21
+117V13*To_String{string} 23|65s31 82s31
+136U14*Append 23|64s13 81s13
 239V14*"="{boolean} 5|44i19
 X 19 a-textio.ads
-58K13*Text_IO 725e16 23|15w10 43r15 47r7 48r7 63r7 78r7 88r7
-313V13*End_Of_File{boolean} 23|43s23
-390U14*Put 23|88s15
-479U14*Get_Line 23|47s15
-506U14*Put_Line 23|48s15 63s15 78s15
+58K13*Text_IO 725e16 23|15w10 43r18 47r13 48r13 65r13 82r13 93r13
+313V13*End_Of_File{boolean} 23|43s26
+390U14*Put 23|93s21
+479U14*Get_Line 23|47s21
+506U14*Put_Line 23|48s21 65s21 82s21
 X 22 graph.ads
-16K9*Graph 32e10 23|17w6 99r4
-23U14*printMessage 23|99s10
+16K9*Graph 35e10 23|17w6 104r7
+23U17*printMessage 23|104s13
 X 23 hear.adb
-20U11*hear 20b11 101l5 101t9
-23a4 inputLine{string} 47m25 48r43 52r15 58r23 62r27 67r13 73r23 77r28 83r23
-. 84r23 87r17
-24i4 inputLineLen{integer} 47m36 48r59
-25i4 index{integer} 52r26 53m7 53r16 56r16 58r34 59m13 59r22 62r47 67r24
-. 68m13 68r22 71r16 73r34 74m13 74r22 77r48 83r34 84r34 85m13 85r22 87r28
-26i4 start{integer} 56m7 62r38 71m7 77r39
-29r4 left_tower{16|88R9} 62m15 62r15 63r36
-30r4 right_tower{16|88R9} 77m15 77r15 78r36
-33e4 action{character} 87m7 88r20
+20U11*hear 20b11 106l5 106t9
+23a7 inputLine{string} 47m31 48r49 52r19 59r29 64r33 69r19 76r29 81r34 87r29
+. 88r29 92r23
+24i7 inputLineLen{integer} 47m42 48r65
+25i7 index{integer} 52r30 53m19 53r28 57r22 59r40 60m19 60r28 64r53 69r30
+. 70m19 70r28 74r22 76r40 77m19 77r28 81r54 87r40 88r40 89m19 89r28 92r34
+26i7 start{integer} 57m13 64r44 74m13 81r45
+29r7 left_tower{16|88R9} 64m21 64r21 65r42
+30r7 right_tower{16|88R9} 81m21 81r21 82r42
+33e7 action{character} 92m13 93r26
 X 26 system.ads
 67M9*Address
 X 34 s-memory.ads

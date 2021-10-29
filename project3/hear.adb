@@ -20,7 +20,7 @@ with Graph;
 procedure hear is
 
       --  No input line shall be greater than 150 chars
-      inputLine   : String (1 .. 150);
+      inputLine    : String (1 .. 150);
       inputLineLen : Integer;
       index : Integer := 1;
       start : Integer;
@@ -54,7 +54,7 @@ begin
             end loop;
 
             --  Text_IO.Put_Line (inputLine (1 .. index));
-            start := index; 
+            start := index;
             loop
                   exit when inputLine (index) = ' ';
                   index := index + 1;

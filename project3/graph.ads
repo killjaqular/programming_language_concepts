@@ -29,4 +29,7 @@ package Graph is
       package listPackage is
       new Ada.Containers.Doubly_Linked_Lists (Unbounded_String);
 
+      outterList : listPackage.List;
+      innerList  : listPackage.List;
+
 end Graph;
