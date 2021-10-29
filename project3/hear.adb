@@ -61,7 +61,8 @@ begin
             end loop;
 
             --  Ada.Integer_Text_IO.Put (index - 1);
-            Append (left_tower, inputLine (start .. index - 1));
+            left_tower := To_Unbounded_String (inputLine (start .. index - 1));
+            --  Append (left_tower, inputLine (start .. index - 1));
             Text_IO.Put_Line (To_String (left_tower));
             --------------------------------
             --  Get right_tower
@@ -74,23 +75,30 @@ begin
             start := index;
             loop
                   exit when inputLine (index) = ' ';
-                  index := index + 1;
-            end loop;
-
-            --  Text_IO.Put_Line (inputLine (start .. index - 1));
-            Append (right_tower, inputLine (start .. index - 1));
-            Text_IO.Put_Line (To_String (right_tower));
-            --------------------------------
-            --  Get action
-            --------------------------------
-            loop
                   exit when inputLine (index) = '.';
                   exit when inputLine (index) = '?';
                   index := index + 1;
             end loop;
 
+            --  Text_IO.Put_Line (inputLine (start .. index - 1));
+            right_tower := To_Unbounded_String
+                  (inputLine (start .. index - 1));
+            --  Append (right_tower, inputLine (start .. index - 1));
+            Text_IO.Put_Line (To_String (right_tower));
+            --------------------------------
+            --  Get action
+            --------------------------------
+            if inputLine (index) = ' ' then
+                  loop
+                        exit when inputLine (index) = '.';
+                        exit when inputLine (index) = '?';
+                        index := index + 1;
+                  end loop;
+            end if;
             action := inputLine (index);
             Text_IO.Put (action);
+
+            index := 1;
             --------------------------------
             --  If action is '.' Insert new link
             --------------------------------

@@ -1,6 +1,6 @@
-V "GNAT Lib v2021"
+V "GNAT Lib v9"
 A -gnaty
-P SS ZX
+P ZX
 
 RN
 RV NO_EXCEPTION_HANDLERS
@@ -8,17 +8,17 @@ RV NO_EXCEPTIONS
 RV NO_IO
 RV NO_DEFAULT_INITIALIZATION
 RV NO_ELABORATION_CODE
+RV SPARK_05
 
-U graph%b		graph.adb		0b9a9caf NE OO PK
+U graph%b		graph.adb		8dda0525 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
 W ada.strings%s		a-string.ads		a-string.ali
-Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
-U graph%s		graph.ads		0e6d9d2d EE OO PF PK
+U graph%s		graph.ads		aec46290 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
@@ -28,14 +28,12 @@ Z ada.finalization%s	a-finali.ads		a-finali.ali
 Z ada.iterator_interfaces%s
 Z ada.streams%s		a-stream.adb		a-stream.ali
 W ada.strings%s		a-string.ads		a-string.ali
-Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 Z ada.unchecked_deallocation%s
 Z system%s		system.ads		system.ali
 Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
 Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
-Z system.put_images%s	s-putima.adb		s-putima.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
@@ -45,198 +43,88 @@ Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
 Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
 
-D ada.ads		20210520051130 76789da1 ada%s
-D a-charac.ads		20210520051127 2d3ec45b ada.characters%s
-D a-chlat1.ads		20210520051127 66457d31 ada.characters.latin_1%s
-D a-contai.ads		20210520051127 61e5e089 ada.containers%s
-D a-cdlili.ads		20210520051127 ad05d077 ada.containers.doubly_linked_lists%s
-D a-cdlili.adb		20210520051127 e29ee816 ada.containers.doubly_linked_lists%b
-D a-conhel.ads		20210520051127 20298884 ada.containers.helpers%s
-D a-conhel.adb		20210520051127 fe7a6827 ada.containers.helpers%b
-D a-except.ads		20210520051127 946f3014 ada.exceptions%s
-D a-finali.ads		20210520051127 bf4f806b ada.finalization%s
-D a-ioexce.ads		20210520051127 e4a01f64 ada.io_exceptions%s
-D a-iteint.ads		20210520051127 49a8bee2 ada.iterator_interfaces%s
-D a-stream.ads		20210520051128 119b8fb3 ada.streams%s
-D a-string.ads		20210520051128 90ac6797 ada.strings%s
-D a-strmap.ads		20210520051128 5a88892a ada.strings.maps%s
-D a-sttebu.ads		20210520051128 18209c64 ada.strings.text_buffers%s
-D a-strunb.ads		20210520051128 03325227 ada.strings.unbounded%s
-D a-stuten.ads		20210520051128 808c40ad ada.strings.utf_encoding%s
-D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
-D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
-D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
-D a-uncdea.ads		20210520051129 c3a8ac65 ada.unchecked_deallocation%s
-D graph.ads		20211029000321 a05a1f7d graph%s
-D graph.adb		20211029000724 ab03d4ef graph%b
-D interfac.ads		20210520051131 edec285f interfaces%s
-D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
-D system.ads		20210520051134 a2da961d system%s
-D s-atocou.ads		20210520051131 b45c2d8d system.atomic_counters%s
-D s-atocou.adb		20210520051131 b65612c0 system.atomic_counters%b
-D s-crtl.ads		20210520051131 0ebbdb71 system.crtl%s
-D s-exctab.ads		20210520051131 54135002 system.exception_table%s
-D s-ficobl.ads		20210520051131 078245e4 system.file_control_block%s
-D s-finmas.ads		20210520051131 1ab4dba8 system.finalization_masters%s
-D s-finroo.ads		20210520051131 4ff27390 system.finalization_root%s
-D s-memory.ads		20210520051132 597d6634 system.memory%s
-D s-parame.ads		20210520051133 4752c4cb system.parameters%s
-D s-pooglo.ads		20210520051133 ede33ef8 system.pool_global%s
-D s-putima.ads		20210520051133 4e095881 system.put_images%s
-D s-secsta.ads		20210520051133 9b3ab94b system.secondary_stack%s
-D s-soflin.ads		20210520051133 a7318a92 system.soft_links%s
-D s-stache.ads		20210520051133 a37c21ec system.stack_checking%s
-D s-stalib.ads		20210520051133 472fbca8 system.standard_library%s
-D s-stalib.adb		20210520051133 977290bf system.standard_library%b
-D s-stoele.ads		20210520051133 2dc34a04 system.storage_elements%s
-D s-stoele.adb		20210520051133 ed88f8fb system.storage_elements%b
-D s-stopoo.ads		20210520051133 e9fa2dd8 system.storage_pools%s
-D s-stposu.ads		20210520051133 e251976f system.storage_pools.subpools%s
-D s-stratt.ads		20210520051133 7bdda3fa system.stream_attributes%s
-D s-string.ads		20210520051133 8fe54fb7 system.strings%s
-D s-ststop.ads		20210520051133 5fbf1b38 system.strings.stream_ops%s
-D s-traent.ads		20210520051133 26a8d361 system.traceback_entries%s
-D s-unstyp.ads		20210520051133 2b077493 system.unsigned_types%s
-D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
-D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
-G a e
-G c Z s b [printmessage graph 23 17 none]
-G c Z s s [empty graph__listpackage 70 13 29_7]
-G c Z s s [has_element graph__listpackage 75 13 29_7]
-G c Z s s [Oeq graph__listpackage 80 13 29_7]
-G c Z s s [length graph__listpackage 82 13 29_7]
-G c Z s s [is_empty graph__listpackage 84 13 29_7]
-G c Z s s [clear graph__listpackage 86 14 29_7]
-G c Z s s [element graph__listpackage 88 13 29_7]
-G c Z s s [replace_element graph__listpackage 90 14 29_7]
-G c Z s s [query_element graph__listpackage 95 14 29_7]
-G c Z s s [update_element graph__listpackage 99 14 29_7]
-G c Z s s [constant_reference graph__listpackage 114 13 29_7]
-G c Z s s [reference graph__listpackage 119 13 29_7]
-G c Z s s [assign graph__listpackage 124 14 29_7]
-G c Z s s [copy graph__listpackage 126 13 29_7]
-G c Z s s [move graph__listpackage 128 14 29_7]
-G c Z s s [insert graph__listpackage 132 14 29_7]
-G c Z s s [insert graph__listpackage 138 14 29_7]
-G c Z s s [insert graph__listpackage 145 14 29_7]
-G c Z s s [prepend graph__listpackage 151 14 29_7]
-G c Z s s [append graph__listpackage 156 14 29_7]
-G c Z s s [append graph__listpackage 161 14 29_7]
-G c Z s s [delete graph__listpackage 165 14 29_7]
-G c Z s s [delete_first graph__listpackage 170 14 29_7]
-G c Z s s [delete_last graph__listpackage 174 14 29_7]
-G c Z s s [reverse_elements graph__listpackage 178 14 29_7]
-G c Z s s [iterate graph__listpackage 180 13 29_7]
-G c Z s s [iterate graph__listpackage 183 13 29_7]
-G c Z s s [swap graph__listpackage 186 14 29_7]
-G c Z s s [swap_links graph__listpackage 190 14 29_7]
-G c Z s s [splice graph__listpackage 194 14 29_7]
-G c Z s s [splice graph__listpackage 199 14 29_7]
-G c Z s s [splice graph__listpackage 205 14 29_7]
-G c Z s s [first graph__listpackage 210 13 29_7]
-G c Z s s [first_element graph__listpackage 212 13 29_7]
-G c Z s s [last graph__listpackage 214 13 29_7]
-G c Z s s [last_element graph__listpackage 216 13 29_7]
-G c Z s s [next graph__listpackage 218 13 29_7]
-G c Z s s [next graph__listpackage 220 14 29_7]
-G c Z s s [previous graph__listpackage 222 13 29_7]
-G c Z s s [previous graph__listpackage 224 14 29_7]
-G c Z s s [find graph__listpackage 226 13 29_7]
-G c Z s s [reverse_find graph__listpackage 231 13 29_7]
-G c Z s s [contains graph__listpackage 236 13 29_7]
-G c Z s s [iterate graph__listpackage 240 14 29_7]
-G c Z s s [reverse_iterate graph__listpackage 244 14 29_7]
-G c Z s s [adjust graph__listpackage__implementation 90 28 266_4_29_7]
-G c Z s s [finalize graph__listpackage__implementation 93 28 266_4_29_7]
-G c Z s s [zero_counts graph__listpackage__implementation 96 17 266_4_29_7]
-G c Z s s [busy graph__listpackage__implementation 100 17 266_4_29_7]
-G c Z s s [unbusy graph__listpackage__implementation 104 17 266_4_29_7]
-G c Z s s [lock graph__listpackage__implementation 108 17 266_4_29_7]
-G c Z s s [unlock graph__listpackage__implementation 112 17 266_4_29_7]
-G c Z s s [tc_check graph__listpackage__implementation 116 17 266_4_29_7]
-G c Z s s [te_check graph__listpackage__implementation 120 17 266_4_29_7]
-G c Z s s [initialize graph__listpackage__implementation 139 28 266_4_29_7]
-G c Z s s [finalize graph__listpackage__implementation 140 28 266_4_29_7]
-G c Z s s [initialize graph__listpackage__implementation 145 28 266_4_29_7]
-G c Z s s [finalize graph__listpackage__implementation 146 28 266_4_29_7]
-G c Z s s [reference_control_typeDA graph__listpackage__implementation 84 12 266_4_29_7]
-G c Z s s [reference_control_typeDF graph__listpackage__implementation 84 12 266_4_29_7]
-G c Z s s [reference_control_typeIP graph__listpackage__implementation 84 12 266_4_29_7]
-G c Z s s [with_busyDF graph__listpackage__implementation 136 12 266_4_29_7]
-G c Z s s [with_busyIP graph__listpackage__implementation 136 12 266_4_29_7]
-G c Z s s [with_lockDF graph__listpackage__implementation 142 12 266_4_29_7]
-G c Z s s [with_lockIP graph__listpackage__implementation 142 12 266_4_29_7]
-G c Z s s [put_image graph__listpackage 290 14 29_7]
-G c Z s s [adjust graph__listpackage 293 25 29_7]
-G c Z s s [read graph__listpackage 297 14 29_7]
-G c Z s s [write graph__listpackage 303 14 29_7]
-G c Z s s [read graph__listpackage 318 14 29_7]
-G c Z s s [write graph__listpackage 324 14 29_7]
-G c Z s s [write graph__listpackage 343 14 29_7]
-G c Z s s [read graph__listpackage 349 14 29_7]
-G c Z s s [write graph__listpackage 365 14 29_7]
-G c Z s s [read graph__listpackage 371 14 29_7]
-G c Z s s [pseudo_reference graph__listpackage 382 13 29_7]
-G c Z s s [get_element_access graph__listpackage 392 13 29_7]
-G c Z s s [listDA graph__listpackage 282 9 29_7]
-G c Z s s [listDF graph__listpackage 282 9 29_7]
-G c Z s s [listIP graph__listpackage 282 9 29_7]
-G c Z s s [cursorIP graph__listpackage 312 9 29_7]
-G c Z s s [constant_reference_typeDI graph__listpackage 333 9 29_7]
-G c Z s s [constant_reference_typeDA graph__listpackage 333 9 29_7]
-G c Z s s [constant_reference_typeDF graph__listpackage 333 9 29_7]
-G c Z s s [constant_reference_typeIP graph__listpackage 333 9 29_7]
-G c Z s s [reference_typeDI graph__listpackage 355 9 29_7]
-G c Z s s [reference_typeDA graph__listpackage 355 9 29_7]
-G c Z s s [reference_typeDF graph__listpackage 355 9 29_7]
-G c Z s s [reference_typeIP graph__listpackage 355 9 29_7]
-G c Z s s [finalize graph__listpackage 409 25 29_7]
-G c Z s s [first graph__listpackage 411 24 29_7]
-G c Z s s [last graph__listpackage 412 24 29_7]
-G c Z s s [next graph__listpackage 414 24 29_7]
-G c Z s s [previous graph__listpackage 418 24 29_7]
-G c Z s s [node_typeDI graph__listpackage 272 9 29_7]
-G c Z s s [node_typeDF graph__listpackage 272 9 29_7]
-G c Z s s [node_typeIP graph__listpackage 272 9 29_7]
-G c Z s s [iteratorDF graph__listpackage 401 9 29_7]
-G c Z s s [iteratorIP graph__listpackage 401 9 29_7]
-G c Z s s [free graph__listpackage 47 14 29_7]
-G c Z s s [insert_internal graph__listpackage 49 14 29_7]
-G c Z s s [splice_internal graph__listpackage 54 14 29_7]
-G c Z s s [splice_internal graph__listpackage 59 14 29_7]
-G c Z s s [vet graph__listpackage 65 13 29_7]
+D ada.ads		20200312110721 76789da1 ada%s
+D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20200312110721 61e5e089 ada.containers%s
+D a-cdlili.ads		20200312110721 8e06b4f2 ada.containers.doubly_linked_lists%s
+D a-cdlili.adb		20200312110721 8ed211ef ada.containers.doubly_linked_lists%b
+D a-conhel.ads		20200312110721 20298884 ada.containers.helpers%s
+D a-conhel.adb		20200312110721 9cc5095b ada.containers.helpers%b
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20200312110721 7c7305e9 ada.iterator_interfaces%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-string.ads		20200312110721 90ac6797 ada.strings%s
+D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
+D graph.ads		20211029023135 a05a1f7d graph%s
+D graph.adb		20211029023135 ab03d4ef graph%b
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D system.ads		20200312110721 77e65b42 system%s
+D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20200312110721 b65612c0 system.atomic_counters%b
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-memory.ads		20200312110721 597d6634 system.memory%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-pooglo.ads		20200312110721 ede33ef8 system.pool_global%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stalib.adb		20200312110721 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20200312110721 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
+D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
+D s-string.ads		20200312110721 8fe54fb7 system.strings%s
+D s-ststop.ads		20200312110721 5fbf1b38 system.strings.stream_ops%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
 X 1 ada.ads
-16K9*Ada 20e8 23|9r6 10r6 10r33 30r11 24|9r6 10r6 10r33 11r6 14r5
+16K9*Ada 20e8 21|9r6 10r6 10r33 30r11 22|9r6 10r6 10r33 11r6 14r5
 X 4 a-contai.ads
-16K13*Containers 28e19 23|9r10 30r15 24|9r10
+16K13*Containers 24e19 21|9r10 30r15 22|9r10
 X 5 a-cdlili.ads
-47k24*Doubly_Linked_Lists 422e39 23|9w21 30r26 24|9w21
-54R9*List<10|43R9> 23|32r32[29] 33r32[29]
+46k24*Doubly_Linked_Lists 406e39 21|9w21 30r26 22|9w21
+51R9*List<10|43R9> 21|32r32[29] 33r32[29]
 X 12 a-iteint.ads
 24h9 Forward_Iterator
-32h9 Reversible_Iterator<24R9[5|77]>
+32h9 Reversible_Iterator<24R9[5|69]>
 X 14 a-string.ads
-16K13*Strings 35e16 23|10r10 10r37 24|10r10 10r37
-X 17 a-strunb.ads
-83K21*Unbounded 765e26 23|10w18 10r45 24|10w18 10r45
-88R9*Unbounded_String<10|43R9> 744e15 23|30r47
-239V14*"="{boolean} 5|44i19
-X 20 a-textio.ads
-58K13*Text_IO 725e16 24|11w10 21r13
-506U14*Put_Line 24|21s21
-X 23 graph.ads
-16K9*Graph 35l5 35e10 24|17b14 24l5 24t10
-21a7*theMessage{string} 24|21r31
-23U17*printMessage 24|19b17 22l11 22t23
-29K15*listPackage[5|47] 32r20 33r20
-32r7*outterList{5|54R9[29]}
-33r7*innerList{5|54R9[29]}
-X 27 system.ads
+16K13*Strings 35e16 21|10r10 10r37 22|10r10 10r37
+X 16 a-strunb.ads
+76K21*Unbounded 491e26 21|10w18 10r45 22|10w18 10r45
+79R9*Unbounded_String<10|43R9> 474e14 21|30r47
+166V14*"="{boolean} 5|43i19
+X 18 a-textio.ads
+49K13*Text_IO 471e16 22|11w10 21r13
+263U14*Put_Line 22|21s21
+X 21 graph.ads
+16K9*Graph 35l5 35e10 22|17b14 24l5 24t10
+21a7*theMessage{string} 22|21r31
+23U17*printMessage 22|19b17 22l11 22t23
+29K15*listPackage[5|46] 32r20 33r20
+32r7*outterList{5|51R9[29]}
+33r7*innerList{5|51R9[29]}
+X 25 system.ads
 67M9*Address
-X 35 s-memory.ads
-53V13*Alloc{27|67M9} 103i<c,__gnat_malloc>22
+X 33 s-memory.ads
+53V13*Alloc{25|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{27|67M9} 105i<c,__gnat_realloc>22
-X 43 s-stalib.adb
-89U14 Break_Start 90i<c,__gnat_break_start>22
+76V13*Realloc{25|67M9} 105i<c,__gnat_realloc>22
+X 40 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
 
