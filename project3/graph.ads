@@ -6,7 +6,7 @@
 --  graph.adb: Graph package specification
 
 --  INCLUDE  --------------------------------------------------
-with Ada.Containers.Doubly_Linked_Lists;
+with Ada.Containers.Doubly_Linked_Lists; use Ada.Containers;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
 --  NAME  -----------------------------------------------------
@@ -21,15 +21,16 @@ package Graph is
       theMessage : String := "MESSAGE FROM graph.ads, PRINTED BY graph.adb.";
 
       procedure printMessage;
+      procedure newAdjList;
 
       --------------------------------
       --  GRAPH STUFF
       --------------------------------
 
-      package listPackage is
-      new Ada.Containers.Doubly_Linked_Lists (Unbounded_String);
+      --  package listPackage is
+      --  new Doubly_Linked_Lists (Unbounded_String);
 
-      outterList : listPackage.List;
-      innerList  : listPackage.List;
+      --  outterList : List;
+      --  innerList  : listPackage.List;
 
 end Graph;

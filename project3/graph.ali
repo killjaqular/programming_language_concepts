@@ -3,22 +3,31 @@ A -gnaty
 P ZX
 
 RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_DISPATCH
+RV NO_DISPATCHING_CALLS
 RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
 RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_RECURSION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_STREAMS
+RV NO_UNCHECKED_ACCESS
 RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_ALIASING
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U graph%b		graph.adb		8dda0525 NE OO PK
-W ada%s			ada.ads			ada.ali
-W ada.containers%s	a-contai.ads		a-contai.ali
-W ada.containers.doubly_linked_lists%s
-W ada.strings%s		a-string.ads		a-string.ali
-W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
-W ada.text_io%s		a-textio.adb		a-textio.ali
-
-U graph%s		graph.ads		aec46290 EE OO PF PK
+U graph%b		graph.adb		3939da35 OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
@@ -27,9 +36,8 @@ Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.finalization%s	a-finali.ads		a-finali.ali
 Z ada.iterator_interfaces%s
 Z ada.streams%s		a-stream.adb		a-stream.ali
-W ada.strings%s		a-string.ads		a-string.ali
-W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
 Z ada.unchecked_deallocation%s
 Z system%s		system.ads		system.ali
 Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
@@ -42,6 +50,13 @@ Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
 Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
 Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
 Z system.strings.stream_ops%s  s-ststop.adb	s-ststop.ali
+
+U graph%s		graph.ads		4a01fbad EE NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.containers%s	a-contai.ads		a-contai.ali
+W ada.containers.doubly_linked_lists%s
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 
 D ada.ads		20200312110721 76789da1 ada%s
 D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
@@ -63,8 +78,8 @@ D a-tags.ads		20200312110721 491b781d ada.tags%s
 D a-textio.ads		20200312110721 881db35a ada.text_io%s
 D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
-D graph.ads		20211029023135 a05a1f7d graph%s
-D graph.adb		20211029023135 ab03d4ef graph%b
+D graph.ads		20211029050702 449f8640 graph%s
+D graph.adb		20211029050730 7bbd5bdd graph%b
 D interfac.ads		20200312110721 5ab55268 interfaces%s
 D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
 D system.ads		20200312110721 77e65b42 system%s
@@ -94,31 +109,39 @@ D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
 X 1 ada.ads
-16K9*Ada 20e8 21|9r6 10r6 10r33 30r11 22|9r6 10r6 10r33 11r6 14r5
+16K9*Ada 20e8 21|9r6 9r46 10r6 10r33 22|9r6 10r6 13r5 14r5
 X 4 a-contai.ads
-16K13*Containers 24e19 21|9r10 30r15 22|9r10
+16K13*Containers 24e19 21|9r10 9r50 22|9r10 14r9
 X 5 a-cdlili.ads
-46k24*Doubly_Linked_Lists 406e39 21|9w21 30r26 22|9w21
-51R9*List<10|43R9> 21|32r32[29] 33r32[29]
+46k24*Doubly_Linked_Lists 406e39 21|9w21 22|9w21 19r11 23r11
+51R9*List<10|43R9> 22|23r46[18] 36r38[22]
+60R9*Cursor 22|27r35[18] 28r38[22]
+63r4*Empty_List{51R9[22|22]} 22|36r62[22] 39r42[18]
+72V14*"="{boolean} 43i19[22|18]
+148U14*Append 22|39s20[22]
 X 12 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[5|69]>
 X 14 a-string.ads
-16K13*Strings 35e16 21|10r10 10r37 22|10r10 10r37
+16K13*Strings 35e16 21|10r10 10r37
 X 16 a-strunb.ads
-76K21*Unbounded 491e26 21|10w18 10r45 22|10w18 10r45
-79R9*Unbounded_String<10|43R9> 474e14 21|30r47
+76K21*Unbounded 491e26 21|10w18 10r45
+79R9*Unbounded_String<10|43R9> 474e14 22|19r32
 166V14*"="{boolean} 5|43i19
 X 18 a-textio.ads
-49K13*Text_IO 471e16 22|11w10 21r13
-263U14*Put_Line 22|21s21
+49K13*Text_IO 471e16 22|10w10 32r13
+263U14*Put_Line 22|32s21
 X 21 graph.ads
-16K9*Graph 35l5 35e10 22|17b14 24l5 24t10
-21a7*theMessage{string} 22|21r31
-23U17*printMessage 22|19b17 22l11 22t23
-29K15*listPackage[5|46] 32r20 33r20
-32r7*outterList{5|51R9[29]}
-33r7*innerList{5|51R9[29]}
+16K9*Graph 36l5 36e10 22|16b14 42l5 42t10
+21a7*theMessage{string} 22|32r31
+23U17*printMessage 22|30b17 33l11 33t23
+24U17*newAdjList 22|35b17 40l11 40t21
+X 22 graph.adb
+18K15 edgeContainer[5|46] 20r11 23r32 27r21 39r28
+22K15 vectorContainer[5|46] 24r11 28r22 36r22 36r46
+27r7 innerCursor{5|60R9[18]}
+28r7 outterCursor{5|60R9[22]}
+36r13 outter{5|51R9[22]} 39m13 39r13
 X 25 system.ads
 67M9*Address
 X 33 s-memory.ads
