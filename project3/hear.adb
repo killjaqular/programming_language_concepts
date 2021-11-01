@@ -35,7 +35,7 @@ procedure hear is
       --------------------------------
       --  Create a new graph
       --------------------------------
-      --  <left_tower><right_tower><action>
+      TheGraph : Graph.List_List.List;
 
 begin
 
@@ -45,33 +45,37 @@ begin
             --  Read in a line
             --------------------------------
             Text_IO.Get_Line (inputLine, inputLineLen);
-            Text_IO.Put_Line ("inputLine:=> " & inputLine (1 .. inputLineLen));
+            --  Text_IO.Put_Line ("inputLine:=> <" &
+            --                  inputLine (1 .. inputLineLen) & ">");
+
             --------------------------------
             --  Get left_tower
             --------------------------------
+            --  Move index until the first non-blank character is found
             while inputLine (index) = ' ' loop
                   index := index + 1;
             end loop;
 
-            --  Text_IO.Put_Line (inputLine (1 .. index));
+            --  Save the position of the first non-blank character
             start := index;
             loop
                   exit when inputLine (index) = ' ';
                   index := index + 1;
             end loop;
 
-            --  Ada.Integer_Text_IO.Put (index - 1);
-            left_tower := To_Unbounded_String (inputLine (start .. index - 1));
-            --  Append (left_tower, inputLine (start .. index - 1));
-            Text_IO.Put_Line (To_String (left_tower));
+            left_tower := To_Unbounded_String
+                          (inputLine (start .. index - 1));
+            Text_IO.Put_Line ("<" & To_String (left_tower) & ">");
+
             --------------------------------
             --  Get right_tower
             --------------------------------
+            --  Move index until the first non-blank character is found
             while inputLine (index) = ' ' loop
                   index := index + 1;
             end loop;
 
-            --  Text_IO.Put_Line (inputLine (1 .. index));
+            --  Save the position of the first non-blank character
             start := index;
             loop
                   exit when inputLine (index) = ' ';
@@ -80,11 +84,10 @@ begin
                   index := index + 1;
             end loop;
 
-            --  Text_IO.Put_Line (inputLine (start .. index - 1));
             right_tower := To_Unbounded_String
-                  (inputLine (start .. index - 1));
-            --  Append (right_tower, inputLine (start .. index - 1));
-            Text_IO.Put_Line (To_String (right_tower));
+                           (inputLine (start .. index - 1));
+            Text_IO.Put_Line ("<" & To_String (right_tower) & ">");
+
             --------------------------------
             --  Get action
             --------------------------------
@@ -96,19 +99,32 @@ begin
                   end loop;
             end if;
             action := inputLine (index);
-            Text_IO.Put (action);
+            Text_IO.Put_Line ("<" & action & ">");
 
-            index := 1;
+            index := 1; --  Reset the index counter
+
             --------------------------------
             --  If action is '.' Insert new link
             --------------------------------
+            --  Check if Left Tower is in main spine
+            --  If its not already in the spine,
+                  --  X
 
             --------------------------------
             --  If action is '?' Search for link
             --------------------------------
+            --  Check if connection exists in the graph
+                  --  if the connection does exists, follow this format:
+                  --  + Tower_A => Tower_C
+                  Text_IO.Put_Line ("+ " & To_String (left_tower)
+                                    & " " & To_String (right_tower));
+                  --  if the connection does not exists, follow this format:
+                  --  - Tower_D => Tower_B
+                  Text_IO.Put_Line ("- " & To_String (left_tower)
+                                    & " " & To_String (right_tower));
+
+            Text_IO.Put_Line ("-------------------------------------");
 
       end loop;
-
-      Graph.printMessage;
 
 end hear;

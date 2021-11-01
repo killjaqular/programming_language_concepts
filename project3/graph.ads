@@ -15,22 +15,40 @@ with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 --  PACKAGE  --------------------------------------------------
 package Graph is
 
-      --------------------------------
-      --  EXAMPLE STUFF
-      --------------------------------
-      theMessage : String := "MESSAGE FROM graph.ads, PRINTED BY graph.adb.";
+      -------------------------------
+      --  Declarations and Initializations
+      -------------------------------
 
-      procedure printMessage;
-      procedure newAdjList;
+      --  List of Unbounded Strings
+      package Unbounded_String_List is
+      new Doubly_Linked_Lists (Unbounded_String);
+      use Unbounded_String_List;
 
-      --------------------------------
-      --  GRAPH STUFF
-      --------------------------------
+      --  List of lists
+      package List_List is
+      new Doubly_Linked_Lists (Unbounded_String_List.List);
+      use List_List;
 
-      --  package listPackage is
-      --  new Doubly_Linked_Lists (Unbounded_String);
+      --  Cursors for pointing to elements in lists
+      innerCursor  : Unbounded_String_List.Cursor;
+      outterCursor : List_List.Cursor;
 
-      --  outterList : List;
-      --  innerList  : listPackage.List;
+      --  The outer most list
+      The_Graph : List_List.List := List_List.Empty_List;
+
+      -------------------------------
+      --  This section has functions and procedures
+      --  used to view information in the Graph.
+      -------------------------------
+      procedure PrintGraphBFS;
+
+      -------------------------------
+      --  This section has functions and procedures
+      --  used to manipulate information in the Graph.
+      -------------------------------
+      procedure InsertUnbounded_String_List;
+
+      function FindConnection (fromTower : String;
+                               toTower   : String) return Boolean;
 
 end Graph;

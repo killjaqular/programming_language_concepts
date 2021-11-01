@@ -12,31 +12,39 @@ with Ada.Text_IO;
 --  NAMES  ----------------------------------------------------
 use Ada;
 use Ada.Containers;
+
 --  PACKAGE  --------------------------------------------------
 package body Graph is
 
-      package edgeContainer is
-      new Doubly_Linked_Lists (Unbounded_String);
-      use edgeContainer;
+      -------------------------------
+      --  Procedures and Functions
+      -------------------------------
 
-      package vectorContainer is
-      new Doubly_Linked_Lists (edgeContainer.List);
-      use vectorContainer;
-
-      --  Cursors for points to elements in lists
-      innerCursor : edgeContainer.Cursor;
-      outterCursor : vectorContainer.Cursor;
-
-      procedure printMessage is
+      --  Inserts a new and empty Unbounded String List
+      procedure InsertUnbounded_String_List is
+            NewUnbounded_String_List : Unbounded_String_List.List :=
+            Unbounded_String_List.Empty_List;
       begin
-            Text_IO.Put_Line (theMessage);
-      end printMessage;
+            The_Graph.Append (NewUnbounded_String_List);
+      end InsertUnbounded_String_List;
 
-      procedure newAdjList is
-            outter : vectorContainer.List := vectorContainer.Empty_List;
+      --  Checks if a connection between towers exists in the graph
+      function FindConnection (fromTower : String;
+                               toTower   : String) return Boolean is
       begin
-            --  Add Empty inner list
-            outter.Append (edgeContainer.Empty_List);
-      end newAdjList;
+            return (True);
+      end FindConnection;
+
+      --  Print entire Graph in Breath First Search order
+      procedure PrintGraphBFS is
+      begin
+            --  Loop over the elements of the outer and inner list.
+            for Inner_List of The_Graph loop
+                  for Inner_Elem of Inner_List loop
+                        Text_IO.Put (To_String (Inner_Elem) & " ");
+                  end loop;
+                  Text_IO.New_Line;
+            end loop;
+      end PrintGraphBFS;
 
 end Graph;
