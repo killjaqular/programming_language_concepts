@@ -9,7 +9,7 @@
 with Ada.Containers.Doubly_Linked_Lists; use Ada.Containers;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 
---  NAME  -----------------------------------------------------
+--  NAMES  ----------------------------------------------------
 --  NONE
 
 --  PACKAGE  --------------------------------------------------
@@ -29,20 +29,19 @@ package Graph is
       new Doubly_Linked_Lists (Unbounded_String_List.List);
       use List_List;
 
-      --  Cursors for pointing to elements in lists
-      innerCursor  : Unbounded_String_List.Cursor;
-      outterCursor : List_List.Cursor;
-
       --  The outer most list
-      The_Graph : List_List.List := List_List.Empty_List;
+      TheGraph : List_List.List := List_List.Empty_List;
 
       -------------------------------
       --  This section has functions and procedures
       --  used to manipulate information in the Graph.
       -------------------------------
-      function FindConnection (fromNode : String;
-                               toNode   : String) return Boolean;
+      procedure InsertLink (left_node  : String;
+                            right_node : String);
 
-      function IsInSpine (name : String) return Boolean;
+      function HasLink (from_node : String;
+                        to_node   : String) return Boolean;
+
+      procedure PrintGraph;
 
 end Graph;
