@@ -108,11 +108,15 @@ begin
             --  If action is '.' Insert new link
             --------------------------------
             --  Check if left_tower is in main spine
-            --  if TheGraph.IsInSpine (left_tower) = True then
-            --        TheGraph.Append (left_tower);
-            --  end if;
-            NewList.Append (left_tower);
-            TheGraph.Append (NewList);
+            if TheGraph.IsInSpine (left_tower) = True then
+                  -- Append left_tower
+                  TheGraph.Append ();
+            else then
+                  NewList := Graph.Unbounded_String_List.Empty_List;
+                  NewList.Append (left_tower);
+                  NewList.Append (right_tower);
+                  TheGraph.Append (NewList);
+            end if;
 
             --------------------------------
             --  If action is '?' Search for link

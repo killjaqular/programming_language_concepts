@@ -50,11 +50,11 @@ package body Graph is
       -------------------------------
       function IsInSpine (name : String) return Boolean is
       begin
-            --  for every_list of TheGraph loop
+            for every_list of TheGraph loop
                   --  Check first element in each list
-                  --  if name = X then
-                        -- return (True);
-            --  end loop;
+                  if name = every_list(0) then
+                        return (True);
+            end loop;
 
             return (False);
       end IsInSpine;
