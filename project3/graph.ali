@@ -15,7 +15,7 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_ELABORATION_CODE
 
-U graph%b		graph.adb		9ea8c78b NE OO PK
+U graph%b		graph.adb		a334ec0b NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
@@ -27,7 +27,7 @@ Z system.concat_2%s	s-conca2.adb		s-conca2.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 
-U graph%s		graph.ads		61111ee9 EE OO PF PK
+U graph%s		graph.ads		906f8de8 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
@@ -77,8 +77,8 @@ D a-tags.ads		20210427100012 9eaa38c6 ada.tags%s
 D a-textio.ads		20210427100012 aef4d56d ada.text_io%s
 D a-unccon.ads		20210427100012 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210427100012 eff36322 ada.unchecked_deallocation%s
-D graph.ads		20211031214631 592b8fe0 graph%s
-D graph.adb		20211031214622 9427c92e graph%b
+D graph.ads		20211101145937 a8551ce1 graph%s
+D graph.adb		20211101145904 58c571af graph%b
 D interfac.ads		20210427100012 edec285f interfaces%s
 D i-cstrea.ads		20210427100012 e53d8b8e interfaces.c_streams%s
 D system.ads		20210427100012 a2da961d system%s
@@ -319,20 +319,21 @@ G c Z s s [insert_internal graph__list_list 49 14 28_7]
 G c Z s s [splice_internal graph__list_list 54 14 28_7]
 G c Z s s [splice_internal graph__list_list 59 14 28_7]
 G c Z s s [vet graph__list_list 65 13 28_7]
-G c Z s b [printgraphbfs graph 43 17 none]
-G c Z s b [insertunbounded_string_list graph 49 17 none]
-G c Z s b [findconnection graph 51 16 none]
+G c Z s b [insertunbounded_string_list graph 43 17 none]
+G c Z s b [isinspine graph 45 16 none]
+G c Z s b [findconnection graph 47 16 none]
+G c Z s b [printgraphbfs graph 54 17 none]
 X 1 ada.ads
 16K9*Ada 20e8 24|9r6 9r46 10r6 10r33 25|9r6 10r6 13r5 14r5
 X 4 a-contai.ads
 16K13*Containers 28e19 24|9r10 9r50 25|9r10 14r9
 X 5 a-cdlili.ads
 47k24*Doubly_Linked_Lists 420e39 24|9w21 24r11 29r11 25|9w21
-54R9*List<10|43R9> 24|29r54[23] 37r29[28] 25|25r62[24|23]
+54R9*List<10|43R9> 24|29r54[23] 37r29[28] 25|28r62[24|23]
 65R9*Cursor 24|33r44[23] 34r32[28]
-68r4*Empty_List{54R9[24|28]} 24|37r47[28] 25|26r35[24|23]
+68r4*Empty_List{54R9[24|28]} 24|37r47[28] 25|29r35[24|23]
 78V14*"="{boolean} 44i19[24|23]
-159U14*Append 25|28s23[24|28]
+159U14*Append 25|31s23[24|28]
 X 12 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[5|75]>
@@ -341,28 +342,30 @@ X 14 a-string.ads
 X 17 a-strunb.ads
 83K21*Unbounded 762e26 24|10w18 10r45
 88R9*Unbounded_String<10|43R9> 742e15 24|24r32
-117V13*To_String{string} 25|44s38
+117V13*To_String{string} 25|71s38
 239V14*"="{boolean} 5|44i19
 X 21 a-textio.ads
-58K13*Text_IO 728e16 25|10w10 44r25 46r19
-265U14*New_Line 25|46s27
-466U14*Put 25|44s33
+58K13*Text_IO 728e16 25|10w10 71r25 73r19
+265U14*New_Line 25|73s27
+466U14*Put 25|71s33
 X 24 graph.ads
-16K9*Graph 54l5 54e10 25|17b14 50l5 50t10
-23K15*Unbounded_String_List[5|47] 25r11 29r32 33r22 25|25r40 26r13
+16K9*Graph 56l5 56e10 25|17b14 77l5 77t10
+23K15*Unbounded_String_List[5|47] 25r11 29r32 33r22 25|28r40 29r13
 28K15*List_List[5|47] 30r11 34r22 37r19 37r37
 33r7*innerCursor{5|65R9[23]}
 34r7*outterCursor{5|65R9[28]}
-37r7*The_Graph{5|54R9[28]} 25|28m13 28r13 42r31
-43U17*PrintGraphBFS 25|39b17 48l11 48t24
-49U17*InsertUnbounded_String_List 25|24b17 29l11 29t38
-51V16*FindConnection{boolean} 51>32 52>32 25|32b16 36l11 36t25
-51a32 fromTower{string} 25|32b32
-52a32 toTower{string} 25|33b32
+37r7*The_Graph{5|54R9[28]} 25|31m13 31r13 69r31
+43U17*InsertUnbounded_String_List 25|27b17 32l11 32t38
+45V16*IsInSpine{boolean} 45>27 25|51b16 60l11 60t20
+45a27 name{string} 25|51b27
+47V16*FindConnection{boolean} 47>32 48>32 25|40b16 44l11 44t25
+47a32 fromNode{string} 25|40b32
+48a32 toNode{string} 25|41b32
+54U17*PrintGraphBFS 25|66b17 75l11 75t24
 X 25 graph.adb
-25r13 NewUnbounded_String_List{5|54R9[24|23]} 28r31
-42r17 Inner_List{5|54R9[24|23]} 43r37
-43r23 Inner_Elem{17|88R9} 44r49
+28r13 NewUnbounded_String_List{5|54R9[24|23]} 31r31
+69r17 Inner_List{5|54R9[24|23]} 70r37
+70r23 Inner_Elem{17|88R9} 71r49
 X 28 system.ads
 67M9*Address
 X 37 s-memory.ads

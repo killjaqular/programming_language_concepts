@@ -20,7 +20,10 @@ package body Graph is
       --  Procedures and Functions
       -------------------------------
 
+      -------------------------------
+      --  InsertUnbounded_String_List:
       --  Inserts a new and empty Unbounded String List
+      -------------------------------
       procedure InsertUnbounded_String_List is
             NewUnbounded_String_List : Unbounded_String_List.List :=
             Unbounded_String_List.Empty_List;
@@ -28,14 +31,38 @@ package body Graph is
             The_Graph.Append (NewUnbounded_String_List);
       end InsertUnbounded_String_List;
 
+      -------------------------------
+      --  FindConnection:
       --  Checks if a connection between towers exists in the graph
-      function FindConnection (fromTower : String;
-                               toTower   : String) return Boolean is
+      --  fromNode : The starting node
+      --  toNode   : The ending node
+      -------------------------------
+      function FindConnection (fromNode : String;
+                               toNode   : String) return Boolean is
       begin
             return (True);
       end FindConnection;
 
+      -------------------------------
+      --  IsInSpine:
+      --  Checks if a node is already in the outer most list
+      --  name : The name of a node to search
+      -------------------------------
+      function IsInSpine (name : String) return Boolean is
+      begin
+            --  for every_list of TheGraph loop
+                  --  Check first element in each list
+                  --  if name = X then
+                        -- return (True);
+            --  end loop;
+
+            return (False);
+      end IsInSpine;
+
+      -------------------------------
+      --  PrintGraphBFS:
       --  Print entire Graph in Breath First Search order
+      -------------------------------
       procedure PrintGraphBFS is
       begin
             --  Loop over the elements of the outer and inner list.

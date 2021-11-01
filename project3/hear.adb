@@ -36,6 +36,7 @@ procedure hear is
       --  Create a new graph
       --------------------------------
       TheGraph : Graph.List_List.List;
+      NewList  : Graph.Unbounded_String_List.List;
 
 begin
 
@@ -106,9 +107,12 @@ begin
             --------------------------------
             --  If action is '.' Insert new link
             --------------------------------
-            --  Check if Left Tower is in main spine
-            --  If its not already in the spine,
-                  --  X
+            --  Check if left_tower is in main spine
+            --  if TheGraph.IsInSpine (left_tower) = True then
+            --        TheGraph.Append (left_tower);
+            --  end if;
+            NewList.Append (left_tower);
+            TheGraph.Append (NewList);
 
             --------------------------------
             --  If action is '?' Search for link
@@ -121,10 +125,17 @@ begin
                   --  if the connection does not exists, follow this format:
                   --  - Tower_D => Tower_B
                   Text_IO.Put_Line ("- " & To_String (left_tower)
-                                    & " " & To_String (right_tower));
+                                    & " => " & To_String (right_tower));
 
             Text_IO.Put_Line ("-------------------------------------");
 
+      end loop;
+
+      for every_list of TheGraph loop
+            for every_element of every_list loop
+                  Text_IO.Put ("ELEM: " & To_String (every_element) & " ");
+            end loop;
+            Text_IO.Put_Line ("NEXT");
       end loop;
 
 end hear;

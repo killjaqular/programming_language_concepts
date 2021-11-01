@@ -4,6 +4,7 @@ A -gnaty
 P SS ZX
 
 RN
+RV NO_DISPATCHING_CALLS
 RV NO_EXCEPTION_HANDLERS
 RV NO_EXCEPTIONS
 RV NO_IO
@@ -14,7 +15,7 @@ RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U hear%b		hear.adb		7cdac961 NE OO SU IL
+U hear%b		hear.adb		6fe128e7 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -23,6 +24,7 @@ W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W graph%s		graph.adb		graph.ali
+Z system%s		system.ads		system.ali
 Z system.concat_3%s	s-conca3.adb		s-conca3.ali
 Z system.concat_4%s	s-conca4.adb		s-conca4.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
@@ -51,8 +53,8 @@ D a-tags.ads		20210427100012 9eaa38c6 ada.tags%s
 D a-textio.ads		20210427100012 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210427100012 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210427100012 0e9b276f ada.unchecked_conversion%s
-D graph.ads		20211031214631 592b8fe0 graph%s
-D hear.adb		20211031224310 b824df69 hear%b
+D graph.ads		20211101145937 a8551ce1 graph%s
+D hear.adb		20211101151459 5a61adee hear%b
 D interfac.ads		20210427100012 edec285f interfaces%s
 D i-cstrea.ads		20210427100012 e53d8b8e interfaces.c_streams%s
 D system.ads		20210427100012 a2da961d system%s
@@ -85,8 +87,9 @@ G c Z b b [hear standard 20 11 none]
 X 1 ada.ads
 16K9*Ada 20e8 24|14r6 14r33 15r6 15r23 16r6
 X 5 a-cdlili.ads
-54R9*List<8|43R9> 24|38r34[23|28]
+54R9*List<8|43R9> 24|38r34[23|28] 39r46[23|23]
 78V14*"="{boolean} 44i19[23|23]
+159U14*Append 24|114s21[23|23] 115s22[23|28]
 X 9 a-inteio.ads
 18K13*Integer_Text_IO[21|46] 24|16w10
 X 11 a-iteint.ads
@@ -97,31 +100,36 @@ X 13 a-string.ads
 X 16 a-strunb.ads
 83K21*Unbounded 762e26 24|14w18 14r45
 88R9*Unbounded_String<8|43R9> 742e15 24|29r21 30r21
-104V13*To_Unbounded_String{88R9} 24|66s27 87s28
-117V13*To_String{string} 24|68s37 89s37 119s44 120s45 123s44 124s45
+104V13*To_Unbounded_String{88R9} 24|67s27 88s28
+117V13*To_String{string} 24|69s37 90s37 123s44 124s45 127s44 128s48 136s43
 239V14*"="{boolean} 5|44i19
 X 20 a-textio.ads
-58K13*Text_IO 728e16 24|15w10 43r18 47r13 68r13 89r13 102r13 119r19 123r19
-. 126r13
-316V13*End_Of_File{boolean} 24|43s26
-482U14*Get_Line 24|47s21
-509U14*Put_Line 24|68s21 89s21 102s21 119s27 123s27 126s21
+58K13*Text_IO 728e16 24|15w10 44r18 48r13 69r13 90r13 103r13 123r19 127r19
+. 130r13 136r19 138r13
+316V13*End_Of_File{boolean} 24|44s26
+466U14*Put 24|136s27
+482U14*Get_Line 24|48s21
+509U14*Put_Line 24|69s21 90s21 103s21 123s27 127s27 130s21 138s21
 X 23 graph.ads
-16K9*Graph 54e10 24|17w6 38r18
+16K9*Graph 56e10 24|17w6 38r18 39r18
+23K15*Unbounded_String_List[5|47] 24|39r24
 28K15*List_List[5|47] 24|38r24
 X 24 hear.adb
-20U11*hear 20b11 130l5 130t9
-23a7 inputLine{string} 47m31 55r19 62r29 67r28 74r19 81r29 82r29 83r29 88r29
-. 94r16 96r35 97r35 101r23
-24i7 inputLineLen{integer} 47m42
-25i7 index{integer} 55r30 56m19 56r28 60r22 62r40 63m19 63r28 67r48 74r30
-. 75m19 75r28 79r22 81r40 82r40 83r40 84m19 84r28 88r49 94r27 96r46 97r46
-. 98m25 98r34 101r34 104m13
-26i7 start{integer} 60m13 67r39 79m13 88r40
-29r7 left_tower{16|88R9} 66m13 68r48 119r55 123r55
-30r7 right_tower{16|88R9} 87m13 89r48 120r56 124r56
-33e7 action{character} 101m13 102r37
-38r7 TheGraph{5|54R9[23|28]}
+20U11*hear 20b11 141l5 141t9
+23a7 inputLine{string} 48m31 56r19 63r29 68r28 75r19 82r29 83r29 84r29 89r29
+. 95r16 97r35 98r35 102r23
+24i7 inputLineLen{integer} 48m42
+25i7 index{integer} 56r30 57m19 57r28 61r22 63r40 64m19 64r28 68r48 75r30
+. 76m19 76r28 80r22 82r40 83r40 84r40 85m19 85r28 89r49 95r27 97r46 98r46
+. 99m25 99r34 102r34 105m13
+26i7 start{integer} 61m13 68r39 80m13 89r40
+29r7 left_tower{16|88R9} 67m13 69r48 114r29 123r55 127r55
+30r7 right_tower{16|88R9} 88m13 90r48 124r56 128r59
+33e7 action{character} 102m13 103r37
+38r7 TheGraph{5|54R9[23|28]} 115m13 115r13 134r25
+39r7 NewList{5|54R9[23|23]} 114m13 114r13 115r30
+134r11 every_list{5|54R9[23|23]} 135r34
+135r17 every_element{16|88R9} 136r54
 X 27 system.ads
 67M9*Address
 X 36 s-memory.ads
