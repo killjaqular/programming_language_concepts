@@ -108,15 +108,9 @@ begin
             --  If action is '.' Insert new link
             --------------------------------
             --  Check if left_tower is in main spine
-            if TheGraph.IsInSpine (left_tower) = True then
-                  -- Append left_tower
-                  TheGraph.Append ();
-            else then
-                  NewList := Graph.Unbounded_String_List.Empty_List;
-                  NewList.Append (left_tower);
-                  NewList.Append (right_tower);
-                  TheGraph.Append (NewList);
-            end if;
+            NewList := Graph.Unbounded_String_List.Empty_List;
+            NewList.Append (left_tower);
+            TheGraph.Append (NewList);
 
             --------------------------------
             --  If action is '?' Search for link
@@ -125,7 +119,7 @@ begin
                   --  if the connection does exists, follow this format:
                   --  + Tower_A => Tower_C
                   Text_IO.Put_Line ("+ " & To_String (left_tower)
-                                    & " " & To_String (right_tower));
+                                    & " => " & To_String (right_tower));
                   --  if the connection does not exists, follow this format:
                   --  - Tower_D => Tower_B
                   Text_IO.Put_Line ("- " & To_String (left_tower)

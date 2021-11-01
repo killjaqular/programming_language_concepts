@@ -15,7 +15,7 @@ RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U hear%b		hear.adb		34fdb32c NE OO SU IL
+U hear%b		hear.adb		4891e5cc NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -53,8 +53,8 @@ D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
 D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051129 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
-D graph.ads		20211101172022 a8551ce1 graph%s
-D hear.adb		20211101172734 c725a123 hear%b
+D graph.ads		20211101184656 e64646fd graph%s
+D hear.adb		20211101184916 f55aaddf hear%b
 D interfac.ads		20210520051131 edec285f interfaces%s
 D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051134 a2da961d system%s
@@ -89,9 +89,9 @@ X 1 ada.ads
 16K9*Ada 20e8 23|14r6 14r33 15r6 15r23 16r6
 X 5 a-cdlili.ads
 54R9*List<8|43R9> 23|38r34[22|28] 39r46[22|23]
-68r4*Empty_List{54R9[22|23]} 23|114r52[22|23]
+68r4*Empty_List{54R9[22|23]} 23|111r52[22|23]
 80V14*"="{boolean} 44i19[22|23]
-161U14*Append 23|115s21[22|23] 116s22[22|28]
+161U14*Append 23|112s21[22|23] 113s22[22|28]
 X 9 a-inteio.ads
 18K13*Integer_Text_IO[20|46] 23|16w10
 X 11 a-iteint.ads
@@ -103,21 +103,21 @@ X 16 a-strunb.ads
 83K21*Unbounded 765e26 23|14w18 14r45
 88R9*Unbounded_String<8|43R9> 744e15 23|29r21 30r21
 104V13*To_Unbounded_String{88R9} 23|67s27 88s28
-117V13*To_String{string} 23|69s37 90s37 124s44 125s45 128s44 129s48 137s43
+117V13*To_String{string} 23|69s37 90s37 121s44 122s48 125s44 126s48 134s43
 239V14*"="{boolean} 5|44i19
 X 19 a-textio.ads
-58K13*Text_IO 725e16 23|15w10 44r18 48r13 69r13 90r13 103r13 124r19 128r19
-. 131r13 137r19 139r13
+58K13*Text_IO 725e16 23|15w10 44r18 48r13 69r13 90r13 103r13 121r19 125r19
+. 128r13 134r19 136r13
 313V13*End_Of_File{boolean} 23|44s26
-463U14*Put 23|137s27
+463U14*Put 23|134s27
 479U14*Get_Line 23|48s21
-506U14*Put_Line 23|69s21 90s21 103s21 124s27 128s27 131s21 139s21
+506U14*Put_Line 23|69s21 90s21 103s21 121s27 125s27 128s21 136s21
 X 22 graph.ads
-16K9*Graph 56e10 23|17w6 38r18 39r18 114r24
-23K15*Unbounded_String_List[5|47] 23|39r24 114r30
+16K9*Graph 48e10 23|17w6 38r18 39r18 111r24
+23K15*Unbounded_String_List[5|47] 23|39r24 111r30
 28K15*List_List[5|47] 23|38r24
 X 23 hear.adb
-20U11*hear 20b11 142l5 142t9
+20U11*hear 20b11 139l5 139t9
 23a7 inputLine{string} 48m31 56r19 63r29 68r28 75r19 82r29 83r29 84r29 89r29
 . 95r16 97r35 98r35 102r23
 24i7 inputLineLen{integer} 48m42
@@ -125,13 +125,13 @@ X 23 hear.adb
 . 76m19 76r28 80r22 82r40 83r40 84r40 85m19 85r28 89r49 95r27 97r46 98r46
 . 99m25 99r34 102r34 105m13
 26i7 start{integer} 61m13 68r39 80m13 89r40
-29r7 left_tower{16|88R9} 67m13 69r48 115r29 124r55 128r55
-30r7 right_tower{16|88R9} 88m13 90r48 125r56 129r59
+29r7 left_tower{16|88R9} 67m13 69r48 112r29 121r55 125r55
+30r7 right_tower{16|88R9} 88m13 90r48 122r59 126r59
 33e7 action{character} 102m13 103r37
-38r7 TheGraph{5|54R9[22|28]} 116m13 116r13 135r25
-39r7 NewList{5|54R9[22|23]} 114m13 115m13 115r13 116r30
-135r11 every_list{5|54R9[22|23]} 136r34
-136r17 every_element{16|88R9} 137r54
+38r7 TheGraph{5|54R9[22|28]} 113m13 113r13 132r25
+39r7 NewList{5|54R9[22|23]} 111m13 112m13 112r13 113r30
+132r11 every_list{5|54R9[22|23]} 133r34
+133r17 every_element{16|88R9} 134r54
 X 26 system.ads
 67M9*Address
 X 35 s-memory.ads

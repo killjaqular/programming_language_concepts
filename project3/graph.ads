@@ -40,17 +40,9 @@ package Graph is
       --  This section has functions and procedures
       --  used to manipulate information in the Graph.
       -------------------------------
-      procedure InsertUnbounded_String_List;
-
-      function IsInSpine (name : String) return Boolean;
-
       function FindConnection (fromNode : String;
                                toNode   : String) return Boolean;
 
-      -------------------------------
-      --  This section has functions and procedures
-      --  used to view information in the Graph.
-      -------------------------------
-      procedure PrintGraphBFS;
+      function IsInSpine (name : String) return Boolean;
 
 end Graph;
