@@ -93,8 +93,7 @@ package body Graph is
       begin
             for every_list of TheGraph loop
                   for every_element of every_list loop
-                        Text_IO.Put ("<" & To_String
-                                    (every_element) & "> => ");
+                        Text_IO.Put (To_String (every_element) & " ");
                   end loop;
                   Text_IO.Put_Line ("");
             end loop;

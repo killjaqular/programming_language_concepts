@@ -23,7 +23,7 @@ procedure hear is
 
       --  No input line shall be greater than 150 chars
       inputLine    : String (1 .. 150);
-      inputLineLen : Integer;
+      inputLineLen : Integer := 0;
       index        : Integer := 1;
       start        : Integer;
 
@@ -35,11 +35,16 @@ procedure hear is
 begin
 
       --  Read from STDIN until End of File char is read
+      <<Continue>>
       while not (Text_IO.End_Of_File) loop
             --------------------------------
             --  Read in a line
             --------------------------------
             Text_IO.Get_Line (inputLine, inputLineLen);
+            --  Skip over empty lines
+            if inputLineLen = 0 then
+                  goto Continue;
+            end if;
 
             --------------------------------
             --  Get left_tower

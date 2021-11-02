@@ -3,7 +3,6 @@
 - Tower_D => Tower_B
 - xxxx => yyyy
 + Tower_D => Tower_B
-+ Tower_D => Tower_B
 - thisTowerDoesNotExistInTheWorldMap => neitherDoesThisTower
 + towerOne => towerTwo
 - someTOWER_AA => SOMEtower_BB
