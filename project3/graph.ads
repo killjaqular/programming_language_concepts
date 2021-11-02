@@ -42,6 +42,10 @@ package Graph is
       function HasLink (from_node : String;
                         to_node   : String) return Boolean;
 
+      -------------------------------
+      --  This section has functions and procedures
+      --  used to display information in the Graph.
+      -------------------------------
       procedure PrintGraph;
 
 end Graph;

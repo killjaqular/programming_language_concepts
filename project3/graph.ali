@@ -15,7 +15,7 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_ELABORATION_CODE
 
-U graph%b		graph.adb		79e2828f NE OO PK
+U graph%b		graph.adb		9e4fc9e8 NE OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
@@ -76,8 +76,8 @@ D a-tags.ads		20210427100012 9eaa38c6 ada.tags%s
 D a-textio.ads		20210427100012 aef4d56d ada.text_io%s
 D a-unccon.ads		20210427100012 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20210427100012 eff36322 ada.unchecked_deallocation%s
-D graph.ads		20211101202929 250ea201 graph%s
-D graph.adb		20211101205636 f218f5e3 graph%b
+D graph.ads		20211101222515 250ea201 graph%s
+D graph.adb		20211102154629 15b5be84 graph%b
 D interfac.ads		20210427100012 edec285f interfaces%s
 D i-cstrea.ads		20210427100012 e53d8b8e interfaces.c_streams%s
 D system.ads		20210427100012 a2da961d system%s
@@ -320,18 +320,18 @@ G c Z s s [splice_internal graph__list_list 59 14 28_7]
 G c Z s s [vet graph__list_list 65 13 28_7]
 G c Z s b [insertlink graph 39 17 none]
 G c Z s b [haslink graph 42 16 none]
-G c Z s b [printgraph graph 45 17 none]
+G c Z s b [printgraph graph 49 17 none]
 X 1 ada.ads
 16K9*Ada 20e8 24|9r6 9r46 10r6 10r33 25|9r6 12r5
 X 4 a-contai.ads
 16K13*Containers 28e19 24|9r10 9r50
 X 5 a-cdlili.ads
 47k24*Doubly_Linked_Lists 420e39 24|9w21 24r11 29r11
-54R9*List<10|43R9> 24|29r54[23] 33r28[28] 25|30r45[24|23]
-68r4*Empty_List{54R9[24|28]} 24|33r46[28] 25|45r46[24|23]
+54R9*List<10|43R9> 24|29r54[23] 33r28[28] 25|30r45[24|23] 60r43[24|23]
+68r4*Empty_List{54R9[24|28]} 24|33r46[28] 25|45r46[24|23] 62r44[24|23]
 78V14*"="{boolean} 44i19[24|23]
 159U14*Append 25|39s36[24|23] 46s21[24|23] 47s21[24|23] 48s22[24|28]
-210V13*First_Element{17|88R9} 25|37s22[24|23]
+210V13*First_Element{17|88R9} 25|37s22[24|23] 69s22[24|23]
 X 12 a-iteint.ads
 24h9 Forward_Iterator
 32h9 Reversible_Iterator<24R9[5|75]>
@@ -341,30 +341,33 @@ X 17 a-strunb.ads
 83K21*Unbounded 762e26 24|10w18 10r45
 88R9*Unbounded_String<10|43R9> 742e15 24|24r32
 104V13*To_Unbounded_String{88R9} 25|39s44 46s29 47s29
-117V13*To_String{string} 25|76s44
+117V13*To_String{string} 25|96s44
 239V14*"="{boolean} 5|44i19
-245V14*"="{boolean} 25|37s49
+245V14*"="{boolean} 25|37s49 69s49 74s45
 X 21 a-textio.ads
-58K13*Text_IO 728e16 25|9w10 76r25 79r19
-466U14*Put 25|76s33
-509U14*Put_Line 25|79s27
+58K13*Text_IO 728e16 25|9w10 96r25 99r19
+466U14*Put 25|96s33
+509U14*Put_Line 25|99s27
 X 24 graph.ads
-16K9*Graph 47l5 47e10 25|15b14 83l5 83t10
-23K15*Unbounded_String_List[5|47] 25r11 29r32 25|30r23 45r24
+16K9*Graph 51l5 51e10 25|15b14 103l5 103t10
+23K15*Unbounded_String_List[5|47] 25r11 29r32 25|30r23 45r24 60r21 62r22
 28K15*List_List[5|47] 30r11 33r18 33r36
-33r7*TheGraph{5|54R9[28]} 25|35m31 35r31 48m13 48r13 74r31
+33r7*TheGraph{5|54R9[28]} 25|35m31 35r31 48m13 48r13 67r31 94r31
 39U17*InsertLink 39>29 40>29 25|27b17 49l11 49t21
 39a29 left_node{string} 25|27b29 37r51 46r50
 40a29 right_node{string} 25|28b29 39r65 47r50
-42V16*HasLink{boolean} 42>25 43>25 25|57b16 62l11 62t18
-42a25 from_node{string} 25|57b25
-43a25 to_node{string} 25|58b25
-45U17*PrintGraph 25|72b17 81l11 81t21
+42V16*HasLink{boolean} 42>25 43>25 25|57b16 82l11 82t18
+42a25 from_node{string} 25|57b25 69r51
+43a25 to_node{string} 25|58b25 74r47
+49U17*PrintGraph 25|92b17 101l11 101t21
 X 25 graph.adb
 30r13 NewList{5|54R9[24|23]} 45m13 46m13 46r13 47m13 47r13 48r30
 35r17 every_list{5|54R9[24|23]} 37r37 39r25
-74r17 every_list{5|54R9[24|23]} 75r40
-75r23 every_element{17|88R9} 77r38
+60r13 Queue{5|54R9[24|23]} 62m13
+67r17 every_list{5|54R9[24|23]} 69r37 73r43
+73r29 every_node{17|88R9} 74r34
+94r17 every_list{5|54R9[24|23]} 95r40
+95r23 every_element{17|88R9} 97r38
 X 28 system.ads
 67M9*Address
 X 37 s-memory.ads

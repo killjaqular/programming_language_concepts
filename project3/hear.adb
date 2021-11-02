@@ -40,8 +40,6 @@ begin
             --  Read in a line
             --------------------------------
             Text_IO.Get_Line (inputLine, inputLineLen);
-            --  Text_IO.Put_Line ("inputLine:=> <" &
-            --                  inputLine (1 .. inputLineLen) & ">");
 
             --------------------------------
             --  Get left_tower
@@ -60,7 +58,6 @@ begin
 
             left_tower := To_Unbounded_String
                           (inputLine (start .. index - 1));
-            Text_IO.Put_Line ("<" & To_String (left_tower) & ">");
 
             --------------------------------
             --  Get right_tower
@@ -81,7 +78,6 @@ begin
 
             right_tower := To_Unbounded_String
                            (inputLine (start .. index - 1));
-            Text_IO.Put_Line ("<" & To_String (right_tower) & ">");
 
             --------------------------------
             --  Get action
@@ -94,7 +90,6 @@ begin
                   end loop;
             end if;
             action := inputLine (index);
-            Text_IO.Put_Line ("<" & action & ">");
 
             index := 1; --  Reset the index counter
 
@@ -104,12 +99,12 @@ begin
             if action = '.' then
                   Graph.InsertLink (To_String (left_tower),
                                     To_String (right_tower));
-            end if;
 
             --------------------------------
             --  If action is '?' Search for link
             --------------------------------
-            --  Check if connection exists in the graph
+            else
+                  --  Check if connection exists in the graph
                   --  if the connection does exists, follow this format:
                   has_link := Graph.HasLink (To_String (left_tower),
                                              To_String (right_tower));
@@ -122,12 +117,9 @@ begin
                         --  - Tower_D => Tower_B
                         Text_IO.Put_Line ("- " & To_String (left_tower)
                                           & " => " & To_String (right_tower));
+
                   end if;
-
-            Text_IO.Put_Line ("-------------------------------------");
-
+            end if;
       end loop;
-
-      Graph.PrintGraph;
 
 end hear;

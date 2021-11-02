@@ -56,9 +56,29 @@ package body Graph is
       -------------------------------
       function HasLink (from_node : String;
                         to_node   : String) return Boolean is
+
+            Queue : Unbounded_String_List.List;
       begin
-            null;
-            return (True);
+            Queue := Unbounded_String_List.Empty_List;
+
+            -------------------------------
+            --  Search spine for from_node
+            -------------------------------
+            for every_list of TheGraph loop
+                  --  If from_node exists in the spine,
+                  if First_Element (every_list) = from_node then
+                        -------------------------------
+                        --  Search every_list for to_node
+                        -------------------------------
+                        for every_node of every_list loop
+                              if every_node = to_node then
+                                    return (True);
+                              end if;
+                        end loop;
+                  end if;
+            end loop;
+
+            return (False);
       end HasLink;
 
       -------------------------------

@@ -14,7 +14,7 @@ RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U hear%b		hear.adb		5bc415c2 NE OO SU IL
+U hear%b		hear.adb		b89311fe NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.strings%s		a-string.ads		a-string.ali
@@ -22,7 +22,6 @@ W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W graph%s		graph.adb		graph.ali
-Z system.concat_3%s	s-conca3.adb		s-conca3.ali
 Z system.concat_4%s	s-conca4.adb		s-conca4.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
@@ -48,13 +47,12 @@ D a-suezst.ads		20210427100012 1161e3f6 ada.strings.utf_encoding.wide_wide_strin
 D a-tags.ads		20210427100012 9eaa38c6 ada.tags%s
 D a-textio.ads		20210427100012 aef4d56d ada.text_io%s
 D a-unccon.ads		20210427100012 0e9b276f ada.unchecked_conversion%s
-D graph.ads		20211101202929 250ea201 graph%s
-D hear.adb		20211101202854 1554a78f hear%b
+D graph.ads		20211101222515 250ea201 graph%s
+D hear.adb		20211102154009 f603a3b3 hear%b
 D interfac.ads		20210427100012 edec285f interfaces%s
 D i-cstrea.ads		20210427100012 e53d8b8e interfaces.c_streams%s
 D system.ads		20210427100012 a2da961d system%s
 D s-atocou.ads		20210427100012 b45c2d8d system.atomic_counters%s
-D s-conca3.ads		20210427100012 0b705ca5 system.concat_3%s
 D s-conca4.ads		20210427100012 7e642b20 system.concat_4%s
 D s-crtl.ads		20210427100012 0ebbdb71 system.crtl%s
 D s-exctab.ads		20210427100012 54135002 system.exception_table%s
@@ -79,9 +77,8 @@ D s-wchcon.ads		20210427100012 1b7d22d2 system.wch_con%s
 D unchconv.ads		20210427100012 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [hear standard 22 11 none]
-G r c none [hear standard 22 11 none] [insertlink graph 39 17 none]
 G r c none [hear standard 22 11 none] [haslink graph 42 16 none]
-G r c none [hear standard 22 11 none] [printgraph graph 45 17 none]
+G r c none [hear standard 22 11 none] [insertlink graph 39 17 none]
 X 1 ada.ads
 16K9*Ada 20e8 22|14r6 14r33 15r6 15r23
 X 5 a-cdlili.ads
@@ -94,40 +91,38 @@ X 12 a-string.ads
 X 15 a-strunb.ads
 83K21*Unbounded 762e26 22|14w18 14r45
 88R9*Unbounded_String<8|43R9> 742e15 22|30r21 31r21
-104V13*To_Unbounded_String{88R9} 22|61s27 82s28
-117V13*To_String{string} 22|63s37 84s37 105s37 106s37 114s46 115s46 118s50
-. 119s54 123s50 124s54
+104V13*To_Unbounded_String{88R9} 22|59s27 79s28
+117V13*To_String{string} 22|100s37 101s37 109s46 110s46 113s50 114s54 118s50
+. 119s54
 239V14*"="{boolean} 5|44i19
 X 19 a-textio.ads
-58K13*Text_IO 728e16 22|15w10 38r18 42r13 63r13 84r13 97r13 118r25 123r25
-. 127r13
+58K13*Text_IO 728e16 22|15w10 38r18 42r13 113r25 118r25
 316V13*End_Of_File{boolean} 22|38s26
 482U14*Get_Line 22|42s21
-509U14*Put_Line 22|63s21 84s21 97s21 118s33 123s33 127s21
+509U14*Put_Line 22|113s33 118s33
 X 21 graph.ads
-16K9*Graph 47e10 22|16w6 105r19 114r31 131r7
-39U17*InsertLink 22|105s25
-42V16*HasLink{boolean} 22|114s37
-45U17*PrintGraph 22|131s13
+16K9*Graph 51e10 22|16w6 100r19 109r31
+39U17*InsertLink 22|100s25
+42V16*HasLink{boolean} 22|109s37
 X 22 hear.adb
-22U11*hear 22b11 133l5 133t9
-25a7 inputLine{string} 42m31 50r19 57r29 62r28 69r19 76r29 77r29 78r29 83r29
-. 89r16 91r35 92r35 96r23
+22U11*hear 22b11 125l5 125t9
+25a7 inputLine{string} 42m31 48r19 55r29 60r28 66r19 73r29 74r29 75r29 80r29
+. 85r16 87r35 88r35 92r23
 26i7 inputLineLen{integer} 42m42
-27i7 index{integer} 50r30 51m19 51r28 55r22 57r40 58m19 58r28 62r48 69r30
-. 70m19 70r28 74r22 76r40 77r40 78r40 79m19 79r28 83r49 89r27 91r46 92r46
-. 93m25 93r34 96r34 99m13
-28i7 start{integer} 55m13 62r39 74m13 83r40
-30r7 left_tower{15|88R9} 61m13 63r48 105r48 114r57 118r61 123r61
-31r7 right_tower{15|88R9} 82m13 84r48 106r48 115r57 119r65 124r65
-32e7 action{character} 96m13 97r37 104r16
-33b7 has_link{boolean} 114m19 116r22
+27i7 index{integer} 48r30 49m19 49r28 53r22 55r40 56m19 56r28 60r48 66r30
+. 67m19 67r28 71r22 73r40 74r40 75r40 76m19 76r28 80r49 85r27 87r46 88r46
+. 89m25 89r34 92r34 94m13
+28i7 start{integer} 53m13 60r39 71m13 80r40
+30r7 left_tower{15|88R9} 59m13 100r48 109r57 113r61 118r61
+31r7 right_tower{15|88R9} 79m13 101r48 110r57 114r65 119r65
+32e7 action{character} 92m13 99r16
+33b7 has_link{boolean} 109m19 111r22
 X 25 system.ads
 67M9*Address
-X 34 s-memory.ads
+X 33 s-memory.ads
 53V13*Alloc{25|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
 76V13*Realloc{25|67M9} 105i<c,__gnat_realloc>22
-X 41 s-stalib.adb
+X 40 s-stalib.adb
 89U14 Break_Start 90i<c,__gnat_break_start>22
 
