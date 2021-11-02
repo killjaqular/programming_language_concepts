@@ -54,30 +54,38 @@ package body Graph is
       --  from_node : The starting node
       --  to_node   : The end node
       -------------------------------
-      function HasLink (from_node : String;
-                        to_node   : String) return Boolean is
+      function HasLink (from_node : Unbounded_String;
+                        to_node   : Unbounded_String) return Boolean is
 
-            Queue : Unbounded_String_List.List;
+            Queue : Unbounded_String_Queues.Queue;
+            Visited : Unbounded_String_List.List;
+            node : Unbounded_String;
       begin
-            Queue := Unbounded_String_List.Empty_List;
+            --  Queue := Unbounded_String_Queues.Queue;
+            Visited := Unbounded_String_List.Empty_List;
+            --  node := Unbounded_String;
 
-            -------------------------------
-            --  Search spine for from_node
-            -------------------------------
-            for every_list of TheGraph loop
-                  --  If from_node exists in the spine,
-                  if First_Element (every_list) = from_node then
-                        -------------------------------
-                        --  Search every_list for to_node
-                        -------------------------------
-                        for every_node of every_list loop
-                              if every_node = to_node then
-                                    return (True);
+            --  BFS
+            Queue.Enqueue (from_node);
+
+            while not (Current_Use (Queue) = 0) loop
+                  Queue.Dequeue (node);
+
+                  if node = to_node then
+                        return (True);
+                  else
+                        for every_list of TheGraph loop
+                              if First_Element (every_list) = node then
+                                    for every_node of every_list loop
+                                          if Visited.Contains (every_node) = False then
+                                                Queue.Enqueue (every_node);
+                                          end if;
+                                    end loop;
                               end if;
                         end loop;
+                        Visited.Append (node);
                   end if;
             end loop;
-
             return (False);
       end HasLink;
 

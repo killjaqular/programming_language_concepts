@@ -111,8 +111,8 @@ begin
             else
                   --  Check if connection exists in the graph
                   --  if the connection does exists, follow this format:
-                  has_link := Graph.HasLink (To_String (left_tower),
-                                             To_String (right_tower));
+                  has_link := Graph.HasLink (left_tower,
+                                             right_tower);
                   if has_link = True then
                         --  + Tower_A => Tower_C
                         Text_IO.Put_Line ("+ " & To_String (left_tower)
