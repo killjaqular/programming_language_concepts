@@ -48,7 +48,7 @@ D a-tags.ads		20210427100012 9eaa38c6 ada.tags%s
 D a-textio.ads		20210427100012 aef4d56d ada.text_io%s
 D a-unccon.ads		20210427100012 0e9b276f ada.unchecked_conversion%s
 D graph.ads		20211101222515 250ea201 graph%s
-D hear.adb		20211102171049 bb794ce4 hear%b
+D hear.adb		20211102171959 bb794ce4 hear%b
 D interfac.ads		20210427100012 edec285f interfaces%s
 D i-cstrea.ads		20210427100012 e53d8b8e interfaces.c_streams%s
 D system.ads		20210427100012 a2da961d system%s
@@ -91,33 +91,33 @@ X 12 a-string.ads
 X 15 a-strunb.ads
 83K21*Unbounded 762e26 22|14w18 14r45
 88R9*Unbounded_String<8|43R9> 742e15 22|30r21 31r21
-104V13*To_Unbounded_String{88R9} 22|63s27 83s28
-117V13*To_String{string} 22|104s37 105s37 113s46 114s46 117s50 118s54 122s50
-. 123s54
+104V13*To_Unbounded_String{88R9} 22|64s27 84s28
+117V13*To_String{string} 22|105s37 106s37 114s46 115s46 118s50 119s54 123s50
+. 124s54
 239V14*"="{boolean} 5|44i19
 X 19 a-textio.ads
-58K13*Text_IO 728e16 22|15w10 39r18 43r13 117r25 122r25
+58K13*Text_IO 728e16 22|15w10 39r18 43r13 118r25 123r25
 316V13*End_Of_File{boolean} 22|39s26
 482U14*Get_Line 22|43s21
-509U14*Put_Line 22|117s33 122s33
+509U14*Put_Line 22|118s33 123s33
 X 21 graph.ads
-16K9*Graph 51e10 22|16w6 104r19 113r31
-39U17*InsertLink 22|104s25
-42V16*HasLink{boolean} 22|113s37
+16K9*Graph 51e10 22|16w6 105r19 114r31
+39U17*InsertLink 22|105s25
+42V16*HasLink{boolean} 22|114s37
 X 22 hear.adb
-22U11*hear 22b11 129l5 129t9
-25a7 inputLine{string} 43m31 52r19 59r29 64r28 70r19 77r29 78r29 79r29 84r29
-. 89r16 91r35 92r35 96r23
-26i7 inputLineLen{integer} 43m42 44r16
-27i7 index{integer} 52r30 53m19 53r28 57r22 59r40 60m19 60r28 64r48 70r30
-. 71m19 71r28 75r22 77r40 78r40 79r40 80m19 80r28 84r49 89r27 91r46 92r46
-. 93m25 93r34 96r34 98m13
-28i7 start{integer} 57m13 64r39 75m13 84r40
-30r7 left_tower{15|88R9} 63m13 104r48 113r57 117r61 122r61
-31r7 right_tower{15|88R9} 83m13 105r48 114r57 118r65 123r65
-32e7 action{character} 96m13 103r16
-33b7 has_link{boolean} 113m19 115r22
-38L9 Continue 45r24
+22U11*hear 22b11 130l5 130t9
+25a7 inputLine{string} 43m31 53r19 60r29 65r28 71r19 78r29 79r29 80r29 85r29
+. 90r16 92r35 93r35 97r23
+26i7 inputLineLen{integer} 43m42 45r16
+27i7 index{integer} 53r30 54m19 54r28 58r22 60r40 61m19 61r28 65r48 71r30
+. 72m19 72r28 76r22 78r40 79r40 80r40 81m19 81r28 85r49 90r27 92r46 93r46
+. 94m25 94r34 97r34 99m13
+28i7 start{integer} 58m13 65r39 76m13 85r40
+30r7 left_tower{15|88R9} 64m13 105r48 114r57 118r61 123r61
+31r7 right_tower{15|88R9} 84m13 106r48 115r57 119r65 124r65
+32e7 action{character} 97m13 104r16
+33b7 has_link{boolean} 114m19 116r22
+38L9 Continue 46r24
 X 25 system.ads
 67M9*Address
 X 33 s-memory.ads
