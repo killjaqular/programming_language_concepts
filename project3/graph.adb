@@ -57,13 +57,11 @@ package body Graph is
       function HasLink (from_node : Unbounded_String;
                         to_node   : Unbounded_String) return Boolean is
 
-            Queue : Unbounded_String_Queues.Queue;
+            Queue   : Unbounded_String_Queues.Queue;
             Visited : Unbounded_String_List.List;
-            node : Unbounded_String;
+            node    : Unbounded_String;
       begin
-            --  Queue := Unbounded_String_Queues.Queue;
             Visited := Unbounded_String_List.Empty_List;
-            --  node := Unbounded_String;
 
             --  BFS
             Queue.Enqueue (from_node);

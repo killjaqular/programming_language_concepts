@@ -1,13 +1,13 @@
-V "GNAT Lib v9"
+V "GNAT Lib v2021"
 A -gnaty
-P ZX
+P SS ZX
 
 RN
 RV NO_DISPATCHING_CALLS
 RV NO_EXCEPTION_HANDLERS
-RV NO_EXCEPTION_PROPAGATION
 RV NO_EXCEPTIONS
 RV NO_IO
+RV NO_LOCAL_ALLOCATORS
 RV NO_LOCAL_PROTECTED_OBJECTS
 RV NO_NESTED_FINALIZATION
 RV NO_SECONDARY_STACK
@@ -15,16 +15,12 @@ RV NO_STANDARD_STORAGE_POOLS
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_ELABORATION_CODE
-RV SPARK_05
 RV MAX_ENTRY_QUEUE_LENGTH=1+
 
-<<<<<<< HEAD
-U graph%b		graph.adb		cd6b24e5 NE OO PK
-=======
-U graph%b		graph.adb		d194f75f NE OO PK
->>>>>>> 93e556e68ed8d5da3cd81899c4d6731c41571d8c
+U graph%b		graph.adb		eb8242d2 NE OO PK
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z system%s		system.ads		system.ali
@@ -36,7 +32,7 @@ Z system.tasking%s	s-taskin.adb		s-taskin.ali
 Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
 Z system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
 
-U graph%s		graph.ads		e10c3575 EE OO PF PK
+U graph%s		graph.ads		41a5cac8 EE OO PF PK
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 W ada.containers.doubly_linked_lists%s
@@ -48,12 +44,14 @@ Z ada.finalization%s	a-finali.ads		a-finali.ali
 Z ada.iterator_interfaces%s
 Z ada.streams%s		a-stream.adb		a-stream.ali
 W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
 Z ada.tags%s		a-tags.adb		a-tags.ali
 Z ada.unchecked_deallocation%s
 Z system%s		system.ads		system.ali
 Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
 Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.put_images%s	s-putima.adb		s-putima.ali
 Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
 Z system.standard_library%s  s-stalib.adb	s-stalib.ali
@@ -67,450 +65,386 @@ Z system.tasking.protected_objects%s  s-taprob.adb  s-taprob.ali
 Z system.tasking.protected_objects.entries%s  s-tpoben.adb  s-tpoben.ali
 Z system.tasking.protected_objects.operations%s  s-tpobop.adb  s-tpobop.ali
 
-<<<<<<< HEAD
-D ada.ads		20200312110721 76789da1 ada%s
-D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
-D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
-D a-contai.ads		20200312110721 61e5e089 ada.containers%s
-D a-cdlili.ads		20200312110721 8e06b4f2 ada.containers.doubly_linked_lists%s
-D a-cdlili.adb		20200312110721 8ed211ef ada.containers.doubly_linked_lists%b
-D a-conhel.ads		20200312110721 20298884 ada.containers.helpers%s
-D a-conhel.adb		20200312110721 9cc5095b ada.containers.helpers%b
-D a-csquin.ads		20200312110721 8c71856d ada.containers.synchronized_queue_interfaces%s
-D a-cusyqu.ads		20200312110721 c768ec18 ada.containers.unbounded_synchronized_queues%s
-D a-cusyqu.adb		20200312110721 bdf5fca2 ada.containers.unbounded_synchronized_queues%b
-D a-except.ads		20200312110721 291912d5 ada.exceptions%s
-D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
-D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
-D a-iteint.ads		20200312110721 7c7305e9 ada.iterator_interfaces%s
-D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
-D a-string.ads		20200312110721 90ac6797 ada.strings%s
-D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
-D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
-D a-tags.ads		20200312110721 491b781d ada.tags%s
-D a-textio.ads		20200312110721 881db35a ada.text_io%s
-D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
-D a-uncdea.ads		20200312110721 eff36322 ada.unchecked_deallocation%s
-D graph.ads		20211102204535 a48b21ed graph%s
-D graph.adb		20211102213826 e1fdb652 graph%b
-D interfac.ads		20200312110721 5ab55268 interfaces%s
-D i-c.ads		20200312110721 5421119b interfaces.c%s
-D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
-D system.ads		20200312110721 77e65b42 system%s
-D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
-D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
-D s-atocou.adb		20200312110721 b65612c0 system.atomic_counters%b
-D s-conca2.ads		20200312110721 02a0d7d0 system.concat_2%s
-D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
-D s-exctab.ads		20200312110721 54135002 system.exception_table%s
-D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
-D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
-D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
-D s-linux.ads		20200312110721 ed0b8aee system.linux%s
-D s-memory.ads		20200312110721 597d6634 system.memory%s
-D s-multip.ads		20200312110721 38ac9f73 system.multiprocessors%s
-D s-oscons.ads		20200808120453 6d3922a6 system.os_constants%s
-D s-osinte.ads		20200312110721 710cf8c6 system.os_interface%s
-D s-parame.ads		20200312110721 48ec542b system.parameters%s
-D s-pooglo.ads		20200312110721 ede33ef8 system.pool_global%s
-D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
-D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
-D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
-D s-stausa.ads		20200312110721 017a0a05 system.stack_usage%s
-D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
-D s-stalib.adb		20200312110721 f2fe2716 system.standard_library%b
-D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
-D s-stoele.adb		20200312110721 ed88f8fb system.storage_elements%b
-D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
-D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
-D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
-D s-string.ads		20200312110721 8fe54fb7 system.strings%s
-D s-ststop.ads		20200312110721 5fbf1b38 system.strings.stream_ops%s
-D s-tasinf.ads		20200312110721 2b3f8252 system.task_info%s
-D s-taspri.ads		20200312110721 f40ac08d system.task_primitives%s
-D s-taskin.ads		20200312110721 b9d612e2 system.tasking%s
-D s-taprob.ads		20200312110721 acd6094d system.tasking.protected_objects%s
-D s-tpoben.ads		20200312110721 60ad3dae system.tasking.protected_objects.entries%s
-D s-tpobop.ads		20200312110721 5f548bb3 system.tasking.protected_objects.operations%s
-D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
-D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
-D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
-=======
-D ada.ads		20210427100012 76789da1 ada%s
-D a-charac.ads		20210427100012 2d3ec45b ada.characters%s
-D a-chlat1.ads		20210427100012 66457d31 ada.characters.latin_1%s
-D a-contai.ads		20210427100012 61e5e089 ada.containers%s
-D a-cdlili.ads		20210427100012 fd505428 ada.containers.doubly_linked_lists%s
-D a-cdlili.adb		20210427100012 6c995ff5 ada.containers.doubly_linked_lists%b
-D a-conhel.ads		20210427100012 20298884 ada.containers.helpers%s
-D a-conhel.adb		20210427100012 e8b6ff51 ada.containers.helpers%b
-D a-except.ads		20210427100012 449c9b65 ada.exceptions%s
-D a-finali.ads		20210427100012 bf4f806b ada.finalization%s
-D a-ioexce.ads		20210427100012 e4a01f64 ada.io_exceptions%s
-D a-iteint.ads		20210427100012 7c7305e9 ada.iterator_interfaces%s
-D a-stream.ads		20210427100012 119b8fb3 ada.streams%s
-D a-string.ads		20210427100012 90ac6797 ada.strings%s
-D a-strmap.ads		20210427100012 5a88892a ada.strings.maps%s
-D a-stteou.ads		20210427100012 e7ab1e2a ada.strings.text_output%s
-D a-strunb.ads		20210427100012 c56ac521 ada.strings.unbounded%s
-D a-stuten.ads		20210427100012 808c40ad ada.strings.utf_encoding%s
-D a-suezst.ads		20210427100012 1161e3f6 ada.strings.utf_encoding.wide_wide_strings%s
-D a-tags.ads		20210427100012 9eaa38c6 ada.tags%s
-D a-textio.ads		20210427100012 aef4d56d ada.text_io%s
-D a-unccon.ads		20210427100012 0e9b276f ada.unchecked_conversion%s
-D a-uncdea.ads		20210427100012 eff36322 ada.unchecked_deallocation%s
-D graph.ads		20211101222515 250ea201 graph%s
-D graph.adb		20211102181200 5a6e8033 graph%b
-D interfac.ads		20210427100012 edec285f interfaces%s
-D i-cstrea.ads		20210427100012 e53d8b8e interfaces.c_streams%s
-D system.ads		20210427100012 a2da961d system%s
-D s-atocou.ads		20210427100012 b45c2d8d system.atomic_counters%s
-D s-atocou.adb		20210427100012 b65612c0 system.atomic_counters%b
-D s-conca2.ads		20210427100012 02a0d7d0 system.concat_2%s
-D s-crtl.ads		20210427100012 0ebbdb71 system.crtl%s
-D s-exctab.ads		20210427100012 54135002 system.exception_table%s
-D s-ficobl.ads		20210427100012 078245e4 system.file_control_block%s
-D s-finmas.ads		20210427100012 1ab4dba8 system.finalization_masters%s
-D s-finroo.ads		20210427100012 4ff27390 system.finalization_root%s
-D s-memory.ads		20210427100012 597d6634 system.memory%s
-D s-parame.ads		20210427100012 4752c4cb system.parameters%s
-D s-pooglo.ads		20210427100012 ede33ef8 system.pool_global%s
-D s-putima.ads		20210427100012 542de38b system.put_images%s
-D s-secsta.ads		20210427100012 9b3ab94b system.secondary_stack%s
-D s-soflin.ads		20210427100012 a7318a92 system.soft_links%s
-D s-stache.ads		20210427100012 a37c21ec system.stack_checking%s
-D s-stalib.ads		20210427100012 0f2d51ff system.standard_library%s
-D s-stalib.adb		20210427100012 977290bf system.standard_library%b
-D s-stoele.ads		20210427100012 2dc34a04 system.storage_elements%s
-D s-stoele.adb		20210427100012 ed88f8fb system.storage_elements%b
-D s-stopoo.ads		20210427100012 e9fa2dd8 system.storage_pools%s
-D s-stposu.ads		20210427100012 e251976f system.storage_pools.subpools%s
-D s-stratt.ads		20210427100012 7bdda3fa system.stream_attributes%s
-D s-string.ads		20210427100012 8fe54fb7 system.strings%s
-D s-ststop.ads		20210427100012 5fbf1b38 system.strings.stream_ops%s
-D s-traent.ads		20210427100012 26a8d361 system.traceback_entries%s
-D s-unstyp.ads		20210427100012 eea7525d system.unsigned_types%s
-D s-wchcon.ads		20210427100012 1b7d22d2 system.wch_con%s
-D unchconv.ads		20210427100012 ca2f9e18 unchecked_conversion%s
+D ada.ads		20210520051130 76789da1 ada%s
+D a-charac.ads		20210520051127 2d3ec45b ada.characters%s
+D a-chlat1.ads		20210520051127 66457d31 ada.characters.latin_1%s
+D a-contai.ads		20210520051127 61e5e089 ada.containers%s
+D a-cdlili.ads		20210520051127 ad05d077 ada.containers.doubly_linked_lists%s
+D a-cdlili.adb		20210520051127 e29ee816 ada.containers.doubly_linked_lists%b
+D a-conhel.ads		20210520051127 20298884 ada.containers.helpers%s
+D a-conhel.adb		20210520051127 fe7a6827 ada.containers.helpers%b
+D a-csquin.ads		20210520051127 8c71856d ada.containers.synchronized_queue_interfaces%s
+D a-cusyqu.ads		20210520051127 c768ec18 ada.containers.unbounded_synchronized_queues%s
+D a-cusyqu.adb		20210520051127 bdf5fca2 ada.containers.unbounded_synchronized_queues%b
+D a-except.ads		20210520051127 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051127 bf4f806b ada.finalization%s
+D a-ioexce.ads		20210520051127 e4a01f64 ada.io_exceptions%s
+D a-iteint.ads		20210520051127 49a8bee2 ada.iterator_interfaces%s
+D a-stream.ads		20210520051128 119b8fb3 ada.streams%s
+D a-string.ads		20210520051128 90ac6797 ada.strings%s
+D a-strmap.ads		20210520051128 5a88892a ada.strings.maps%s
+D a-sttebu.ads		20210520051128 18209c64 ada.strings.text_buffers%s
+D a-strunb.ads		20210520051128 03325227 ada.strings.unbounded%s
+D a-stuten.ads		20210520051128 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
+D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20210520051129 c3a8ac65 ada.unchecked_deallocation%s
+D graph.ads		20211103004806 a48b21ed graph%s
+D graph.adb		20211103005300 e1fdb652 graph%b
+D interfac.ads		20210520051131 edec285f interfaces%s
+D i-c.ads		20210520051131 d9beded9 interfaces.c%s
+D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
+D system.ads		20210520051134 a2da961d system%s
+D s-atacco.ads		20210520051131 4c36d12f system.address_to_access_conversions%s
+D s-atocou.ads		20210520051131 b45c2d8d system.atomic_counters%s
+D s-atocou.adb		20210520051131 b65612c0 system.atomic_counters%b
+D s-conca2.ads		20210520051131 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20210520051131 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051131 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051131 078245e4 system.file_control_block%s
+D s-finmas.ads		20210520051131 1ab4dba8 system.finalization_masters%s
+D s-finroo.ads		20210520051131 4ff27390 system.finalization_root%s
+D s-linux.ads		20210520051126 ed0b8aee system.linux%s
+D s-memory.ads		20210520051132 597d6634 system.memory%s
+D s-multip.ads		20210520051132 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20210520095157 e3a42aec system.os_constants%s
+D s-osinte.ads		20210520051126 222ac181 system.os_interface%s
+D s-parame.ads		20210520051133 4752c4cb system.parameters%s
+D s-pooglo.ads		20210520051133 ede33ef8 system.pool_global%s
+D s-putima.ads		20210520051133 4e095881 system.put_images%s
+D s-secsta.ads		20210520051133 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051133 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051133 a37c21ec system.stack_checking%s
+D s-stausa.ads		20210520051133 017a0a05 system.stack_usage%s
+D s-stalib.ads		20210520051133 472fbca8 system.standard_library%s
+D s-stalib.adb		20210520051133 977290bf system.standard_library%b
+D s-stoele.ads		20210520051133 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051133 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20210520051133 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20210520051133 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20210520051133 7bdda3fa system.stream_attributes%s
+D s-string.ads		20210520051133 8fe54fb7 system.strings%s
+D s-ststop.ads		20210520051133 5fbf1b38 system.strings.stream_ops%s
+D s-tasinf.ads		20210520051126 2b3f8252 system.task_info%s
+D s-taspri.ads		20210520051126 4ec891e7 system.task_primitives%s
+D s-taskin.ads		20210520051126 88fba9ad system.tasking%s
+D s-taprob.ads		20210520051126 acd6094d system.tasking.protected_objects%s
+D s-tpoben.ads		20210520051126 60ad3dae system.tasking.protected_objects.entries%s
+D s-tpobop.ads		20210520051126 5f548bb3 system.tasking.protected_objects.operations%s
+D s-traent.ads		20210520051133 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051133 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
+D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
 G a e
-G c Z s s [empty graph__unbounded_string_list 69 13 23_7]
-G c Z s s [has_element graph__unbounded_string_list 73 13 23_7]
-G c Z s s [Oeq graph__unbounded_string_list 78 13 23_7]
-G c Z s s [length graph__unbounded_string_list 80 13 23_7]
-G c Z s s [is_empty graph__unbounded_string_list 82 13 23_7]
-G c Z s s [clear graph__unbounded_string_list 84 14 23_7]
-G c Z s s [element graph__unbounded_string_list 86 13 23_7]
-G c Z s s [replace_element graph__unbounded_string_list 88 14 23_7]
-G c Z s s [query_element graph__unbounded_string_list 93 14 23_7]
-G c Z s s [update_element graph__unbounded_string_list 97 14 23_7]
-G c Z s s [constant_reference graph__unbounded_string_list 112 13 23_7]
-G c Z s s [reference graph__unbounded_string_list 117 13 23_7]
-G c Z s s [assign graph__unbounded_string_list 122 14 23_7]
-G c Z s s [copy graph__unbounded_string_list 124 13 23_7]
-G c Z s s [move graph__unbounded_string_list 126 14 23_7]
-G c Z s s [insert graph__unbounded_string_list 130 14 23_7]
-G c Z s s [insert graph__unbounded_string_list 136 14 23_7]
-G c Z s s [insert graph__unbounded_string_list 143 14 23_7]
-G c Z s s [prepend graph__unbounded_string_list 149 14 23_7]
-G c Z s s [append graph__unbounded_string_list 154 14 23_7]
-G c Z s s [append graph__unbounded_string_list 159 14 23_7]
-G c Z s s [delete graph__unbounded_string_list 163 14 23_7]
-G c Z s s [delete_first graph__unbounded_string_list 168 14 23_7]
-G c Z s s [delete_last graph__unbounded_string_list 172 14 23_7]
-G c Z s s [reverse_elements graph__unbounded_string_list 176 14 23_7]
-G c Z s s [iterate graph__unbounded_string_list 178 13 23_7]
-G c Z s s [iterate graph__unbounded_string_list 181 13 23_7]
-G c Z s s [swap graph__unbounded_string_list 184 14 23_7]
-G c Z s s [swap_links graph__unbounded_string_list 188 14 23_7]
-G c Z s s [splice graph__unbounded_string_list 192 14 23_7]
-G c Z s s [splice graph__unbounded_string_list 197 14 23_7]
-G c Z s s [splice graph__unbounded_string_list 203 14 23_7]
-G c Z s s [first graph__unbounded_string_list 208 13 23_7]
-G c Z s s [first_element graph__unbounded_string_list 210 13 23_7]
-G c Z s s [last graph__unbounded_string_list 212 13 23_7]
-G c Z s s [last_element graph__unbounded_string_list 214 13 23_7]
-G c Z s s [next graph__unbounded_string_list 216 13 23_7]
-G c Z s s [next graph__unbounded_string_list 218 14 23_7]
-G c Z s s [previous graph__unbounded_string_list 220 13 23_7]
-G c Z s s [previous graph__unbounded_string_list 222 14 23_7]
-G c Z s s [find graph__unbounded_string_list 224 13 23_7]
-G c Z s s [reverse_find graph__unbounded_string_list 229 13 23_7]
-G c Z s s [contains graph__unbounded_string_list 234 13 23_7]
-G c Z s s [iterate graph__unbounded_string_list 238 14 23_7]
-G c Z s s [reverse_iterate graph__unbounded_string_list 242 14 23_7]
-G c Z s s [adjust graph__unbounded_string_list__implementation 90 28 264_4_23_7]
-G c Z s s [finalize graph__unbounded_string_list__implementation 93 28 264_4_23_7]
-G c Z s s [zero_counts graph__unbounded_string_list__implementation 96 17 264_4_23_7]
-G c Z s s [busy graph__unbounded_string_list__implementation 100 17 264_4_23_7]
-G c Z s s [unbusy graph__unbounded_string_list__implementation 104 17 264_4_23_7]
-G c Z s s [lock graph__unbounded_string_list__implementation 108 17 264_4_23_7]
-G c Z s s [unlock graph__unbounded_string_list__implementation 112 17 264_4_23_7]
-G c Z s s [tc_check graph__unbounded_string_list__implementation 116 17 264_4_23_7]
-G c Z s s [te_check graph__unbounded_string_list__implementation 120 17 264_4_23_7]
-G c Z s s [initialize graph__unbounded_string_list__implementation 139 28 264_4_23_7]
-G c Z s s [finalize graph__unbounded_string_list__implementation 140 28 264_4_23_7]
-G c Z s s [initialize graph__unbounded_string_list__implementation 145 28 264_4_23_7]
-G c Z s s [finalize graph__unbounded_string_list__implementation 146 28 264_4_23_7]
-G c Z s s [reference_control_typeDA graph__unbounded_string_list__implementation 84 12 264_4_23_7]
-G c Z s s [reference_control_typeDF graph__unbounded_string_list__implementation 84 12 264_4_23_7]
-G c Z s s [reference_control_typeIP graph__unbounded_string_list__implementation 84 12 264_4_23_7]
-G c Z s s [with_busyDF graph__unbounded_string_list__implementation 136 12 264_4_23_7]
-G c Z s s [with_busyIP graph__unbounded_string_list__implementation 136 12 264_4_23_7]
-G c Z s s [with_lockDF graph__unbounded_string_list__implementation 142 12 264_4_23_7]
-G c Z s s [with_lockIP graph__unbounded_string_list__implementation 142 12 264_4_23_7]
-G c Z s s [put_image graph__unbounded_string_list 288 14 23_7]
-G c Z s s [adjust graph__unbounded_string_list 291 25 23_7]
-G c Z s s [read graph__unbounded_string_list 295 14 23_7]
-G c Z s s [write graph__unbounded_string_list 301 14 23_7]
-G c Z s s [read graph__unbounded_string_list 316 14 23_7]
-G c Z s s [write graph__unbounded_string_list 322 14 23_7]
-G c Z s s [write graph__unbounded_string_list 341 14 23_7]
-G c Z s s [read graph__unbounded_string_list 347 14 23_7]
-G c Z s s [write graph__unbounded_string_list 363 14 23_7]
-G c Z s s [read graph__unbounded_string_list 369 14 23_7]
-G c Z s s [pseudo_reference graph__unbounded_string_list 380 13 23_7]
-G c Z s s [get_element_access graph__unbounded_string_list 390 13 23_7]
-G c Z s s [listDA graph__unbounded_string_list 280 9 23_7]
-G c Z s s [listDF graph__unbounded_string_list 280 9 23_7]
-G c Z s s [listIP graph__unbounded_string_list 280 9 23_7]
-G c Z s s [cursorIP graph__unbounded_string_list 310 9 23_7]
-G c Z s s [constant_reference_typeDI graph__unbounded_string_list 331 9 23_7]
-G c Z s s [constant_reference_typeDA graph__unbounded_string_list 331 9 23_7]
-G c Z s s [constant_reference_typeDF graph__unbounded_string_list 331 9 23_7]
-G c Z s s [constant_reference_typeIP graph__unbounded_string_list 331 9 23_7]
-G c Z s s [reference_typeDI graph__unbounded_string_list 353 9 23_7]
-G c Z s s [reference_typeDA graph__unbounded_string_list 353 9 23_7]
-G c Z s s [reference_typeDF graph__unbounded_string_list 353 9 23_7]
-G c Z s s [reference_typeIP graph__unbounded_string_list 353 9 23_7]
-G c Z s s [finalize graph__unbounded_string_list 407 25 23_7]
-G c Z s s [first graph__unbounded_string_list 409 24 23_7]
-G c Z s s [last graph__unbounded_string_list 410 24 23_7]
-G c Z s s [next graph__unbounded_string_list 412 24 23_7]
-G c Z s s [previous graph__unbounded_string_list 416 24 23_7]
-G c Z s s [node_typeDI graph__unbounded_string_list 270 9 23_7]
-G c Z s s [node_typeDF graph__unbounded_string_list 270 9 23_7]
-G c Z s s [node_typeIP graph__unbounded_string_list 270 9 23_7]
-G c Z s s [iteratorDF graph__unbounded_string_list 399 9 23_7]
-G c Z s s [iteratorIP graph__unbounded_string_list 399 9 23_7]
-G c Z s s [free graph__unbounded_string_list 47 14 23_7]
-G c Z s s [insert_internal graph__unbounded_string_list 49 14 23_7]
-G c Z s s [splice_internal graph__unbounded_string_list 54 14 23_7]
-G c Z s s [splice_internal graph__unbounded_string_list 59 14 23_7]
-G c Z s s [vet graph__unbounded_string_list 65 13 23_7]
-G c Z s s [empty graph__list_list 69 13 28_7]
-G c Z s s [has_element graph__list_list 73 13 28_7]
-G c Z s s [Oeq graph__list_list 78 13 28_7]
-G c Z s s [length graph__list_list 80 13 28_7]
-G c Z s s [is_empty graph__list_list 82 13 28_7]
-G c Z s s [clear graph__list_list 84 14 28_7]
-G c Z s s [element graph__list_list 86 13 28_7]
-G c Z s s [replace_element graph__list_list 88 14 28_7]
-G c Z s s [query_element graph__list_list 93 14 28_7]
-G c Z s s [update_element graph__list_list 97 14 28_7]
-G c Z s s [constant_reference graph__list_list 112 13 28_7]
-G c Z s s [reference graph__list_list 117 13 28_7]
-G c Z s s [assign graph__list_list 122 14 28_7]
-G c Z s s [copy graph__list_list 124 13 28_7]
-G c Z s s [move graph__list_list 126 14 28_7]
-G c Z s s [insert graph__list_list 130 14 28_7]
-G c Z s s [insert graph__list_list 136 14 28_7]
-G c Z s s [insert graph__list_list 143 14 28_7]
-G c Z s s [prepend graph__list_list 149 14 28_7]
-G c Z s s [append graph__list_list 154 14 28_7]
-G c Z s s [append graph__list_list 159 14 28_7]
-G c Z s s [delete graph__list_list 163 14 28_7]
-G c Z s s [delete_first graph__list_list 168 14 28_7]
-G c Z s s [delete_last graph__list_list 172 14 28_7]
-G c Z s s [reverse_elements graph__list_list 176 14 28_7]
-G c Z s s [iterate graph__list_list 178 13 28_7]
-G c Z s s [iterate graph__list_list 181 13 28_7]
-G c Z s s [swap graph__list_list 184 14 28_7]
-G c Z s s [swap_links graph__list_list 188 14 28_7]
-G c Z s s [splice graph__list_list 192 14 28_7]
-G c Z s s [splice graph__list_list 197 14 28_7]
-G c Z s s [splice graph__list_list 203 14 28_7]
-G c Z s s [first graph__list_list 208 13 28_7]
-G c Z s s [first_element graph__list_list 210 13 28_7]
-G c Z s s [last graph__list_list 212 13 28_7]
-G c Z s s [last_element graph__list_list 214 13 28_7]
-G c Z s s [next graph__list_list 216 13 28_7]
-G c Z s s [next graph__list_list 218 14 28_7]
-G c Z s s [previous graph__list_list 220 13 28_7]
-G c Z s s [previous graph__list_list 222 14 28_7]
-G c Z s s [find graph__list_list 224 13 28_7]
-G c Z s s [reverse_find graph__list_list 229 13 28_7]
-G c Z s s [contains graph__list_list 234 13 28_7]
-G c Z s s [iterate graph__list_list 238 14 28_7]
-G c Z s s [reverse_iterate graph__list_list 242 14 28_7]
-G c Z s s [adjust graph__list_list__implementation 90 28 264_4_28_7]
-G c Z s s [finalize graph__list_list__implementation 93 28 264_4_28_7]
-G c Z s s [zero_counts graph__list_list__implementation 96 17 264_4_28_7]
-G c Z s s [busy graph__list_list__implementation 100 17 264_4_28_7]
-G c Z s s [unbusy graph__list_list__implementation 104 17 264_4_28_7]
-G c Z s s [lock graph__list_list__implementation 108 17 264_4_28_7]
-G c Z s s [unlock graph__list_list__implementation 112 17 264_4_28_7]
-G c Z s s [tc_check graph__list_list__implementation 116 17 264_4_28_7]
-G c Z s s [te_check graph__list_list__implementation 120 17 264_4_28_7]
-G c Z s s [initialize graph__list_list__implementation 139 28 264_4_28_7]
-G c Z s s [finalize graph__list_list__implementation 140 28 264_4_28_7]
-G c Z s s [initialize graph__list_list__implementation 145 28 264_4_28_7]
-G c Z s s [finalize graph__list_list__implementation 146 28 264_4_28_7]
-G c Z s s [reference_control_typeDA graph__list_list__implementation 84 12 264_4_28_7]
-G c Z s s [reference_control_typeDF graph__list_list__implementation 84 12 264_4_28_7]
-G c Z s s [reference_control_typeIP graph__list_list__implementation 84 12 264_4_28_7]
-G c Z s s [with_busyDF graph__list_list__implementation 136 12 264_4_28_7]
-G c Z s s [with_busyIP graph__list_list__implementation 136 12 264_4_28_7]
-G c Z s s [with_lockDF graph__list_list__implementation 142 12 264_4_28_7]
-G c Z s s [with_lockIP graph__list_list__implementation 142 12 264_4_28_7]
-G c Z s s [put_image graph__list_list 288 14 28_7]
-G c Z s s [adjust graph__list_list 291 25 28_7]
-G c Z s s [read graph__list_list 295 14 28_7]
-G c Z s s [write graph__list_list 301 14 28_7]
-G c Z s s [read graph__list_list 316 14 28_7]
-G c Z s s [write graph__list_list 322 14 28_7]
-G c Z s s [write graph__list_list 341 14 28_7]
-G c Z s s [read graph__list_list 347 14 28_7]
-G c Z s s [write graph__list_list 363 14 28_7]
-G c Z s s [read graph__list_list 369 14 28_7]
-G c Z s s [pseudo_reference graph__list_list 380 13 28_7]
-G c Z s s [get_element_access graph__list_list 390 13 28_7]
-G c Z s s [listDA graph__list_list 280 9 28_7]
-G c Z s s [listDF graph__list_list 280 9 28_7]
-G c Z s s [listIP graph__list_list 280 9 28_7]
-G c Z s s [cursorIP graph__list_list 310 9 28_7]
-G c Z s s [constant_reference_typeDI graph__list_list 331 9 28_7]
-G c Z s s [constant_reference_typeDA graph__list_list 331 9 28_7]
-G c Z s s [constant_reference_typeDF graph__list_list 331 9 28_7]
-G c Z s s [constant_reference_typeIP graph__list_list 331 9 28_7]
-G c Z s s [reference_typeDI graph__list_list 353 9 28_7]
-G c Z s s [reference_typeDA graph__list_list 353 9 28_7]
-G c Z s s [reference_typeDF graph__list_list 353 9 28_7]
-G c Z s s [reference_typeIP graph__list_list 353 9 28_7]
-G c Z s s [finalize graph__list_list 407 25 28_7]
-G c Z s s [first graph__list_list 409 24 28_7]
-G c Z s s [last graph__list_list 410 24 28_7]
-G c Z s s [next graph__list_list 412 24 28_7]
-G c Z s s [previous graph__list_list 416 24 28_7]
-G c Z s s [node_typeDI graph__list_list 270 9 28_7]
-G c Z s s [node_typeDF graph__list_list 270 9 28_7]
-G c Z s s [node_typeIP graph__list_list 270 9 28_7]
-G c Z s s [iteratorDF graph__list_list 399 9 28_7]
-G c Z s s [iteratorIP graph__list_list 399 9 28_7]
-G c Z s s [free graph__list_list 47 14 28_7]
-G c Z s s [insert_internal graph__list_list 49 14 28_7]
-G c Z s s [splice_internal graph__list_list 54 14 28_7]
-G c Z s s [splice_internal graph__list_list 59 14 28_7]
-G c Z s s [vet graph__list_list 65 13 28_7]
-G c Z s b [insertlink graph 39 17 none]
-G c Z s b [haslink graph 42 16 none]
-G c Z s b [printgraph graph 49 17 none]
->>>>>>> 93e556e68ed8d5da3cd81899c4d6731c41571d8c
+G c Z s s [empty graph__unbounded_string_list 70 13 25_7]
+G c Z s s [has_element graph__unbounded_string_list 75 13 25_7]
+G c Z s s [Oeq graph__unbounded_string_list 80 13 25_7]
+G c Z s s [length graph__unbounded_string_list 82 13 25_7]
+G c Z s s [is_empty graph__unbounded_string_list 84 13 25_7]
+G c Z s s [clear graph__unbounded_string_list 86 14 25_7]
+G c Z s s [element graph__unbounded_string_list 88 13 25_7]
+G c Z s s [replace_element graph__unbounded_string_list 90 14 25_7]
+G c Z s s [query_element graph__unbounded_string_list 95 14 25_7]
+G c Z s s [update_element graph__unbounded_string_list 99 14 25_7]
+G c Z s s [constant_reference graph__unbounded_string_list 114 13 25_7]
+G c Z s s [reference graph__unbounded_string_list 119 13 25_7]
+G c Z s s [assign graph__unbounded_string_list 124 14 25_7]
+G c Z s s [copy graph__unbounded_string_list 126 13 25_7]
+G c Z s s [move graph__unbounded_string_list 128 14 25_7]
+G c Z s s [insert graph__unbounded_string_list 132 14 25_7]
+G c Z s s [insert graph__unbounded_string_list 138 14 25_7]
+G c Z s s [insert graph__unbounded_string_list 145 14 25_7]
+G c Z s s [prepend graph__unbounded_string_list 151 14 25_7]
+G c Z s s [append graph__unbounded_string_list 156 14 25_7]
+G c Z s s [append graph__unbounded_string_list 161 14 25_7]
+G c Z s s [delete graph__unbounded_string_list 165 14 25_7]
+G c Z s s [delete_first graph__unbounded_string_list 170 14 25_7]
+G c Z s s [delete_last graph__unbounded_string_list 174 14 25_7]
+G c Z s s [reverse_elements graph__unbounded_string_list 178 14 25_7]
+G c Z s s [iterate graph__unbounded_string_list 180 13 25_7]
+G c Z s s [iterate graph__unbounded_string_list 183 13 25_7]
+G c Z s s [swap graph__unbounded_string_list 186 14 25_7]
+G c Z s s [swap_links graph__unbounded_string_list 190 14 25_7]
+G c Z s s [splice graph__unbounded_string_list 194 14 25_7]
+G c Z s s [splice graph__unbounded_string_list 199 14 25_7]
+G c Z s s [splice graph__unbounded_string_list 205 14 25_7]
+G c Z s s [first graph__unbounded_string_list 210 13 25_7]
+G c Z s s [first_element graph__unbounded_string_list 212 13 25_7]
+G c Z s s [last graph__unbounded_string_list 214 13 25_7]
+G c Z s s [last_element graph__unbounded_string_list 216 13 25_7]
+G c Z s s [next graph__unbounded_string_list 218 13 25_7]
+G c Z s s [next graph__unbounded_string_list 220 14 25_7]
+G c Z s s [previous graph__unbounded_string_list 222 13 25_7]
+G c Z s s [previous graph__unbounded_string_list 224 14 25_7]
+G c Z s s [find graph__unbounded_string_list 226 13 25_7]
+G c Z s s [reverse_find graph__unbounded_string_list 231 13 25_7]
+G c Z s s [contains graph__unbounded_string_list 236 13 25_7]
+G c Z s s [iterate graph__unbounded_string_list 240 14 25_7]
+G c Z s s [reverse_iterate graph__unbounded_string_list 244 14 25_7]
+G c Z s s [adjust graph__unbounded_string_list__implementation 90 28 266_4_25_7]
+G c Z s s [finalize graph__unbounded_string_list__implementation 93 28 266_4_25_7]
+G c Z s s [zero_counts graph__unbounded_string_list__implementation 96 17 266_4_25_7]
+G c Z s s [busy graph__unbounded_string_list__implementation 100 17 266_4_25_7]
+G c Z s s [unbusy graph__unbounded_string_list__implementation 104 17 266_4_25_7]
+G c Z s s [lock graph__unbounded_string_list__implementation 108 17 266_4_25_7]
+G c Z s s [unlock graph__unbounded_string_list__implementation 112 17 266_4_25_7]
+G c Z s s [tc_check graph__unbounded_string_list__implementation 116 17 266_4_25_7]
+G c Z s s [te_check graph__unbounded_string_list__implementation 120 17 266_4_25_7]
+G c Z s s [initialize graph__unbounded_string_list__implementation 139 28 266_4_25_7]
+G c Z s s [finalize graph__unbounded_string_list__implementation 140 28 266_4_25_7]
+G c Z s s [initialize graph__unbounded_string_list__implementation 145 28 266_4_25_7]
+G c Z s s [finalize graph__unbounded_string_list__implementation 146 28 266_4_25_7]
+G c Z s s [reference_control_typeDA graph__unbounded_string_list__implementation 84 12 266_4_25_7]
+G c Z s s [reference_control_typeDF graph__unbounded_string_list__implementation 84 12 266_4_25_7]
+G c Z s s [reference_control_typeIP graph__unbounded_string_list__implementation 84 12 266_4_25_7]
+G c Z s s [with_busyDF graph__unbounded_string_list__implementation 136 12 266_4_25_7]
+G c Z s s [with_busyIP graph__unbounded_string_list__implementation 136 12 266_4_25_7]
+G c Z s s [with_lockDF graph__unbounded_string_list__implementation 142 12 266_4_25_7]
+G c Z s s [with_lockIP graph__unbounded_string_list__implementation 142 12 266_4_25_7]
+G c Z s s [put_image graph__unbounded_string_list 290 14 25_7]
+G c Z s s [adjust graph__unbounded_string_list 293 25 25_7]
+G c Z s s [read graph__unbounded_string_list 297 14 25_7]
+G c Z s s [write graph__unbounded_string_list 303 14 25_7]
+G c Z s s [read graph__unbounded_string_list 318 14 25_7]
+G c Z s s [write graph__unbounded_string_list 324 14 25_7]
+G c Z s s [write graph__unbounded_string_list 343 14 25_7]
+G c Z s s [read graph__unbounded_string_list 349 14 25_7]
+G c Z s s [write graph__unbounded_string_list 365 14 25_7]
+G c Z s s [read graph__unbounded_string_list 371 14 25_7]
+G c Z s s [pseudo_reference graph__unbounded_string_list 382 13 25_7]
+G c Z s s [get_element_access graph__unbounded_string_list 392 13 25_7]
+G c Z s s [listDA graph__unbounded_string_list 282 9 25_7]
+G c Z s s [listDF graph__unbounded_string_list 282 9 25_7]
+G c Z s s [listIP graph__unbounded_string_list 282 9 25_7]
+G c Z s s [cursorIP graph__unbounded_string_list 312 9 25_7]
+G c Z s s [constant_reference_typeDI graph__unbounded_string_list 333 9 25_7]
+G c Z s s [constant_reference_typeDA graph__unbounded_string_list 333 9 25_7]
+G c Z s s [constant_reference_typeDF graph__unbounded_string_list 333 9 25_7]
+G c Z s s [constant_reference_typeIP graph__unbounded_string_list 333 9 25_7]
+G c Z s s [reference_typeDI graph__unbounded_string_list 355 9 25_7]
+G c Z s s [reference_typeDA graph__unbounded_string_list 355 9 25_7]
+G c Z s s [reference_typeDF graph__unbounded_string_list 355 9 25_7]
+G c Z s s [reference_typeIP graph__unbounded_string_list 355 9 25_7]
+G c Z s s [finalize graph__unbounded_string_list 409 25 25_7]
+G c Z s s [first graph__unbounded_string_list 411 24 25_7]
+G c Z s s [last graph__unbounded_string_list 412 24 25_7]
+G c Z s s [next graph__unbounded_string_list 414 24 25_7]
+G c Z s s [previous graph__unbounded_string_list 418 24 25_7]
+G c Z s s [node_typeDI graph__unbounded_string_list 272 9 25_7]
+G c Z s s [node_typeDF graph__unbounded_string_list 272 9 25_7]
+G c Z s s [node_typeIP graph__unbounded_string_list 272 9 25_7]
+G c Z s s [iteratorDF graph__unbounded_string_list 401 9 25_7]
+G c Z s s [iteratorIP graph__unbounded_string_list 401 9 25_7]
+G c Z s s [free graph__unbounded_string_list 47 14 25_7]
+G c Z s s [insert_internal graph__unbounded_string_list 49 14 25_7]
+G c Z s s [splice_internal graph__unbounded_string_list 54 14 25_7]
+G c Z s s [splice_internal graph__unbounded_string_list 59 14 25_7]
+G c Z s s [vet graph__unbounded_string_list 65 13 25_7]
+G c Z s s [empty graph__list_list 70 13 30_7]
+G c Z s s [has_element graph__list_list 75 13 30_7]
+G c Z s s [Oeq graph__list_list 80 13 30_7]
+G c Z s s [length graph__list_list 82 13 30_7]
+G c Z s s [is_empty graph__list_list 84 13 30_7]
+G c Z s s [clear graph__list_list 86 14 30_7]
+G c Z s s [element graph__list_list 88 13 30_7]
+G c Z s s [replace_element graph__list_list 90 14 30_7]
+G c Z s s [query_element graph__list_list 95 14 30_7]
+G c Z s s [update_element graph__list_list 99 14 30_7]
+G c Z s s [constant_reference graph__list_list 114 13 30_7]
+G c Z s s [reference graph__list_list 119 13 30_7]
+G c Z s s [assign graph__list_list 124 14 30_7]
+G c Z s s [copy graph__list_list 126 13 30_7]
+G c Z s s [move graph__list_list 128 14 30_7]
+G c Z s s [insert graph__list_list 132 14 30_7]
+G c Z s s [insert graph__list_list 138 14 30_7]
+G c Z s s [insert graph__list_list 145 14 30_7]
+G c Z s s [prepend graph__list_list 151 14 30_7]
+G c Z s s [append graph__list_list 156 14 30_7]
+G c Z s s [append graph__list_list 161 14 30_7]
+G c Z s s [delete graph__list_list 165 14 30_7]
+G c Z s s [delete_first graph__list_list 170 14 30_7]
+G c Z s s [delete_last graph__list_list 174 14 30_7]
+G c Z s s [reverse_elements graph__list_list 178 14 30_7]
+G c Z s s [iterate graph__list_list 180 13 30_7]
+G c Z s s [iterate graph__list_list 183 13 30_7]
+G c Z s s [swap graph__list_list 186 14 30_7]
+G c Z s s [swap_links graph__list_list 190 14 30_7]
+G c Z s s [splice graph__list_list 194 14 30_7]
+G c Z s s [splice graph__list_list 199 14 30_7]
+G c Z s s [splice graph__list_list 205 14 30_7]
+G c Z s s [first graph__list_list 210 13 30_7]
+G c Z s s [first_element graph__list_list 212 13 30_7]
+G c Z s s [last graph__list_list 214 13 30_7]
+G c Z s s [last_element graph__list_list 216 13 30_7]
+G c Z s s [next graph__list_list 218 13 30_7]
+G c Z s s [next graph__list_list 220 14 30_7]
+G c Z s s [previous graph__list_list 222 13 30_7]
+G c Z s s [previous graph__list_list 224 14 30_7]
+G c Z s s [find graph__list_list 226 13 30_7]
+G c Z s s [reverse_find graph__list_list 231 13 30_7]
+G c Z s s [contains graph__list_list 236 13 30_7]
+G c Z s s [iterate graph__list_list 240 14 30_7]
+G c Z s s [reverse_iterate graph__list_list 244 14 30_7]
+G c Z s s [adjust graph__list_list__implementation 90 28 266_4_30_7]
+G c Z s s [finalize graph__list_list__implementation 93 28 266_4_30_7]
+G c Z s s [zero_counts graph__list_list__implementation 96 17 266_4_30_7]
+G c Z s s [busy graph__list_list__implementation 100 17 266_4_30_7]
+G c Z s s [unbusy graph__list_list__implementation 104 17 266_4_30_7]
+G c Z s s [lock graph__list_list__implementation 108 17 266_4_30_7]
+G c Z s s [unlock graph__list_list__implementation 112 17 266_4_30_7]
+G c Z s s [tc_check graph__list_list__implementation 116 17 266_4_30_7]
+G c Z s s [te_check graph__list_list__implementation 120 17 266_4_30_7]
+G c Z s s [initialize graph__list_list__implementation 139 28 266_4_30_7]
+G c Z s s [finalize graph__list_list__implementation 140 28 266_4_30_7]
+G c Z s s [initialize graph__list_list__implementation 145 28 266_4_30_7]
+G c Z s s [finalize graph__list_list__implementation 146 28 266_4_30_7]
+G c Z s s [reference_control_typeDA graph__list_list__implementation 84 12 266_4_30_7]
+G c Z s s [reference_control_typeDF graph__list_list__implementation 84 12 266_4_30_7]
+G c Z s s [reference_control_typeIP graph__list_list__implementation 84 12 266_4_30_7]
+G c Z s s [with_busyDF graph__list_list__implementation 136 12 266_4_30_7]
+G c Z s s [with_busyIP graph__list_list__implementation 136 12 266_4_30_7]
+G c Z s s [with_lockDF graph__list_list__implementation 142 12 266_4_30_7]
+G c Z s s [with_lockIP graph__list_list__implementation 142 12 266_4_30_7]
+G c Z s s [put_image graph__list_list 290 14 30_7]
+G c Z s s [adjust graph__list_list 293 25 30_7]
+G c Z s s [read graph__list_list 297 14 30_7]
+G c Z s s [write graph__list_list 303 14 30_7]
+G c Z s s [read graph__list_list 318 14 30_7]
+G c Z s s [write graph__list_list 324 14 30_7]
+G c Z s s [write graph__list_list 343 14 30_7]
+G c Z s s [read graph__list_list 349 14 30_7]
+G c Z s s [write graph__list_list 365 14 30_7]
+G c Z s s [read graph__list_list 371 14 30_7]
+G c Z s s [pseudo_reference graph__list_list 382 13 30_7]
+G c Z s s [get_element_access graph__list_list 392 13 30_7]
+G c Z s s [listDA graph__list_list 282 9 30_7]
+G c Z s s [listDF graph__list_list 282 9 30_7]
+G c Z s s [listIP graph__list_list 282 9 30_7]
+G c Z s s [cursorIP graph__list_list 312 9 30_7]
+G c Z s s [constant_reference_typeDI graph__list_list 333 9 30_7]
+G c Z s s [constant_reference_typeDA graph__list_list 333 9 30_7]
+G c Z s s [constant_reference_typeDF graph__list_list 333 9 30_7]
+G c Z s s [constant_reference_typeIP graph__list_list 333 9 30_7]
+G c Z s s [reference_typeDI graph__list_list 355 9 30_7]
+G c Z s s [reference_typeDA graph__list_list 355 9 30_7]
+G c Z s s [reference_typeDF graph__list_list 355 9 30_7]
+G c Z s s [reference_typeIP graph__list_list 355 9 30_7]
+G c Z s s [finalize graph__list_list 409 25 30_7]
+G c Z s s [first graph__list_list 411 24 30_7]
+G c Z s s [last graph__list_list 412 24 30_7]
+G c Z s s [next graph__list_list 414 24 30_7]
+G c Z s s [previous graph__list_list 418 24 30_7]
+G c Z s s [node_typeDI graph__list_list 272 9 30_7]
+G c Z s s [node_typeDF graph__list_list 272 9 30_7]
+G c Z s s [node_typeIP graph__list_list 272 9 30_7]
+G c Z s s [iteratorDF graph__list_list 401 9 30_7]
+G c Z s s [iteratorIP graph__list_list 401 9 30_7]
+G c Z s s [free graph__list_list 47 14 30_7]
+G c Z s s [insert_internal graph__list_list 49 14 30_7]
+G c Z s s [splice_internal graph__list_list 54 14 30_7]
+G c Z s s [splice_internal graph__list_list 59 14 30_7]
+G c Z s s [vet graph__list_list 65 13 30_7]
+G c Z s s [enqueue graph__unbounded_string_queues__implementation 56 17 42_7]
+G c Z s s [dequeue graph__unbounded_string_queues__implementation 60 17 42_7]
+G c Z s s [length graph__unbounded_string_queues__implementation 64 16 42_7]
+G c Z s s [max_length graph__unbounded_string_queues__implementation 66 16 42_7]
+G c Z s s [finalize graph__unbounded_string_queues__implementation 84 28 42_7]
+G c Z s s [free graph__unbounded_string_queues__implementation 40 17 42_7]
+G c Z s s [enqueue graph__unbounded_string_queues__queue 94 24 42_7]
+G c Z s s [dequeue graph__unbounded_string_queues__queue 96 24 42_7]
+G c Z s s [current_use graph__unbounded_string_queues__queue 98 27 42_7]
+G c Z s s [peak_use graph__unbounded_string_queues__queue 100 27 42_7]
+G c Z s s [queue__current_useN graph__unbounded_string_queues 98 18 42_7]
+G c Z s s [queue__current_useP graph__unbounded_string_queues 98 18 42_7]
+G c Z s s [queue__peak_useN graph__unbounded_string_queues 100 18 42_7]
+G c Z s s [queue__peak_useP graph__unbounded_string_queues 100 18 42_7]
+G c Z s s [list_typeDF graph__unbounded_string_queues__implementation 78 12 42_7]
+G c Z s s [list_typeIP graph__unbounded_string_queues__implementation 78 12 42_7]
+G c Z s s [node_typeDI graph__unbounded_string_queues__implementation 73 12 42_7]
+G c Z s s [node_typeDF graph__unbounded_string_queues__implementation 73 12 42_7]
+G c Z s s [node_typeIP graph__unbounded_string_queues__implementation 73 12 42_7]
+G c Z s s [queueVDF graph__unbounded_string_queues 88 4 42_7]
+G c Z s s [queueVDI graph__unbounded_string_queues 88 4 42_7]
+G c Z s s [queueVIP graph__unbounded_string_queues 88 4 42_7]
+G c Z s s [P1371sIP graph__unbounded_string_queues 94 18 42_7]
+G c Z s s [P1374sIP graph__unbounded_string_queues 96 18 42_7]
+G c Z s s [queue__current_use graph__unbounded_string_queues 138 7 42_7]
+G c Z s s [queue__peak_use graph__unbounded_string_queues 167 7 42_7]
+G c Z s b [insertlink graph 50 17 none]
+G c Z s b [haslink graph 53 16 none]
+G c Z s b [printgraph graph 60 17 none]
 X 1 ada.ads
-16K9*Ada 20e8 24|9r6 10r6 10r33 11r6 12r6 16r5 25|9r6 12r5
+16K9*Ada 20e8 26|9r6 10r6 10r33 11r6 12r6 16r5 27|9r6 12r5
 X 4 a-contai.ads
-16K13*Containers 24e19 24|9r10 11r10 12r10 16r9
+16K13*Containers 28e19 26|9r10 11r10 12r10 16r9
 X 5 a-cdlili.ads
-46k24*Doubly_Linked_Lists 406e39 24|9w21 26r11 31r11
-51R9*List<13|43R9> 24|31r54[25] 35r28[30] 25|30r45[24|25] 61r45[24|25]
-63r4*Empty_List{51R9[24|30]} 24|35r46[30] 25|45r46[24|25] 65r46[24|25]
-72V14*"="{boolean} 43i19[24|25]
-148U14*Append 25|39s36[24|25] 46s21[24|25] 47s21[24|25] 48s22[24|30] 86s33[24|25]
-200V13*First_Element{19|79R9} 25|37s22[24|25] 78s34[24|25]
-224V13*Contains{boolean} 25|80s54[24|25]
+47k24*Doubly_Linked_Lists 422e39 26|9w21 26r11 31r11
+54R9*List<13|43R9> 26|31r54[25] 35r28[30] 27|30r45[26|25] 61r45[26|25]
+68r4*Empty_List{54R9[26|30]} 26|35r46[30] 27|45r46[26|25] 64r46[26|25]
+80V14*"="{boolean} 44i19[26|25]
+161U14*Append 27|39s36[26|25] 46s21[26|25] 47s21[26|25] 48s22[26|30] 84s33[26|25]
+212V13*First_Element{20|88R9} 27|37s22[26|25] 76s34[26|25]
+236V13*Contains{boolean} 27|78s54[26|25]
 X 9 a-csquin.ads
-35+9 Element_Type 24|39r42
-37k24*Synchronized_Queue_Interfaces 56e49 24|12w21 39r11
+35+9 Element_Type 26|39r42
+37k24*Synchronized_Queue_Interfaces 56e49 26|12w21 39r11
 X 10 a-cusyqu.ads
-39K17 Queue_Interfaces 24|43r42
-44k24*Unbounded_Synchronized_Queues 106e49 24|11w21 43r11
-88W19*Queue<9|40R9[24|38]> 25|60r45[24|42]
-94Y24 Enqueue 25|69s19[24|42] 81s55[24|42]
-96Y24 Dequeue 25|72s25[24|42]
+39K17 Queue_Interfaces 26|43r42
+44k24*Unbounded_Synchronized_Queues 106e49 26|11w21 43r11
+88W19*Queue<9|40R9[26|38]> 27|60r47[26|42]
+94Y24 Enqueue 27|67s19[26|42] 79s55[26|42]
+96Y24 Dequeue 27|70s25[26|42]
 X 15 a-iteint.ads
 24h9 Forward_Iterator
-32h9 Reversible_Iterator<24R9[5|69]>
+32h9 Reversible_Iterator<24R9[5|77]>
 X 17 a-string.ads
-16K13*Strings 35e16 24|10r10 10r37
-<<<<<<< HEAD
-X 19 a-strunb.ads
-76K21*Unbounded 491e26 24|10w18 10r45
-79R9*Unbounded_String<13|43R9> 474e14 24|26r32 39r58 53r37 54r37 25|57r37
-. 58r37 62r20
-94V13*To_Unbounded_String{79R9} 25|39s44 46s29 47s29
-100V13*To_String{string} 25|104s38
-166V14*"="{boolean} 5|43i19 25|74s27 78s61
-170V14*"="{boolean} 25|37s49
-X 21 a-textio.ads
-49K13*Text_IO 471e16 25|9w10 104r25 106r19
-242U14*Put 25|104s33
-263U14*Put_Line 25|106s27
-X 24 graph.ads
-18K9*Graph 62l5 62e10 25|15b14 110l5 110t10
-25K15*Unbounded_String_List[5|46] 27r11 31r32 25|30r23 45r24 61r23 65r24
-30K15*List_List[5|46] 32r11 35r18 35r36
-35r7*TheGraph{5|51R9[30]} 25|35m31 35r31 48m13 48r13 77r43 102r31
+16K13*Strings 35e16 26|10r10 10r37
+X 20 a-strunb.ads
+83K21*Unbounded 765e26 26|10w18 10r45
+88R9*Unbounded_String<13|43R9> 744e15 26|26r32 39r58 53r37 54r37 27|57r37
+. 58r37 62r23
+104V13*To_Unbounded_String{88R9} 27|39s44 46s29 47s29
+117V13*To_String{string} 27|102s38
+239V14*"="{boolean} 5|44i19 27|72s27 76s61
+245V14*"="{boolean} 27|37s49
+X 23 a-textio.ads
+58K13*Text_IO 725e16 27|9w10 102r25 104r19
+463U14*Put 27|102s33
+506U14*Put_Line 27|104s27
+X 26 graph.ads
+18K9*Graph 62l5 62e10 27|15b14 108l5 108t10
+25K15*Unbounded_String_List[5|47] 27r11 31r32 27|30r23 45r24 61r23 64r24
+30K15*List_List[5|47] 32r11 35r18 35r36
+35r7*TheGraph{5|54R9[30]} 27|35m31 35r31 48m13 48r13 75r43 100r31
 38K15*String_queues[9|37] 40r11 43r62
-42K15*Unbounded_String_Queues[10|44] 44r11 25|60r21
-50U17*InsertLink 50>29 51>29 25|27b17 49l11 49t21
-50a29 left_node{string} 25|27b29 37r51 46r50
-51a29 right_node{string} 25|28b29 39r65 47r50
-53V16*HasLink{boolean} 53>25 54>25 25|57b16 90l11 90t18
-53r25 from_node{19|79R9} 25|57b25 69r28
-54r25 to_node{19|79R9} 25|58b25 74r29
-60U17*PrintGraph 25|100b17 108l11 108t21
-X 25 graph.adb
-30r13 NewList{5|51R9[24|25]} 45m13 46m13 46r13 47m13 47r13 48r30
-35r17 every_list{5|51R9[24|25]} 37r37 39r25
-60w13 Queue{10|88W19[24|42]} 69r13 71r37 72r19 81r49
-61r13 Visited{5|51R9[24|25]} 65m13 80r46 86m25 86r25
-62r13 node{19|79R9} 72m34 74r22 78r63 86r41
-77r29 every_list{5|51R9[24|25]} 78r49 79r55
-79r41 every_node{19|79R9} 80r64 81r64
-102r17 every_list{5|51R9[24|25]} 103r40
-103r23 every_element{19|79R9} 104r49
-X 29 system.ads
-=======
-X 17 a-strunb.ads
-83K21*Unbounded 762e26 24|10w18 10r45
-88R9*Unbounded_String<10|43R9> 742e15 24|24r32
-104V13*To_Unbounded_String{88R9} 25|39s44 46s29 47s29
-117V13*To_String{string} 25|96s38
-239V14*"="{boolean} 5|44i19
-245V14*"="{boolean} 25|37s49 69s49 74s45
-X 21 a-textio.ads
-58K13*Text_IO 728e16 25|9w10 96r25 98r19
-466U14*Put 25|96s33
-509U14*Put_Line 25|98s27
-X 24 graph.ads
-16K9*Graph 51l5 51e10 25|15b14 102l5 102t10
-23K15*Unbounded_String_List[5|47] 25r11 29r32 25|30r23 45r24 60r21 62r22
-28K15*List_List[5|47] 30r11 33r18 33r36
-33r7*TheGraph{5|54R9[28]} 25|35m31 35r31 48m13 48r13 67r31 94r31
-39U17*InsertLink 39>29 40>29 25|27b17 49l11 49t21
-39a29 left_node{string} 25|27b29 37r51 46r50
-40a29 right_node{string} 25|28b29 39r65 47r50
-42V16*HasLink{boolean} 42>25 43>25 25|57b16 82l11 82t18
-42a25 from_node{string} 25|57b25 69r51
-43a25 to_node{string} 25|58b25 74r47
-49U17*PrintGraph 25|92b17 100l11 100t21
-X 25 graph.adb
-30r13 NewList{5|54R9[24|23]} 45m13 46m13 46r13 47m13 47r13 48r30
-35r17 every_list{5|54R9[24|23]} 37r37 39r25
-60r13 Queue{5|54R9[24|23]} 62m13
-67r17 every_list{5|54R9[24|23]} 69r37 73r43
-73r29 every_node{17|88R9} 74r34
-94r17 every_list{5|54R9[24|23]} 95r40
-95r23 every_element{17|88R9} 96r49
-X 28 system.ads
->>>>>>> 93e556e68ed8d5da3cd81899c4d6731c41571d8c
+42K15*Unbounded_String_Queues[10|44] 44r11 27|60r23
+50U17*InsertLink 50>29 51>29 27|27b17 49l11 49t21
+50a29 left_node{string} 27|27b29 37r51 46r50
+51a29 right_node{string} 27|28b29 39r65 47r50
+53V16*HasLink{boolean} 53>25 54>25 27|57b16
+53r25 from_node{20|88R9} 27|57b25 67r28
+54r25 to_node{20|88R9} 27|58b25 72r29
+60U17*PrintGraph 27|98b17 106l11 106t21
+X 27 graph.adb
+30r13 NewList{5|54R9[26|25]} 45m13 46m13 46r13 47m13 47r13 48r30
+35r17 every_list{5|54R9[26|25]} 37r37 39r25
+60w13 Queue{10|88W19[26|42]} 67r13 69r37 70r19 79r49
+61r13 Visited{5|54R9[26|25]} 64m13 78r46 84m25 84r25
+62r13 node{20|88R9} 70m34 72r22 76r63 84r41
+75r29 every_list{5|54R9[26|25]} 76r49 77r55
+77r41 every_node{20|88R9} 78r64 79r64
+100r17 every_list{5|54R9[26|25]} 101r40
+101r23 every_element{20|88R9} 102r49
+X 31 system.ads
 67M9*Address
-X 40 s-memory.ads
-53V13*Alloc{29|67M9} 103i<c,__gnat_malloc>22
+X 42 s-memory.ads
+53V13*Alloc{31|67M9} 103i<c,__gnat_malloc>22
 68U14*Free 104i<c,__gnat_free>22
-76V13*Realloc{29|67M9} 105i<c,__gnat_realloc>22
-X 49 s-stausa.ads
-203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
-268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 51 s-stalib.adb
-93U14 Break_Start 94i<c,__gnat_break_start>22
+76V13*Realloc{31|67M9} 105i<c,__gnat_realloc>22
+X 52 s-stausa.ads
+208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
+273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
+X 54 s-stalib.adb
+89U14 Break_Start 90i<c,__gnat_break_start>22
 
