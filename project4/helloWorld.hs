@@ -31,6 +31,8 @@
     data Tree = Leaf | Branch Tree Tree
     OR
     data BoolTree = BoolLeaf Bool | BoolBranch BoolTree BoolTree
+    OR
+    data BoolTree a b = BoolLeaf Bool | BoolBranch BoolTree a BoolTree b
 
     In Predicate Notation
     A   v   disjunction
