@@ -94,21 +94,13 @@ f_E x y = x == y
 f_J :: Bool -> Bool -> Bool
 f_J x y = x /= y
 
+-- For reading stdin
+processLine:: String -> String
+processLine line = line
+
+-- For manipulating/processing each line
+readLines:: (String -> String) -> IO ()
+readLines f = interact (unlines . (map processLine) . lines) 
+
 -- Main
-main = do
-    foundEOF <- isEOF
-    if foundEOF
-        then return ()
-    else do
-        inputLine <- getLine
-        putStrLn inputLine
-
-        putStrLn $ show $ True `f_A` False  -- Expected value: True
-        putStrLn $ show $ True `f_K` False  -- Expected value: False
-        putStrLn $ show $ f_N False         -- Expected value: True
-        putStrLn $ show $ True `f_C` False  -- Expected value: False
-        putStrLn $ show $ True `f_D` True   -- Expected value: False
-        putStrLn $ show $ False `f_E` False -- Expected value: True
-        putStrLn $ show $ False `f_J` False -- Expected value: False
-
-        main
+main = readLines processLine
